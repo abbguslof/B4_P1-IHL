@@ -1,1 +1,1 @@
-console.log("jag hatar luca han har en liten snopp för han är rumän och lite nsygg")
+console.log("")
