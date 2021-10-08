@@ -1,3 +1,56 @@
-    body {
-        background-color: orange;
-    }
+#Header {
+    display: flex;
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2.5px solid white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#DivHeader {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+    position: relative;
+    height: 85px;
+    justify-content: center;
+    align-items: center;
+}
+
+#DivRum {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+}
+
+#KRum1 {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+#KRum2 {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+#KRum3 {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+#RPing {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
