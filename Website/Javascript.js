@@ -1,1 +1,1 @@
-console.log("gay")
+alert("ha gay, gustav e en stor gay")
