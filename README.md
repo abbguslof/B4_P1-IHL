@@ -1,3 +1,2 @@
-# B4_P1-IHL
-Basgrupp4 Projekt1 I Hetaste Laget
-<br>Christopher Jernberg, Luca Bihoi, Erling Blomberg, Viktor Sköld, Gustav Löfqvist
+# B4_P1-IHL | Basgrupp 4 Projekt 1 I Hetaste Laget <br>
+Christopher Jernberg, Luca Bihoi, Erling Blomberg, Viktor Sköld, Gustav Löfqvist <br>
