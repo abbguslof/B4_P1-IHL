@@ -1,3 +1,11 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+}
+  
+
+
+
 #Header {
     display: flex;
     position: absolute;
@@ -14,9 +22,10 @@
     background-color: black;
     padding: 10px;
     position: relative;
-    height: 85px;
+    height: 100px;
     justify-content: center;
     align-items: center;
+    border-bottom: 3px solid white;
 }
 
 #DivRum {
@@ -24,33 +33,60 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    background-color: aliceblue;
+   
 }
 
 #KRum1 {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: white;
+    border: 2.5px solid whitesmoke;
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    
 }
 
 #KRum2 {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: white;
+    border: 2.5px solid whitesmoke;
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+
+    
 }
 
 #KRum3 {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: white;
+    border: 2.5px solid whitesmoke;
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    text-align: center;
+   
 }
 
 #RPing {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: white;
+    border: 2.5px solid whitesmoke;
+    border-radius: 20px;
+    padding: 2px;
+    margin-top: 10px; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+   
+}
+.kk {
+   width: 25%;
+    border: 3px solid white;
+    height: 300px;
+    
 }
