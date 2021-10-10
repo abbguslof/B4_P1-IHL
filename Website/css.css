@@ -2,9 +2,6 @@ body {
     background-color: black;
     color: whitesmoke;
 }
-  
-
-
 
 #Header {
     display: flex;
@@ -25,7 +22,7 @@ body {
     height: 100px;
     justify-content: center;
     align-items: center;
-    border-bottom: 3px solid white;
+    border-bottom: 3px dotted white;
 }
 
 #DivRum {
@@ -33,7 +30,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-   
 }
 
 #KRum1 {
@@ -45,7 +41,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 150px;
-    
 }
 
 #KRum2 {
@@ -57,8 +52,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 150px;
-
-    
 }
 
 #KRum3 {
@@ -70,24 +63,25 @@ body {
     margin-right: auto;
     width: 150px;
     text-align: center;
-   
 }
 
 #RPing {
     border: 2.5px solid whitesmoke;
     border-radius: 20px;
     padding: 2px;
-    margin-top: 10px; 
+    margin-top: 10px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 150px;
-   
 }
+
 .kk {
-   width: 17%;
+    width: 17%;
     border: 3px solid white;
     height: 300px;
-    margin-top: 20px;
-    
+    margin-top: 20px   ;
+    border-radius: 10px;
+   
+
 }
