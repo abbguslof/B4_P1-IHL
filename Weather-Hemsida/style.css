@@ -1411,30 +1411,14 @@ form textarea {
   color: #009ad8;
 }
 
-.hero {
+/* Backgrund bild och dess funktion */
+
+.Banner-Image {
+  background-image: url(images/banner.png);
   background-size: cover;
   padding: 70px 0;
   min-height: 350px;
-}
-
-.find-location {
-  position: relative;
-  margin-bottom: 70px;
-}
-
-.find-location input[type="text"] {
-  width: 100%;
-  padding: 20px 50px 20px 20px;
-  background: #1e202b;
-  color: white;
-}
-
-.find-location input[type="submit"] {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  bottom: 5px;
-  padding: 0 40px;
+  border-top: 1px solid black;
 }
 
 /* Temperatur block */
