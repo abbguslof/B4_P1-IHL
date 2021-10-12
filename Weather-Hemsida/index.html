@@ -43,111 +43,128 @@
 			</div>
 		</div> <!-- .site-header -->
 
-		<a target="_blank" href="www.google.se" title="Backgrunds Bild" id="Banner-Image">
+		<a
+			href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
 			<div class="Banner-Image">
-				<div class="container">
+				<div class="container"> </div>
+			</div>
 		</a>
 
-	</div>
-
-	</div>
-	<div class="forecast-table">
-		<div class="container">
-			<div class="forecast-container">
-				<div class="today forecast">
-					<div class="forecast-header">
-						<div class="day">Utomhus</div>
-						<div id="date">date</div>
-						<script>
-							window.onload = setInterval(clock, 1000);
-							function clock() {
-								var d = new Date();
-								var date = d.getDate();
-								var year = d.getFullYear();
-								var month = d.getMonth();
-								var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-								month = monthArr[month];
-								document.getElementById("date").innerHTML = date + " " + month + ", " + year;
-							}
-						</script>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="location">ABB Gymnasiet - Spets</div>
-						<div class="degree">
-							<div class="num">23<sup>o</sup>C</div>
-							<div class="forecast-icon">
-								<img src="images/icons/icon-1.svg" alt="" width=90>
+		<div class="forecast-table">
+			<div class="container">
+				<div class="forecast-container">
+					<div class="today forecast">
+						<div class="forecast-header">
+							<div class="day">Utomhus</div>
+							<div id="date">date</div>
+							<script>
+								window.onload = setInterval(clock, 1000);
+								function clock() {
+									var d = new Date();
+									var date = d.getDate();
+									var year = d.getFullYear();
+									var month = d.getMonth();
+									var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+									month = monthArr[month];
+									document.getElementById("date").innerHTML = date + " " + month + ", " + year;
+								}
+							</script>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="location">ABB Gymnasiet - Spets</div>
+							<div class="degree">
+								<div class="num">23<sup>o</sup>C</div>
+								<div class="forecast-icon">
+									<img src="images/icons/icon-1.svg" alt="" width=90>
+								</div>
 							</div>
+							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
+									id="Time">a</span></span>
+							<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
+							<span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
+							<span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
+							<script>
+								function updateClock() {
+									var now = new Date()
+									months = ['January', 'February', '...'];
+									var minutes = now.getMinutes()
+									if (minutes < 10) {
+										minutes = "0" + minutes
+									}
+									time = now.getHours() + ':' + minutes, // again, you get the idea
+
+										document.getElementById('Time').innerHTML = time;
+
+									// call this function again in 1000ms
+									setTimeout(updateClock, 1000);
+								}
+								updateClock(); // initial call
+							</script>
 						</div>
-						<span><img src="images/icon-clock.png" height="20px" alt="Time">14:56</span>
-						<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chanse">20%</span>
-						<span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
-						<span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
 					</div>
-				</div>
-				<div class="forecast">
-					<div class="forecast-header">
-						<div class="day">Klassrum 1</div>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="forecast-icon">
-							<img src="images/icons/temp-0.png" alt="" width=48>
+					<div class="forecast">
+						<div class="forecast-header">
+							<div class="day">Klassrum 1</div>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="forecast-icon">
+								<img src="images/icons/temp-0.png" alt="" width=48>
+							</div>
+							<div class="degree">23<sup>o</sup>C</div>
+							<small>18<sup>o</sup></small>
 						</div>
-						<div class="degree">23<sup>o</sup>C</div>
-						<small>18<sup>o</sup></small>
 					</div>
-				</div>
-				<div class="forecast">
-					<div class="forecast-header">
-						<div class="day">Klassrum 2</div>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="forecast-icon">
-							<img src="images/icons/temp-1.png" alt="" width=48>
+					<div class="forecast">
+						<div class="forecast-header">
+							<div class="day">Klassrum 2</div>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="forecast-icon">
+								<img src="images/icons/temp-1.png" alt="" width=48>
+							</div>
+							<div class="degree">23<sup>o</sup>C</div>
+							<small>18<sup>o</sup></small>
 						</div>
-						<div class="degree">23<sup>o</sup>C</div>
-						<small>18<sup>o</sup></small>
 					</div>
-				</div>
-				<div class="forecast">
-					<div class="forecast-header">
-						<div class="day">Klassrum 3</div>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="forecast-icon">
-							<img src="images/icons/temp-2.png" alt="" width=48>
+					<div class="forecast">
+						<div class="forecast-header">
+							<div class="day">Klassrum 3</div>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="forecast-icon">
+								<img src="images/icons/temp-2.png" alt="" width=48>
+							</div>
+							<div class="degree">23<sup>o</sup>C</div>
+							<small>18<sup>o</sup></small>
 						</div>
-						<div class="degree">23<sup>o</sup>C</div>
-						<small>18<sup>o</sup></small>
 					</div>
-				</div>
-				<div class="forecast">
-					<div class="forecast-header">
-						<div class="day">Kafeterian</div>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="forecast-icon">
-							<img src="images/icons/temp-3.png" alt="" width=48>
+					<div class="forecast">
+						<div class="forecast-header">
+							<div class="day">Kafeterian</div>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="forecast-icon">
+								<img src="images/icons/temp-3.png" alt="" width=48>
+							</div>
+							<div class="degree">23<sup>o</sup>C</div>
+							<small>18<sup>o</sup></small>
 						</div>
-						<div class="degree">23<sup>o</sup>C</div>
-						<small>18<sup>o</sup></small>
 					</div>
-				</div>
-				<div class="forecast">
-					<div class="forecast-header">
-						<div class="day">Pingis Rummet</div>
-					</div> <!-- .forecast-header -->
-					<div class="forecast-content">
-						<div class="forecast-icon">
-							<img src="images/icons/temp-4.png" alt="" width=48>
+					<div class="forecast">
+						<div class="forecast-header">
+							<div class="day">Pingis Rummet</div>
+						</div> <!-- .forecast-header -->
+						<div class="forecast-content">
+							<div class="forecast-icon">
+								<img src="images/icons/temp-4.png" alt="" width=48>
+							</div>
+							<div class="degree">23<sup>o</sup>C</div>
+							<small>18<sup>o</sup></small>
 						</div>
-						<div class="degree">23<sup>o</sup>C</div>
-						<small>18<sup>o</sup></small>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 	</div>
 
@@ -155,15 +172,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<p class="colophon">Copyright 2021 Basgrupp 4. Designed by Gustav. All rights reserved.</p>
+					<p class="colophon">Copyright 2021 Basgrupp 4. Designed by Gustav and Christopher. All rights
+						reserved.</p>
 				</div>
 	</footer> <!-- .site-footer -->
 	</div>
-
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/app.js"></script>
-
+	<script src="javascript.js"></script>
 </body>
 
 </html>
