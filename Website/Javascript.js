@@ -1,5 +1,5 @@
 
-x = prompt("Har Gustav liten snopp???")
+x = prompt("Luca the little man")
 if(x == "yes") {
     alert("U right")
 } if(x == "din mamma"){
