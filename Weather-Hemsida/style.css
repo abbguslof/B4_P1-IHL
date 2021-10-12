@@ -1421,7 +1421,11 @@ form textarea {
   border-top: 1px solid black;
 }
 
-/* Temperatur block */
+/* Temperatur och datum block */
+
+#date {
+  float: right;
+}
 
 .forecast-container {
   width: 100%;
