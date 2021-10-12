@@ -58,18 +58,18 @@
 					<div class="forecast-header">
 						<div class="day">Utomhus</div>
 						<div id="date">date</div>
-							<script>
-								window.onload = setInterval(clock,1000);
-								function clock() {
-									var d = new Date();
-									var date = d.getDate();
-									var year = d.getFullYear();
-									var month = d.getMonth();
-									var monthArr = ["January", "February","March", "April", "May", "June", "July", "August", "September", "October", "November","December"];
-									month = monthArr[month];
-									document.getElementById("date").innerHTML=date+" "+month+", "+year;
-								}
-							</script>
+						<script>
+							window.onload = setInterval(clock, 1000);
+							function clock() {
+								var d = new Date();
+								var date = d.getDate();
+								var year = d.getFullYear();
+								var month = d.getMonth();
+								var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+								month = monthArr[month];
+								document.getElementById("date").innerHTML = date + " " + month + ", " + year;
+							}
+						</script>
 					</div> <!-- .forecast-header -->
 					<div class="forecast-content">
 						<div class="location">ABB Gymnasiet - Spets</div>
@@ -79,9 +79,10 @@
 								<img src="images/icons/icon-1.svg" alt="" width=90>
 							</div>
 						</div>
-						<span><img src="images/icon-umberella.png" alt="">20%</span>
-						<span><img src="images/icon-wind.png" alt="">100km/h</span>
-						<span><img src="images/icon-compass.png" alt="">East</span>
+						<span><img src="images/icon-clock.png" height="20px" alt="Time">14:56</span>
+						<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chanse">20%</span>
+						<span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
+						<span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
 					</div>
 				</div>
 				<div class="forecast">
