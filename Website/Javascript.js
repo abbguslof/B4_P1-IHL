@@ -5,6 +5,6 @@ if (x == "yes") {
     alert("Luca har en konstig maskara!")
     window.close
 } else {
-    alert("Nah bruh den e fett liten")
+    alert("hej")
     window.close()
 }
