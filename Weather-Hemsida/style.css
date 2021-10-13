@@ -282,8 +282,14 @@ form textarea {
   margin-left: -15px;
   margin-right: -15px;
   *zoom: 1;
-  position: relative;
-  float: left;
+}
+
+.row:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0;
 }
 
 /*
@@ -394,7 +400,7 @@ form textarea {
   color: #009ad8;
 }
 
-/* Backgrund bild */
+/* Backgrund bild och dess funktion */
 
 .Banner-Image {
   background-image: url(images/banner.png);
@@ -540,5 +546,5 @@ form textarea {
 
 .site-footer {
   background: #262936;
-  padding: 50px;
+  padding: 75px 0;
 }
