@@ -284,7 +284,6 @@ form textarea {
   *zoom: 1;
   position: relative;
   float: left;
-  margin-top: 1.25%;
 }
 
 /*
@@ -541,4 +540,5 @@ form textarea {
 
 .site-footer {
   background: #262936;
+  padding: 50px;
 }
