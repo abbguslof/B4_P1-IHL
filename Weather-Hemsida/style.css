@@ -279,9 +279,12 @@ form textarea {
 }
 
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  float: left;
   *zoom: 1;
+  position: relative;
+  align-self: center;
+  top: auto;
+  bottom: auto;
 }
 
 .row:after {
@@ -298,7 +301,6 @@ form textarea {
 
 .site-header {
   padding: 1% 0;
-  /* position: fixed; */
 }
 
 .site-header .branding {
@@ -425,7 +427,7 @@ form textarea {
   overflow: hidden;
   border-radius: 10px;
   margin-top: -150px;
-  margin-bottom: 50px;
+  margin-bottom: 36%;
 }
 
 .forecast-container .forecast {
@@ -546,5 +548,5 @@ form textarea {
 
 .site-footer {
   background: #262936;
-  padding: 75px 0;
+  padding: 1em 0;
 }
