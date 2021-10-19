@@ -5,6 +5,7 @@ body {
  background-image: fixed;
  background-repeat: no-repeat;
  background-attachment: fixed;
+ background-position: center;
 }
 
 #kr {
@@ -57,7 +58,7 @@ font-size: 1.875em;
 }
 
 #KRum1 {
-    border: 15.625% solid whitesmoke;
+    border:0.15625em solid whitesmoke;
     border-radius: 1.25em;
     padding: 0.125em;
     margin-top: 0.625em;
@@ -170,7 +171,7 @@ font-size: 1.875em;
 #lol {
     height: 50%;
     display: block;
- 
+ background-color: blue;
 margin-top: 37.5em;
 margin-bottom: 60px;
 border-top: 0.3125em solid white;
