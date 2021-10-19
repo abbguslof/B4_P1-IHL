@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
 	<title>Spets Termometern | ABB</title>
-
+	<link ref="shortcut icon" sizes="128x128" href="images/icons/temp-4.png">
 	<!-- Loading third party fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -15,7 +15,6 @@
 	<!-- Loading main css file -->
 	<link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
@@ -74,9 +73,9 @@
 						<div class="forecast-content">
 							<div class="location">ABB Gymnasiet - Spets</div>
 							<div class="degree">
-								<div class="num" id="num">INFO<sup>o</sup>C</div>
+								<div class="num" id="num"><sup></sup>C</div>
 								<div class="forecast-icon">
-									<img src="images/icons/icon-1.svg" alt="" width=90>
+									<img id="uteicon" src="images/icons/moon.png" alt="" width=100>
 								</div>
 							</div>
 							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
@@ -88,11 +87,21 @@
 								function updateClock() {
 									var now = new Date()
 									var minutes = now.getMinutes()
+									var hours = now.getHours()
 									if (minutes < 10) {
 										minutes = "0" + minutes
 									}
-									time = now.getHours() + ':' + minutes,
+									time = hours + ':' + minutes,
 										document.getElementById('Time').innerHTML = time;
+
+									if (6 < hours < 23) {
+										document.getElementById("uteicon").src = "images/icons/moon.png"
+									}
+									else {
+										document.getElementById("uteicon").src = "images/icons/helsol.svg"
+									}
+
+
 									setTimeout(updateClock, 1000);
 								}
 								updateClock();
@@ -105,10 +114,10 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="klassrum1-img" src="images/icons/temp-0.png" alt="" width=48>
+								<img id="klassrum1-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
 							<div class="degree"><span id="klassrum1-temp"></span><sup>o</sup>C</div>
-							<small>18<sup>o</sup></small>
+							<small id="hum1">0%</small>
 						</div>
 					</div>
 					<div class="forecast">
@@ -117,10 +126,10 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="klassrum2-img" src="images/icons/temp-1.png" alt="" width=48>
+								<img id="klassrum2-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum2-temp">27</span><sup>o</sup>C</div>
-							<small>18<sup>o</sup></small>
+							<div class="degree"><span id="klassrum2-temp"></span><sup>o</sup>C</div>
+							<small id="hum2">0%</small>
 						</div>
 					</div>
 					<div class="forecast">
@@ -131,8 +140,8 @@
 							<div class="forecast-icon">
 								<img id="klassrum3-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum3-temp">23</span><sup>o</sup>C</div>
-							<small>18<sup>o</sup></small>
+							<div class="degree"><span id="klassrum3-temp"></span><sup>o</sup>C</div>
+							<small id="hum3">0%</small>
 						</div>
 					</div>
 					<div class="forecast">
@@ -141,10 +150,10 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="cafeterian-img" src="images/icons/temp-3.png" alt="" width=48>
+								<img id="cafeterian-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="cafeterian-temp">19</span><sup>o</sup>C</div>
-							<small>18%<sup></sup></small>
+							<div class="degree"><span id="cafeterian-temp"></span><sup>o</sup>C</div>
+							<small id="hum4">0%</small>
 						</div>
 					</div>
 					<div class="forecast">
@@ -153,10 +162,10 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="pingis-img" src="images/icons/temp-4.png" alt="" width=48>
+								<img id="pingis-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="pingis-temp">31</span><sup>o</sup>C</div>
-							<small>18<sup>o</sup></small>
+							<div class="degree"><span id="pingis-temp"></span><sup>o</sup>C</div>
+							<small id="hum5">0%</small>
 						</div>
 					</div>
 				</div>
