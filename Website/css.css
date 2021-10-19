@@ -169,100 +169,184 @@ font-size: 1.875em;
 
 }
 #lol {
+
     height: 30vh;
+
     display: block;
+
  
+
 margin-top: 30%;
+
 margin-bottom: 60px;
+
 border-top: 0.3125em solid white;
 
 
 
 
 
+
+
 }
+
 #kontakt-ram {
+
 width: 30%;
+
 margin-left: 1%;
+
 display: flex;
+
 float: left;
+
 margin-right: 1%;
+
 height: 100%;
+
 border: 0.125em dotted white;
+
 border-radius: 20px;
+
 background-color: 
+
    rgba(0, 0, 0, 0.726);
+
    margin-top: 1.25em;
 
+
+
 }
+
 #osss {
+
     
+
    
+
     font-size: 200%;
+
     text-align: center;
+
    
+
      font-family: 'Times New Roman', Times, serif;
+
     text-decoration: underline;
+
     height: 4vh;
+
     width: 5em;
+
     margin-left: auto;
+
     margin-right: auto;
+
 }
+
 #ossp {
+
    margin-top: 10%;
+
    margin-left: -95%;
+
     
+
     width: 97%;
+
     height: 15vh;
+
     font-size: 120%;
+
     font-family: 'Times New Roman', Times, serif;
+
 }
-
-
 #skolann {
+
   
+
     font-size: 200%;
+
     text-align: center;
+
    
+
      font-family: 'Times New Roman', Times, serif;
+
     text-decoration: underline;
+
     height: 4vh;
+
     width: 5em;
+
     margin-left: auto;
+
     margin-right: auto;
+
 }
+
+
 
 
 #skolaninfo {
+
     margin-top: 10%;
+
     margin-left: -95%;
+
      
+
      width: 97%;
+
      font-size: 120%;
+
      font-family: 'Times New Roman', Times, serif;
+
    
+
 }
+
+
 
 
 #kontaktt {
+
     width: 18.75em;
+
    
+
     font-size: 200%;
+
     
+
     text-align: center;
+
     margin-left: 7%;
+
    
+
     text-decoration: underline;
+
     
 
+
+
 }
+
 #kontaktp {
-    margin-top: 10%;
-   margin-left: -95%;
-    
-    width: 97%;
-   
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 120%;
-}
 
+    margin-top: 10%;
+
+   margin-left: -95%;
+
+    
+
+    width: 97%;
+
+   
+
+    font-family: 'Times New Roman', Times, serif;
+
+    font-size: 120%;
+
+}
