@@ -17,33 +17,30 @@ const firebaseConfig = {
     measurementId: "G-JC26DGQY7X"
 }
 
-//https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo
-async function getapi () {
+// get api
+async function getapitemp () {
 
     // Storing response
     const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
+    const gradc = "°C"
 
-    // Storing data in form of JSON
     var data = await response.json()
-    console.log(data)
-    console.log(data.stations[0].temp)
     let temp = data.stations[0].temp
-    document.getElementById("num").innerHTML = temp
+    document.getElementById("num").innerHTML = temp + gradc
     if (response) {
-        hideloader()
     }
 }
-// Calling that async function
-getapi()
+getapitemp()
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 const database = getDatabase()
 
-// Skriv ut värde på temperaturen i hemsidan
+// Skriv ut värde på temperaturen Klassrum1
 let dataBaseRef = ref(database, "Temp/Current")
 onValue(dataBaseRef, (snapshot) => {
-    console.log(snapshot.val())
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val()
+
     function TempImg (degree, id) {
         var degrees = parseFloat(document.getElementById(degree).innerHTML)
         if (degrees < 15) {
@@ -72,3 +69,163 @@ onValue(dataBaseRef, (snapshot) => {
 }
 
 )
+
+// skriv ut temperatur Klassrum2
+let dataBaseRef2 = ref(database, "Temp2/Current")
+onValue(dataBaseRef2, (snapshot) => {
+    document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
+
+    function TempImg (degree, id) {
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+        if (degrees < 15) {
+            document.getElementById(id).src = "images/icons/temp-0.png"
+        }
+        else if (degrees < 20) {
+            document.getElementById(id).src = "images/icons/temp-1.png"
+        }
+        else if (parseFloat(degrees) < 25) {
+            document.getElementById(id).src = "images/icons/temp-2.png"
+        }
+        else if (degrees < 30) {
+            document.getElementById(id).src = "images/icons/temp-3.png"
+        }
+        else {
+            document.getElementById(id).src = "images/icons/temp-4.png"
+        }
+        setTimeout(TempImg, 1000)
+    }
+
+    TempImg("klassrum1-temp", "klassrum1-img")
+    TempImg("klassrum2-temp", "klassrum2-img")
+    TempImg("klassrum3-temp", "klassrum3-img")
+    TempImg("cafeterian-temp", "cafeterian-img")
+    TempImg("pingis-temp", "pingis-img")
+}
+
+)
+
+// skriv ut temperatur Klassrum3
+let dataBaseRef3 = ref(database, "Temp3/Current")
+onValue(dataBaseRef3, (snapshot) => {
+    document.getElementById("klassrum3-temp").innerHTML = snapshot.val()
+
+    function TempImg (degree, id) {
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+        if (degrees < 15) {
+            document.getElementById(id).src = "images/icons/temp-0.png"
+        }
+        else if (degrees < 20) {
+            document.getElementById(id).src = "images/icons/temp-1.png"
+        }
+        else if (parseFloat(degrees) < 25) {
+            document.getElementById(id).src = "images/icons/temp-2.png"
+        }
+        else if (degrees < 30) {
+            document.getElementById(id).src = "images/icons/temp-3.png"
+        }
+        else {
+            document.getElementById(id).src = "images/icons/temp-4.png"
+        }
+        setTimeout(TempImg, 1000)
+    }
+
+    TempImg("klassrum1-temp", "klassrum1-img")
+    TempImg("klassrum2-temp", "klassrum2-img")
+    TempImg("klassrum3-temp", "klassrum3-img")
+    TempImg("cafeterian-temp", "cafeterian-img")
+    TempImg("pingis-temp", "pingis-img")
+}
+
+)
+
+// skriv ut temperatur Cafeterian
+let dataBaseRef4 = ref(database, "Temp4/Current")
+onValue(dataBaseRef4, (snapshot) => {
+    document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
+
+    function TempImg (degree, id) {
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+        if (degrees < 15) {
+            document.getElementById(id).src = "images/icons/temp-0.png"
+        }
+        else if (degrees < 20) {
+            document.getElementById(id).src = "images/icons/temp-1.png"
+        }
+        else if (parseFloat(degrees) < 25) {
+            document.getElementById(id).src = "images/icons/temp-2.png"
+        }
+        else if (degrees < 30) {
+            document.getElementById(id).src = "images/icons/temp-3.png"
+        }
+        else {
+            document.getElementById(id).src = "images/icons/temp-4.png"
+        }
+        setTimeout(TempImg, 1000)
+    }
+
+    TempImg("klassrum1-temp", "klassrum1-img")
+    TempImg("klassrum2-temp", "klassrum2-img")
+    TempImg("klassrum3-temp", "klassrum3-img")
+    TempImg("cafeterian-temp", "cafeterian-img")
+    TempImg("pingis-temp", "pingis-img")
+}
+
+)
+
+// skriv ut temperatur Pingisrummet
+let dataBaseRef5 = ref(database, "Temp5/Current")
+onValue(dataBaseRef5, (snapshot) => {
+    document.getElementById("pingis-temp").innerHTML = snapshot.val()
+
+    function TempImg (degree, id) {
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+        if (degrees < 15) {
+            document.getElementById(id).src = "images/icons/temp-0.png"
+        }
+        else if (degrees < 20) {
+            document.getElementById(id).src = "images/icons/temp-1.png"
+        }
+        else if (parseFloat(degrees) < 25) {
+            document.getElementById(id).src = "images/icons/temp-2.png"
+        }
+        else if (degrees < 30) {
+            document.getElementById(id).src = "images/icons/temp-3.png"
+        }
+        else {
+            document.getElementById(id).src = "images/icons/temp-4.png"
+        }
+        setTimeout(TempImg, 1000)
+    }
+
+    TempImg("klassrum1-temp", "klassrum1-img")
+    TempImg("klassrum2-temp", "klassrum2-img")
+    TempImg("klassrum3-temp", "klassrum3-img")
+    TempImg("cafeterian-temp", "cafeterian-img")
+    TempImg("pingis-temp", "pingis-img")
+})
+
+const prcent = "%"
+let humref1 = ref(database, "hum/Current")
+onValue(humref1, (snapshot) => {
+    document.getElementById("hum1").innerHTML = snapshot.val() + prcent
+})
+
+let humref2 = ref(database, "hum2/Current")
+onValue(humref2, (snapshot) => {
+    document.getElementById("hum2").innerHTML = snapshot.val() + prcent
+})
+
+let humref3 = ref(database, "hum3/Current")
+onValue(humref3, (snapshot) => {
+    document.getElementById("hum3").innerHTML = snapshot.val() + prcent
+})
+
+let humref4 = ref(database, "hum4/Current")
+onValue(humref4, (snapshot) => {
+    document.getElementById("hum4").innerHTML = snapshot.val() + prcent
+})
+
+let humref5 = ref(database, "hum5/Current")
+onValue(humref5, (snapshot) => {
+    document.getElementById("hum5").innerHTML = snapshot.val() + prcent
+})
