@@ -1,11 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBhy84ujYdgfTDt4TwvFpHd_aJy_X3B8R0",
     authDomain: "abb-temp-project-d1548.firebaseapp.com",
@@ -17,11 +12,61 @@ const firebaseConfig = {
     measurementId: "G-JC26DGQY7X"
 }
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
+const database = getDatabase()
 
-async function gettemp (db) {
-    const
+const cgrader = "°C"
+const TMP = "Temp: "
+const HUM = "Hum: "
+const PRCNT = "%"
 
+
+//get ute temp
+async function getapi () {
+    // Storing response
+    const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
+
+    // Storing data in form of JSON
+    var data = await response.json()
+    console.log(data)
+    console.log(data.stations[0].temp)
+    let temp = data.stations[0].temp
+    document.getElementById("utetemp").innerHTML = TMP + temp + cgrader
+    if (response) {
+    }
 }
+
+getapi()
+    // Storing response
+    //Temp script
+
+let dataBaseRef = ref(database, "Temp/Current")
+onValue(dataBaseRef, (snapshot) => {
+    console.log(snapshot.val())
+    document.getElementById("klass1").innerHTML = TMP + snapshot.val() + cgrader
+})
+
+let dataBaseRef2 = ref(database, "Temp2/Current")
+onValue(dataBaseRef2, (snapshot) => {
+    console.log(snapshot.val())
+    document.getElementById("klass2").innerHTML = TMP + snapshot.val() + cgrader
+})
+
+let dataBaseRef3 = ref(database, "Temp3/Current")
+onValue(dataBaseRef3, (snapshot) => {
+    console.log(snapshot.val())
+    document.getElementById("klass3").innerHTML = TMP + snapshot.val() + cgrader
+})
+
+let dataBaseRef5 = ref(database, "Temp5/Current")
+onValue(dataBaseRef5, (snapshot) => {
+    console.log(snapshot.val())
+    document.getElementById("pingis").innerHTML = TMP + snapshot.val() + cgrader
+})
+
+
+//Hum script
+
+
+
+
