@@ -91,8 +91,8 @@
 									if (minutes < 10) {
 										minutes = "0" + minutes
 									}
-									time = now.getHours() + ':' + minutes, 
-									document.getElementById('Time').innerHTML = time;
+									time = now.getHours() + ':' + minutes,
+										document.getElementById('Time').innerHTML = time;
 									setTimeout(updateClock, 1000);
 								}
 								updateClock();
@@ -107,7 +107,7 @@
 							<div class="forecast-icon">
 								<img id="temp0" src="images/icons/temp-0.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum1-img">22</span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum1-img">10</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -143,7 +143,7 @@
 							<div class="forecast-icon">
 								<img id="temp3" src="images/icons/temp-3.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="cafeterian-img">14</span><sup>o</sup>C</div>
+							<div class="degree"><span id="cafeterian-img">19</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -156,36 +156,36 @@
 								<img id="pingis-img" src="images/icons/temp-4.png" alt="" width=48>
 							</div>
 							<script>
-								
+
 							</script>
 							<div class="degree"><span id="pingis-temp">31</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
-					<script>
-						function TempImg (degree, id){
-						var degrees = document.getElementById(degree).innerHTML
-						if (degrees < 0){
-							document.getElementById(id).src="images/icons/temp-0.png";
-						}
-						else if (degrees < 20) {
-							document.getElementById(id).src="images/icons/temp-1.png";
-						}
-						else if (degrees < 25) {
-							document.getElementById(id).src="images/icons/temp-2.png";
-						}
-						else if (degrees < 30) {
-							document.getElementById(id).src="images/icons/temp-3.png";
-						}
-						else {
-							document.getElementById(id).src="images/icons/temp-4.png";
-						}
-						setTimeout(TempImg, 1000);
-						}
-						TempImg("klassrum1-img", "temp0")
-						TempImg("klassrum2-img", "temp1")
-						TempImg("klassrum3-img", "temp2")
-						TempImg("cafeterian-img", "temp3")
-						TempImg("pingis-img", "temp4")
-					</script>
+							<script>
+								function TempImg(degree, id) {
+									var degrees = document.getElementById(degree).innerHTML
+									if (degrees < 15) {
+										document.getElementById(id).src = "images/icons/temp-0.png";
+									}
+									else if (degrees < 20) {
+										document.getElementById(id).src = "images/icons/temp-1.png";
+									}
+									else if (degrees < 25) {
+										document.getElementById(id).src = "images/icons/temp-2.png";
+									}
+									else if (degrees < 30) {
+										document.getElementById(id).src = "images/icons/temp-3.png";
+									}
+									else {
+										document.getElementById(id).src = "images/icons/temp-4.png";
+									}
+									setTimeout(TempImg, 1000);
+								}
+								TempImg("klassrum1-img", "temp0")
+								TempImg("klassrum2-img", "temp1")
+								TempImg("klassrum3-img", "temp2")
+								TempImg("cafeterian-img", "temp3")
+								TempImg("pingis-img", "temp4")
+							</script>
 						</div>
 					</div>
 				</div>
