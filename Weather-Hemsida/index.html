@@ -56,7 +56,7 @@
 					<div class="today forecast">
 						<div class="forecast-header">
 							<div class="day">Utomhus</div>
-							<div id="date">date</div>
+							<div id="date"></div>
 							<script>
 								window.onload = setInterval(clock, 1000);
 								function clock() {
@@ -68,6 +68,7 @@
 									month = monthArr[month];
 									document.getElementById("date").innerHTML = date + " " + month + ", " + year;
 								}
+								clock()
 							</script>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
@@ -86,19 +87,15 @@
 							<script>
 								function updateClock() {
 									var now = new Date()
-									months = ['January', 'February', '...'];
 									var minutes = now.getMinutes()
 									if (minutes < 10) {
 										minutes = "0" + minutes
 									}
-									time = now.getHours() + ':' + minutes, // again, you get the idea
-
-										document.getElementById('Time').innerHTML = time;
-
-									// call this function again in 1000ms
+									time = now.getHours() + ':' + minutes, 
+									document.getElementById('Time').innerHTML = time;
 									setTimeout(updateClock, 1000);
 								}
-								updateClock(); // initial call
+								updateClock();
 							</script>
 						</div>
 					</div>
@@ -108,9 +105,9 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="images/icons/temp-0.png" alt="" width=48>
+								<img id="temp0" src="images/icons/temp-0.png" alt="" width=48>
 							</div>
-							<div class="degree">23<sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum1-img">22</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -120,9 +117,9 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="images/icons/temp-1.png" alt="" width=48>
+								<img id="temp1" src="images/icons/temp-1.png" alt="" width=48>
 							</div>
-							<div class="degree">23<sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum2-img">27</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -132,21 +129,21 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="images/icons/temp-2.png" alt="" width=48>
+								<img id="temp2" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree">23<sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum3-img">-2</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day">Kafeterian</div>
+							<div class="day">Cafeterian</div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="images/icons/temp-3.png" alt="" width=48>
+								<img id="temp3" src="images/icons/temp-3.png" alt="" width=48>
 							</div>
-							<div class="degree">23<sup>o</sup>C</div>
+							<div class="degree"><span id="cafeterian-img">14</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -156,10 +153,39 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img src="images/icons/temp-4.png" alt="" width=48>
+								<img id="pingis-img" src="images/icons/temp-4.png" alt="" width=48>
 							</div>
-							<div class="degree">23<sup>o</sup>C</div>
+							<script>
+								
+							</script>
+							<div class="degree"><span id="pingis-temp">31</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
+					<script>
+						function TempImg (degree, id){
+						var degrees = document.getElementById(degree).innerHTML
+						if (degrees < 0){
+							document.getElementById(id).src="images/icons/temp-0.png";
+						}
+						else if (degrees < 20) {
+							document.getElementById(id).src="images/icons/temp-1.png";
+						}
+						else if (degrees < 25) {
+							document.getElementById(id).src="images/icons/temp-2.png";
+						}
+						else if (degrees < 30) {
+							document.getElementById(id).src="images/icons/temp-3.png";
+						}
+						else {
+							document.getElementById(id).src="images/icons/temp-4.png";
+						}
+						setTimeout(TempImg, 1000);
+						}
+						TempImg("klassrum1-img", "temp0")
+						TempImg("klassrum2-img", "temp1")
+						TempImg("klassrum3-img", "temp2")
+						TempImg("cafeterian-img", "temp3")
+						TempImg("pingis-img", "temp4")
+					</script>
 						</div>
 					</div>
 				</div>
