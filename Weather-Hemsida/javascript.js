@@ -26,14 +26,14 @@ const database = getDatabase()
 let dataBaseRef = ref(database, "Temp/Current")
 onValue(dataBaseRef, (snapshot) => {
     console.log(snapshot.val())
-    var klassrum1temp = document.getElementById("klassrum1-temp")
-    klassru = snapshot.val()
+    document.getElementById("klassrum1-temp").innerHTML = snapshot.val()
+
 }
 )
 
 // byt bild efter temperatur
 function TempImg (degree, id) {
-    var degrees = document.getElementById(degree).innerHTML
+    var degrees = parseFloat(degree)//parseFloat(document.getElementById(degree).textContent)
     if (degrees < 15) {
         document.getElementById(id).src = "images/icons/temp-0.png"
     }
@@ -51,8 +51,24 @@ function TempImg (degree, id) {
     }
     setTimeout(TempImg, 1000)
 }
-TempImg("klassrum1-temp", "klassrum1-img")
+a = console.log(snapshot.val())
+TempImg(a, "klassrum1-img")
 TempImg("klassrum2-temp", "klassrum2-img")
 TempImg("klassrum3-temp", "klassrum3-img")
 TempImg("cafeterian-temp", "cafeterian-img")
 TempImg("pingis-temp", "pingis-img")
+
+// API för temperatur
+fetch("https://climacell-microweather-v1.p.rapidapi.com/weather/nowcast?lon=59.638518&lat=16.590005&fields=precipitation", {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "climacell-microweather-v1.p.rapidapi.com",
+        "x-rapidapi-key": "8c1fe695edmsha35485f13083dbbp1470ebjsnab03317a742d"
+    }
+})
+    .then(response => {
+        console.log(response)
+    })
+    .catch(err => {
+        console.error(err)
+    })
