@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-analytics.js"
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,9 +19,40 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const analytics = getAnalytics(app)
+const database = getDatabase()
 
-async function gettemp (db) {
-    const
 
+// Skriv ut värde på temperaturen i hemsidan
+let dataBaseRef = ref(database, "Temp/Current")
+onValue(dataBaseRef, (snapshot) => {
+    console.log(snapshot.val())
+    var klassrum1temp = document.getElementById("klassrum1-temp")
+    klassru = snapshot.val()
 }
+)
+
+// byt bild efter temperatur
+function TempImg (degree, id) {
+    var degrees = document.getElementById(degree).innerHTML
+    if (degrees < 15) {
+        document.getElementById(id).src = "images/icons/temp-0.png"
+    }
+    else if (degrees < 20) {
+        document.getElementById(id).src = "images/icons/temp-1.png"
+    }
+    else if (degrees < 25) {
+        document.getElementById(id).src = "images/icons/temp-2.png"
+    }
+    else if (degrees < 30) {
+        document.getElementById(id).src = "images/icons/temp-3.png"
+    }
+    else {
+        document.getElementById(id).src = "images/icons/temp-4.png"
+    }
+    setTimeout(TempImg, 1000)
+}
+TempImg("klassrum1-temp", "klassrum1-img")
+TempImg("klassrum2-temp", "klassrum2-img")
+TempImg("klassrum3-temp", "klassrum3-img")
+TempImg("cafeterian-temp", "cafeterian-img")
+TempImg("pingis-temp", "pingis-img")

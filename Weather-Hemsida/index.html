@@ -105,9 +105,9 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="temp0" src="images/icons/temp-0.png" alt="" width=48>
+								<img id="klassrum1-img" src="images/icons/temp-0.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum1-img">10</span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum1-temp"></span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -117,9 +117,9 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="temp1" src="images/icons/temp-1.png" alt="" width=48>
+								<img id="klassrum2-img" src="images/icons/temp-1.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum2-img">27</span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum2-temp">27</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -129,9 +129,9 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="temp2" src="images/icons/temp-2.png" alt="" width=48>
+								<img id="klassrum3-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum3-img">-2</span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum3-temp">23</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
 						</div>
 					</div>
@@ -141,10 +141,10 @@
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
-								<img id="temp3" src="images/icons/temp-3.png" alt="" width=48>
+								<img id="cafeterian-img" src="images/icons/temp-3.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="cafeterian-img">19</span><sup>o</sup>C</div>
-							<small>18<sup>o</sup></small>
+							<div class="degree"><span id="cafeterian-temp">19</span><sup>o</sup>C</div>
+							<small>18%<sup></sup></small>
 						</div>
 					</div>
 					<div class="forecast">
@@ -155,37 +155,8 @@
 							<div class="forecast-icon">
 								<img id="pingis-img" src="images/icons/temp-4.png" alt="" width=48>
 							</div>
-							<script>
-
-							</script>
 							<div class="degree"><span id="pingis-temp">31</span><sup>o</sup>C</div>
 							<small>18<sup>o</sup></small>
-							<script>
-								function TempImg(degree, id) {
-									var degrees = document.getElementById(degree).innerHTML
-									if (degrees < 15) {
-										document.getElementById(id).src = "images/icons/temp-0.png";
-									}
-									else if (degrees < 20) {
-										document.getElementById(id).src = "images/icons/temp-1.png";
-									}
-									else if (degrees < 25) {
-										document.getElementById(id).src = "images/icons/temp-2.png";
-									}
-									else if (degrees < 30) {
-										document.getElementById(id).src = "images/icons/temp-3.png";
-									}
-									else {
-										document.getElementById(id).src = "images/icons/temp-4.png";
-									}
-									setTimeout(TempImg, 1000);
-								}
-								TempImg("klassrum1-img", "temp0")
-								TempImg("klassrum2-img", "temp1")
-								TempImg("klassrum3-img", "temp2")
-								TempImg("cafeterian-img", "temp3")
-								TempImg("pingis-img", "temp4")
-							</script>
 						</div>
 					</div>
 				</div>
@@ -203,7 +174,7 @@
 				</div>
 	</footer> <!-- .site-footer -->
 	</div>
-	<script src="javascript.js"></script>
+	<script type="module" src="javascript.js"></script>
 </body>
 
 </html>
