@@ -1,29 +1,54 @@
 body {
     background-color: black;
     color: whitesmoke;
+    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/8/15/OLiJWQ.jpg);
+ background-image: fixed;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ background-position: center;
 }
 
-#Header {
-    display: flex;
-    position: absolute;
+#kr {
+    width: 5%;
+    height: 2.5em;
+    
+}
+#nr1 {
+    height: 2.5em;
+    width: 6.25em;
+    border: 0.15625em solid white;
+    border-radius:  0.9375em;
     text-align: center;
+    margin-left: 3.75em;
+    margin-top: 1.875em;
+    background-color: 
+   rgba(44, 32, 32, 0.329);
+    margin-left: 55%;
+    margin-top: 2.5em;
+    
+    
+   
+}
+#nr1b {
+    text-decoration: none;
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 2.5px solid white;
-    border-radius: 20px;
-    padding: 10px;
+    margin-top: 0.5em;
+}
+#nr2 {
+    width: 20%;
+    border: 0.15625em solid white;
+    border-radius: 1.25em;
+    text-align: center;
+    background-color: 
+   rgba(44, 32, 32, 0.329);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2.5em;
+}
+h1 {
+font-size: 1.875em;
 }
 
-#DivHeader {
-    display: flex;
-    background-color: black;
-    padding: 10px;
-    position: relative;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 3px dotted white;
-}
 
 #DivRum {
     display: flex;
@@ -33,55 +58,226 @@ body {
 }
 
 #KRum1 {
-    border: 2.5px solid whitesmoke;
-    border-radius: 20px;
-    padding: 2px;
-    margin-top: 10px;
+    border:0.15625em solid whitesmoke;
+    border-radius: 1.25em;
+    padding: 0.125em;
+    margin-top: 0.625em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
+    width: 8.125em;
 }
 
 #KRum2 {
-    border: 2.5px solid whitesmoke;
-    border-radius: 20px;
-    padding: 2px;
-    margin-top: 10px;
+    border: 0.15625em solid whitesmoke;
+    border-radius: 1.25em;
+    padding: 0.125em;
+    margin-top: 0.625em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
+    width: 8.125em;
 }
 
 #KRum3 {
-    border: 2.5px solid whitesmoke;
-    border-radius: 20px;
-    padding: 2px;
-    margin-top: 10px;
+    border: 0.15625em solid whitesmoke;
+    border-radius: 1.25em;
+    padding: 0.125em;
+    margin-top: 0.625em;
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
+    width: 8.125em;
     text-align: center;
 }
 
 #RPing {
-    border: 2.5px solid whitesmoke;
-    border-radius: 20px;
-    padding: 2px;
-    margin-top: 10px;
+    border: 0.15625em solid whitesmoke;
+    border-radius: 1.25em;
+    padding: 0.125em;
+    margin-top: 0.625em;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 150px;
+    width: 8.125em;
 }
-
-.kk {
-    width: 17%;
-    border: 3px solid white;
-    height: 300px;
-    margin-top: 20px   ;
-    border-radius: 10px;
+#uter {
+    border: 0.15625em solid whitesmoke;
+    border-radius: 1.25em;
+    padding: 0.125em;
+    margin-top: 0.625em;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8.125em;
    
 
 }
+
+.kk {
+    width: 15%;
+    border: 0.1875em solid white;
+    height: 21.875em;
+    margin-top: 5.625em   ;
+    border-radius:  0.625em;
+    background-color: 
+   rgba(44, 32, 32, 0.329);
+
+}
+#w {
+    text-align: center;
+   font-family: 'Times New Roman', Times, serif;
+   
+    font-size: 50px;
+}
+p{
+font-style: italic;
+font-size: 1.875em;
+}
+#q {
+    height:1.0416666666667 vh ;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto; 
+   
+  
+    
+}
+#imgr {
+
+    height:250px ;
+    position: absolute;
+    left: 200px;
+   top: 1000px;
+ border-radius: 20px;
+
+}
+#img2 {
+   height: 250px;
+    position: absolute;
+    left: 700px;
+   top: 1000px;
+ border-radius: 20px;
+
+}
+#img3 {
+  
+    height:250px;
+    position: absolute;
+    left: 1300px;
+   top: 1000px;
+ border-radius: 20px;
+
+}
+#lol {
+    height: 50%;
+    display: block;
+ background-color: blue;
+margin-top: 37.5em;
+margin-bottom: 60px;
+border-top: 0.3125em solid white;
+
+
+
+
+
+}
+#oss {
+width: 30%;
+margin-left: 3.125em;
+display: flex;
+float: left;
+margin-right: 2.5em;
+height: 15.6249999996vh;
+border: 0.125em dotted white;
+border-radius: 20px;
+background-color: 
+   rgba(0, 0, 0, 0.726);
+   margin-top: 1.25em;
+
+}
+#osss {
+    width: 18.75em;
+    height: 2.3041666666667 vh;
+    font-size: 1.875em;
+    text-align: center;
+    margin-left: 25%;
+     font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+
+}
+#ossp {
+   margin-top: 10%;
+   margin-left: -75%;
+    
+    width: 97%;
+    font-size: 1.5625em;
+    font-family: 'Times New Roman', Times, serif;
+}
+#skolan {
+    width: 30%;
+    
+    display: flex;
+    float: left;
+    height: 15.6249999996vh;
+    border: 0.125em dotted white;
+border-radius: 1.25em;
+background-color: 
+   rgba(0, 0, 0, 0.726);
+   margin-top: 1.25em;
+}
+#skolann {
+    width: 300px;
+    height: 2.6041666666667 vh;
+    
+    font-size: 1.875em;
+    text-align: center;
+    margin-left: 25%;
+   
+    text-decoration: underline;
+
+}
+#skolaninfo {
+    margin-top: 10%;
+   margin-left: -75%;
+    
+    width: 95%;
+    font-size: 1.1875em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#kontakt {
+    width: 30%;
+    margin-left: 2.5em;
+    display: flex;
+    float: left;
+    height: 15.6249999996vh;
+    border:  0.125em dotted white;
+border-radius:  1.25em;
+background-color: 
+   rgba(0, 0, 0, 0.726);
+    
+   margin-top:  1.25em;
+
+}
+#kontaktt {
+    width: 18.75em;
+    height: 2.6041666666667 vh;
+    
+    font-size: 1.875em;
+    text-align: center;
+    margin-left: 25%;
+   
+    text-decoration: underline;
+    
+
+}
+#kontaktp {
+    margin-top: 10%;
+   margin-left: -75%;
+    
+    width: 97%;
+    font-size: 10%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25em;
+}
+
