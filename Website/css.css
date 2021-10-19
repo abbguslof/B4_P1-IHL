@@ -126,24 +126,25 @@ font-size: 1.875em;
 
 }
 #temp {
-background-color: seagreen;
+
 width: 90%;
 height: 5vh;
 margin-right: auto;
     margin-left: auto;
     text-align: center;
     margin-top: 3vh;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 #hum{
-    background-color: blueviolet;
+    
+
     width: 90%;
     height: 5vh;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
     margin-top: 3vh;
-   font-size: 1.3em;
+   font-size: 1.5em;
 }
 #w {
     text-align: center;
