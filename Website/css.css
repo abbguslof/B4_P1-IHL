@@ -121,7 +121,29 @@ font-size: 1.875em;
     border-radius:  0.625em;
     background-color: 
    rgba(44, 32, 32, 0.329);
+   
 
+
+}
+#temp {
+background-color: seagreen;
+width: 90%;
+height: 5vh;
+margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 3vh;
+    font-size: 1.3em;
+}
+#hum{
+    background-color: blueviolet;
+    width: 90%;
+    height: 5vh;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 3vh;
+   font-size: 1.3em;
 }
 #w {
     text-align: center;
@@ -149,45 +171,32 @@ font-size: 1.875em;
     left: 7%;
    top: 65em;
  border-radius: 20px;
-
+ border: 2px solid white;
 }
 #img2 {
    height: 30%;
     position: absolute;
-    left: 37%;
+    left: 34%;
    top: 65em;
  border-radius: 20px;
+ border: 2px solid white;
 
 }
 #img3 {
   
     height:30%;
     position: absolute;
-    left: 70%;
+    left: 66%;
    top: 65em;
  border-radius: 20px;
+ border: 2px solid white;
 
 }
 #lol {
-
     height: 30vh;
-
     display: block;
-
- 
-
-margin-top: 30%;
-
-margin-bottom: 60px;
-
-border-top: 0.3125em solid white;
-
-
-
-
-
-
-
+    margin-top: 30%;
+    border-top: 0.3125em solid white;
 }
 
 #kontakt-ram {
@@ -213,29 +222,16 @@ background-color:
    rgba(0, 0, 0, 0.726);
 
    margin-top: 1.25em;
-
-
-
 }
 
 #osss {
 
-    
-
-   
-
     font-size: 200%;
-
     text-align: center;
 
-   
-
-     font-family: 'Times New Roman', Times, serif;
-
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
-
     height: 4vh;
-
     width: 5em;
 
     margin-left: auto;
@@ -291,62 +287,37 @@ background-color:
 #skolaninfo {
 
     margin-top: 10%;
-
     margin-left: -95%;
-
-     
-
-     width: 97%;
-
-     font-size: 120%;
-
-     font-family: 'Times New Roman', Times, serif;
-
-   
-
+    width: 97%;
+    font-size: 120%;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-
-
 
 #kontaktt {
 
     width: 18.75em;
-
-   
-
     font-size: 200%;
-
-    
-
     text-align: center;
-
-    margin-left: 7%;
-
-   
-
+    margin-left: auto;
+     margin-right: auto;
     text-decoration: underline;
-
-    
-
-
 
 }
 
 #kontaktp {
 
     margin-top: 10%;
-
-   margin-left: -95%;
-
-    
-
+    margin-left: -95%;
     width: 97%;
-
-   
-
     font-family: 'Times New Roman', Times, serif;
+    font-size: 140%;
 
-    font-size: 120%;
-
+}
+#copyright {
+    
+    margin-top: 35vh;
+    color: white;
+    background-color: rgba(139, 137, 5, 0.521);
+    height: 4vh;
+    font-size: 23px;
 }
