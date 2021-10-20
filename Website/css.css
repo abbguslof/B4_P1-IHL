@@ -212,7 +212,7 @@ float: left;
 
 margin-right: 1%;
 
-height: 100%;
+height: 110%;
 
 border: 0.125em dotted white;
 
@@ -263,23 +263,16 @@ background-color:
   
 
     font-size: 200%;
-
     text-align: center;
 
-   
-
-     font-family: 'Times New Roman', Times, serif;
-
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
-
     height: 4vh;
-
     width: 5em;
 
     margin-left: auto;
 
     margin-right: auto;
-
 }
 
 
@@ -288,35 +281,58 @@ background-color:
 #skolaninfo {
 
     margin-top: 10%;
+
     margin-left: -95%;
-    width: 97%;
-    font-size: 120%;
-    font-family: 'Times New Roman', Times, serif;
+ 
+     
+ 
+     width: 97%;
+ 
+     height: 15vh;
+ 
+     font-size: 107%;
+ 
+     font-family: 'Times New Roman', Times, serif;
+ 
 }
 
 #kontaktt {
 
-    width: 18.75em;
+   
     font-size: 200%;
     text-align: center;
-    margin-left: auto;
-     margin-right: auto;
+
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
+    height: 4vh;
+    width: 6em;
+
+    margin-left: auto;
+
+    margin-right: auto;
 
 }
 
 #kontaktp {
-
     margin-top: 10%;
+
     margin-left: -95%;
-    width: 97%;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 140%;
+ 
+     
+ 
+     width: 97%;
+ 
+     height: 15vh;
+ 
+     font-size: 120%;
+ 
+     font-family: 'Times New Roman', Times, serif;
+ 
 
 }
 #copyright {
     
-    margin-top: 35vh;
+    margin-top: 38vh;
     color: white;
     background-color: rgba(139, 137, 5, 0.521);
     height: 4vh;

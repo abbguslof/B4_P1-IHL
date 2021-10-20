@@ -37,7 +37,7 @@ async function getapi () {
 }
 
 getapi()
-    // Storing response
+    
     //Temp script
 
 let dataBaseRef = ref(database, "Temp/Current")
@@ -67,6 +67,25 @@ onValue(dataBaseRef5, (snapshot) => {
 
 //Hum script
 
+const Hum = "Fuktighet: "
+const prcent = "%"
+let humref1 = ref(database, "hum/Current")
+onValue(humref1, (snapshot) => {
+    document.getElementById("hum1").innerHTML = Hum + snapshot.val() + prcent 
+})
 
+let humref2 = ref(database, "hum2/Current")
+onValue(humref2, (snapshot) => {
+    document.getElementById("hum2").innerHTML = Hum + snapshot.val() + prcent 
+})
 
+let humref3 = ref(database, "hum3/Current")
+onValue(humref3, (snapshot) => {
+    document.getElementById("hum3").innerHTML = Hum + snapshot.val() + prcent 
+})
+
+let humref5 = ref(database, "hum5/Current")
+onValue(humref5, (snapshot) => {
+    document.getElementById("hum5").innerHTML = Hum + snapshot.val() + prcent 
+})
 
