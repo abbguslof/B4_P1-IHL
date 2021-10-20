@@ -21,15 +21,37 @@ const firebaseConfig = {
 async function getapitemp () {
 
     // Storing response
-    const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
+    const response = await fetch('https://api.temperatur.nu/tnu_1.16b.php?lat=59.638502&lon=16.590032&num=2&graph&cli=api_demo')
     const gradc = "°C"
 
     var data = await response.json()
     let temp = data.stations[0].temp
+    // let distans = data.staions[0].dist
     document.getElementById("num").innerHTML = temp + gradc
+    document.getElementById("lufthastighet").innerHTML = dist
     if (response) {
     }
 }
+function TempImg (degree, id) {
+    var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    if (degrees < 15) {
+        document.getElementById(id).src = "images/icons/temp-0.png"
+    }
+    else if (degrees < 20) {
+        document.getElementById(id).src = "images/icons/temp-1.png"
+    }
+    else if (parseFloat(degrees) < 25) {
+        document.getElementById(id).src = "images/icons/temp-2.png"
+    }
+    else if (degrees < 30) {
+        document.getElementById(id).src = "images/icons/temp-3.png"
+    }
+    else {
+        document.getElementById(id).src = "images/icons/temp-4.png"
+    }
+    setTimeout(TempImg, 1000)
+}
+
 getapitemp()
 
 // Initialize Firebase
@@ -41,31 +63,31 @@ let dataBaseRef = ref(database, "Temp/Current")
 onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val()
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
+    // function TempImg (degree, id) {
+    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    //     if (degrees < 15) {
+    //         document.getElementById(id).src = "images/icons/temp-0.png"
+    //     }
+    //     else if (degrees < 20) {
+    //         document.getElementById(id).src = "images/icons/temp-1.png"
+    //     }
+    //     else if (parseFloat(degrees) < 25) {
+    //         document.getElementById(id).src = "images/icons/temp-2.png"
+    //     }
+    //     else if (degrees < 30) {
+    //         document.getElementById(id).src = "images/icons/temp-3.png"
+    //     }
+    //     else {
+    //         document.getElementById(id).src = "images/icons/temp-4.png"
+    //     }
+    //     setTimeout(TempImg, 1000)
+    // }
 
     TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
+    // TempImg("klassrum2-temp", "klassrum2-img")
+    // TempImg("klassrum3-temp", "klassrum3-img")
+    // TempImg("cafeterian-temp", "cafeterian-img")
+    // TempImg("pingis-temp", "pingis-img")
 }
 
 )
@@ -75,31 +97,31 @@ let dataBaseRef2 = ref(database, "Temp2/Current")
 onValue(dataBaseRef2, (snapshot) => {
     document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
+    // function TempImg (degree, id) {
+    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    //     if (degrees < 15) {
+    //         document.getElementById(id).src = "images/icons/temp-0.png"
+    //     }
+    //     else if (degrees < 20) {
+    //         document.getElementById(id).src = "images/icons/temp-1.png"
+    //     }
+    //     else if (parseFloat(degrees) < 25) {
+    //         document.getElementById(id).src = "images/icons/temp-2.png"
+    //     }
+    //     else if (degrees < 30) {
+    //         document.getElementById(id).src = "images/icons/temp-3.png"
+    //     }
+    //     else {
+    //         document.getElementById(id).src = "images/icons/temp-4.png"
+    //     }
+    //     setTimeout(TempImg, 1000)
+    // }
 
-    TempImg("klassrum1-temp", "klassrum1-img")
+    // TempImg("klassrum1-temp", "klassrum1-img")
     TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
+    // TempImg("klassrum3-temp", "klassrum3-img")
+    // TempImg("cafeterian-temp", "cafeterian-img")
+    // TempImg("pingis-temp", "pingis-img")
 }
 
 )
@@ -109,31 +131,31 @@ let dataBaseRef3 = ref(database, "Temp3/Current")
 onValue(dataBaseRef3, (snapshot) => {
     document.getElementById("klassrum3-temp").innerHTML = snapshot.val()
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
+    // function TempImg (degree, id) {
+    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    //     if (degrees < 15) {
+    //         document.getElementById(id).src = "images/icons/temp-0.png"
+    //     }
+    //     else if (degrees < 20) {
+    //         document.getElementById(id).src = "images/icons/temp-1.png"
+    //     }
+    //     else if (parseFloat(degrees) < 25) {
+    //         document.getElementById(id).src = "images/icons/temp-2.png"
+    //     }
+    //     else if (degrees < 30) {
+    //         document.getElementById(id).src = "images/icons/temp-3.png"
+    //     }
+    //     else {
+    //         document.getElementById(id).src = "images/icons/temp-4.png"
+    //     }
+    //     setTimeout(TempImg, 1000)
+    // }
 
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
+    // TempImg("klassrum1-temp", "klassrum1-img")
+    // TempImg("klassrum2-temp", "klassrum2-img")
     TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
+    // TempImg("cafeterian-temp", "cafeterian-img")
+    // TempImg("pingis-temp", "pingis-img")
 }
 
 )
@@ -143,31 +165,31 @@ let dataBaseRef4 = ref(database, "Temp4/Current")
 onValue(dataBaseRef4, (snapshot) => {
     document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
+    // function TempImg (degree, id) {
+    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    //     if (degrees < 15) {
+    //         document.getElementById(id).src = "images/icons/temp-0.png"
+    //     }
+    //     else if (degrees < 20) {
+    //         document.getElementById(id).src = "images/icons/temp-1.png"
+    //     }
+    //     else if (parseFloat(degrees) < 25) {
+    //         document.getElementById(id).src = "images/icons/temp-2.png"
+    //     }
+    //     else if (degrees < 30) {
+    //         document.getElementById(id).src = "images/icons/temp-3.png"
+    //     }
+    //     else {
+    //         document.getElementById(id).src = "images/icons/temp-4.png"
+    //     }
+    //     setTimeout(TempImg, 1000)
+    // }
 
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
+    // TempImg("klassrum1-temp", "klassrum1-img")
+    // TempImg("klassrum2-temp", "klassrum2-img")
+    // TempImg("klassrum3-temp", "klassrum3-img")
     TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
+    // TempImg("pingis-temp", "pingis-img")
 }
 
 )

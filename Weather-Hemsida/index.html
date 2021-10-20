@@ -75,13 +75,14 @@
 							<div class="degree">
 								<div class="num" id="num"><sup></sup>C</div>
 								<div class="forecast-icon">
-									<img id="uteicon" src="" alt="" width=100>
+									<img id="uteicon" src="" alt="" width=65>
 								</div>
 							</div>
 							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
 									id="Time">a</span></span>
 							<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
-							<span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
+							<span id="lufthastighet"><img src="images/icon-wind.png" height="20px"
+									alt="Wind speed">100km/h</span>
 							<span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
 							<script>
 								function updateClock() {
@@ -94,7 +95,7 @@
 									time = hours + ':' + minutes,
 										document.getElementById('Time').innerHTML = time;
 
-									if (6 < hours < 23) {
+									if (6 < hours, hours < 23) {
 										document.getElementById("uteicon").src = "images/icons/helsol.svg"
 									}
 									else {
@@ -111,7 +112,7 @@
 					<div class="forecast">
 						<div class="forecast-header">
 							<a href="../Graf/Klassrum1/graf1.html">
-								<div class="day">Klassrum 1</div>
+								<div class="day">Klassrumet</div>
 							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
@@ -124,7 +125,9 @@
 					</div>
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day">Klassrum 2</div>
+							<a href="../Graf/Klassrum2/graf2.html">
+								<div class="day">Terrariet</div>
+							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
@@ -136,7 +139,9 @@
 					</div>
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day">Klassrum 3</div>
+							<a href="../Graf/Klassrum3/graf3.html">
+								<div class="day">Vardagsrummet</div>
+							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
@@ -146,6 +151,7 @@
 							<small id="hum3">0%</small>
 						</div>
 					</div>
+
 					<div class="forecast">
 						<div class="forecast-header">
 							<div class="day">Cafeterian</div>
@@ -158,6 +164,7 @@
 							<small id="hum4">0%</small>
 						</div>
 					</div>
+
 					<div class="forecast">
 						<div class="forecast-header">
 							<div class="day">Pingis Rummet</div>
