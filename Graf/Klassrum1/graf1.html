@@ -42,7 +42,8 @@
             </div>
         </div> <!-- .site-header -->
 
-        <a href="">
+        <a
+            href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
             <div class="Banner-Image">
                 <div class="container"> </div>
             </div>
@@ -74,13 +75,14 @@
                             <div class="degree">
                                 <div class="num" id="num"><sup></sup>C</div>
                                 <div class="forecast-icon">
-                                    <img id="uteicon" src="" alt="" width=100>
+                                    <img id="uteicon" src="" alt="" width=65>
                                 </div>
                             </div>
                             <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
                                     id="Time">a</span></span>
                             <span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
-                            <span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
+                            <span id="lufthastighet"><img src="images/icon-wind.png" height="20px"
+                                    alt="Wind speed">100km/h</span>
                             <span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
                             <script>
                                 function updateClock() {
@@ -93,7 +95,7 @@
                                     time = hours + ':' + minutes,
                                         document.getElementById('Time').innerHTML = time;
 
-                                    if (6 < hours < 23) {
+                                    if (6 < hours, hours < 23) {
                                         document.getElementById("uteicon").src = "images/icons/helsol.svg"
                                     }
                                     else {
@@ -107,9 +109,12 @@
                             </script>
                         </div>
                     </div>
+
                     <div class="forecast">
                         <div class="forecast-header">
-                            <div class="day">Klassrum 1</div>
+                            <a href="../Graf/Klassrum1/graf1.html">
+                                <div class="day">Klassrumet</div>
+                            </a>
                         </div> <!-- .forecast-header -->
                         <div class="forecast-content">
                             <div class="forecast-icon">
@@ -120,10 +125,47 @@
                         </div>
                     </div>
 
+
+                    <div class="forecast">
+                        <div class="forecast-header">
+                            <ul>
+
+                                <a href="../../Weather-Hemsida/index.html">
+                                    <p>
+                                        Hem
+                                    </p>
+                                </a>
+
+                                <a href="../../Klassrum2/graf2.html">
+                                    <p>
+                                        Terrariet
+                                    </p>
+                                </a>
+
+                                <a href="../../Klassrum3/graf3.html">
+                                    <p>
+                                        Vardagsrummet
+                                    </p>
+                                </a>
+
+                                <a href="../../Caféterian/graf4.html">
+                                    <p>
+                                        Cafeterian
+                                    </p>
+                                </a>
+
+                                <a href="../../Pinis Rummet/graf5.html">
+                                    <p>
+                                        Pingis rummet
+                                    </p>
+                                </a>
+
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     </div>
 

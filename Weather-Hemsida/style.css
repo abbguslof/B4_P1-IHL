@@ -492,7 +492,7 @@ form textarea {
   display: inline-block;
   vertical-align: middle;
   position: relative;
-  margin-top: -7%;
+  margin-top: 1%;
 }
 
 .forecast-container .forecast.today .degree .num {
