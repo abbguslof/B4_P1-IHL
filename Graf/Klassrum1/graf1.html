@@ -19,7 +19,9 @@
 <body>
 
     <div class="site-content">
-        <div class="site-header">
+
+        <div class="site-content">
+
             <div class="container">
                 <a href="https://www.abbgymnasiet.se/" class="branding">
                     <img src="images/logo.png" alt="" class="logo">
@@ -29,17 +31,17 @@
                 <div class="main-navigation">
                     <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                     <ul class="menu">
-                        <li class="menu-item"><a href="../Website/Website.html">Egen Hemsida</a></li>
+                        <li class="menu-item"><a href="../../Weather-Hemsida/index.html">Hem</a></li>
+                        <li class="menu-item"><a href="../Website/Website.html">Om projektet</a></li>
                         <li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
                         <li class="menu-item"><a
                                 href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
                         </li>
-                        <li class="menu-item"><a href="">?</a></li>
                         <li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
                     </ul> <!-- .menu -->
                 </div> <!-- .main-navigation -->
-
             </div>
+
         </div> <!-- .site-header -->
 
         <a
@@ -71,50 +73,46 @@
                             </script>
                         </div>
                         <div class="forecast-content">
-                            <div class="location">ABB Gymnasiet - Spets</div>
+                            <div class="location">
+                                <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
+                                        id="Time">time</span></span>
+                                <script>
+                                    function updateClock() {
+                                        var now = new Date()
+                                        var minutes = now.getMinutes()
+                                        var hours = now.getHours()
+                                        if (minutes < 10) {
+                                            minutes = "0" + minutes
+                                        }
+                                        time = hours + ':' + minutes,
+                                            document.getElementById('Time').innerHTML = time;
+
+                                        if (6 < hours, hours < 23) {
+                                            document.getElementById("uteicon").src = "images/icons/helsol.svg"
+                                        }
+                                        else {
+                                            document.getElementById("uteicon").src = "images/icons/moon.png"
+                                        }
+
+
+                                        setTimeout(updateClock, 1000);
+                                    }
+                                    updateClock();
+                                </script>
+                            </div>
                             <div class="degree">
                                 <div class="num" id="num"><sup></sup>C</div>
                                 <div class="forecast-icon">
                                     <img id="uteicon" src="" alt="" width=65>
                                 </div>
                             </div>
-                            <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-                                    id="Time">a</span></span>
-                            <span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
-                            <span id="lufthastighet"><img src="images/icon-wind.png" height="20px"
-                                    alt="Wind speed">100km/h</span>
-                            <span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
-                            <script>
-                                function updateClock() {
-                                    var now = new Date()
-                                    var minutes = now.getMinutes()
-                                    var hours = now.getHours()
-                                    if (minutes < 10) {
-                                        minutes = "0" + minutes
-                                    }
-                                    time = hours + ':' + minutes,
-                                        document.getElementById('Time').innerHTML = time;
 
-                                    if (6 < hours, hours < 23) {
-                                        document.getElementById("uteicon").src = "images/icons/helsol.svg"
-                                    }
-                                    else {
-                                        document.getElementById("uteicon").src = "images/icons/moon.png"
-                                    }
-
-
-                                    setTimeout(updateClock, 1000);
-                                }
-                                updateClock();
-                            </script>
                         </div>
                     </div>
 
                     <div class="forecast">
                         <div class="forecast-header">
-                            <a href="../Graf/Klassrum1/graf1.html">
-                                <div class="day">Klassrumet</div>
-                            </a>
+                            <div class="day">Klassrumet</div>
                         </div> <!-- .forecast-header -->
                         <div class="forecast-content">
                             <div class="forecast-icon">
