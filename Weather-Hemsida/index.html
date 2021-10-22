@@ -54,7 +54,7 @@
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
-							<div class="day">Utomhus</div>
+							<div class="day"><a href="../Graf/Ute/graf0.html"" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
 								window.onload = setInterval(clock, 1000);
@@ -73,46 +73,48 @@
 						<div class="forecast-content">
 							<div class="location">ABB Gymnasiet - Spets</div>
 							<div class="degree">
-								<div class="num" id="num"><sup></sup>C</div>
+								<div class="num" id="temp1"><sup></sup></div>
 								<div class="forecast-icon">
 									<img id="uteicon" src="" alt="" width=65>
 								</div>
 							</div>
 							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
 									id="Time">a</span></span>
-							<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
-							<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
-									id="lufthastighet"></span><span class="luftimg">m/s</span></span>
-							<span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
-							<script>
-								function updateClock() {
-									var now = new Date()
-									var minutes = now.getMinutes()
-									var hours = now.getHours()
-									if (minutes < 10) {
-										minutes = "0" + minutes
-									}
-									time = hours + ':' + minutes,
-										document.getElementById('Time').innerHTML = time;
+							<span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance"><span
+									id="hum1"></span>
+								<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
+										id="lufthastighet"></span>
+									<span><img src="images/icon-compass.png" height="20px" alt="Direction"></span>
+									<script>
+										function updateClock() {
+											var now = new Date()
+											var minutes = now.getMinutes()
+											var hours = now.getHours()
+											if (minutes < 10) {
+												minutes = "0" + minutes
+											}
+											time = hours + ':' + minutes,
+												document.getElementById('Time').innerHTML = time;
 
-									if (6 < hours, hours < 23) {
-										document.getElementById("uteicon").src = "images/icons/helsol.svg"
-									}
-									else {
-										document.getElementById("uteicon").src = "images/icons/moon.png"
-									}
+											if (6 < hours, hours < 23) {
+												document.getElementById("uteicon").src = "images/icons/helsol.svg"
+											}
+											else {
+												document.getElementById("uteicon").src = "images/icons/moon.png"
+											}
 
 
-									setTimeout(updateClock, 1000);
-								}
-								updateClock();
-							</script>
+											setTimeout(updateClock, 1000);
+										}
+										updateClock();
+									</script>
 						</div>
 					</div>
 					<div class="forecast">
 						<div class="forecast-header">
-							<a href="../Graf/Klassrum1/graf1.html">
-								<div class="day">Klassrumet</div>
+							<a>
+								<div class="day"><a href="../Graf/Klassrum1/graf1.html" class="fortnamn">Klassrumet</a>
+								</div>
 							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
@@ -125,8 +127,9 @@
 					</div>
 					<div class="forecast">
 						<div class="forecast-header">
-							<a href="../Graf/Klassrum2/graf2.html">
-								<div class="day">Terrariet</div>
+							<a>
+								<div class="day"><a href="../Graf/Klassrum2/graf2.html" class="fortnamn">Terrariet</a>
+								</div>
 							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
@@ -140,7 +143,7 @@
 					<div class="forecast">
 						<div class="forecast-header">
 							<a href="../Graf/Klassrum3/graf3.html">
-								<div class="day">Vardagsrummet</div>
+								<div class="day"><a class="fortnamn">Vardagsrummet</a></div>
 							</a>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
@@ -154,7 +157,7 @@
 
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day">Cafeterian</div>
+							<div class="day"><a class="fortnamn">Cafeterian</a></div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
@@ -167,7 +170,7 @@
 
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day">Pingis Rummet</div>
+							<div class="day"><a class="fortnamn">Pingis Rummet</a></div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
@@ -194,4 +197,5 @@
 	</div>
 	<script type="module" src="javascript.js"></script>
 </body>
+
 </html>

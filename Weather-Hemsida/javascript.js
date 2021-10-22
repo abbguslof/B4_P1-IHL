@@ -20,15 +20,31 @@ const firebaseConfig = {
 // get api
 async function getapitemp () {
 
+    const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
+    const gradc = "°C"
+
+    var dataa = await response.json()
+    let temper = dataa.stations[0].temp
+
+    document.getElementById("temp1").innerHTML = temper + gradc
+    if (response) {
+    }
+}
+
+async function getapi () {
+
     // Storing response
     const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&q=Vasteras&appid=e4db439cc72909853ab9ee518b298cbc')
-    const gradc = "°C"
+    const ms = "m/s"
+    const prcnt = "%"
 
     var data = await response.json()
     let temp = data.list[0].main.temp
     let dist = data.list[0].wind.speed
-    document.getElementById("num").innerHTML = temp + gradc
-    document.getElementById("lufthastighet").innerHTML = dist
+    let hum = data.list[0].main.humidity
+
+    document.getElementById("lufthastighet").innerHTML = dist + ms
+    document.getElementById("hum1").innerHTML = hum + prcnt
     console.log(data)
     if (response) {
     }
@@ -53,6 +69,7 @@ function TempImg (degree, id) {
     setTimeout(TempImg, 1000)
 }
 
+getapi()
 getapitemp()
 
 // Initialize Firebase
