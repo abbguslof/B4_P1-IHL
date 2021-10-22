@@ -18,7 +18,7 @@
     <div class="site-content">
         <div class="site-header">
             <div class="container">
-                <a href="https://www.abbgymnasiet.se/" class="branding">
+                <a target="_blank" href="https://www.abbgymnasiet.se/" class="branding">
                     <img src="images/logo.png" alt="" class="logo">
                 </a>
                 <!-- Default snippet for navigation -->
@@ -26,24 +26,28 @@
                     <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                     <ul class="menu">
                         <li class="menu-item"><a href="../../Weather-Hemsida/index.html">Hem</a></li>
-                        <li class="menu-item"><a href="../Website/Website.html">Om projektet</a></li>
-                        <li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
-                        <li class="menu-item"><a
+                        <li class="menu-item"><a target="_blank" href="../Website/Website.html">Om projektet</a></li>
+                        <li class="menu-item"><a target="_blank"
+                                href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
+                        <li class="menu-item"><a target="_blank"
                                 href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
                         </li>
-                        <li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
+                        <li class="menu-item"><a target="_blank" href="https://new.abb.com/se">ABB</a></li>
                     </ul> <!-- .menu -->
                 </div> <!-- .main-navigation -->
             </div>
 
         </div> <!-- .site-header -->
 
-        <a
-            href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
+
+        <div class="">
             <div class="Banner-Image">
-                <div class="container"> </div>
+                <a target="_blank"
+                    href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
+                </a>
             </div>
-        </a>
+        </div>
+
 
         <div class="forecast-table">
             <div class="container">
@@ -74,14 +78,16 @@
                                             <img id="klassrum1-img" src="images/icons/temp-2.png" alt="" width=48>
                                         </div>
                                         <div class="degree">
-                                            <span id="klassrum1-temp">0<sup>o</sup>C</span>
+                                            <span id="klassrum1-temp">0</span><sup>o</sup>C
                                         </div>
-                                        <small id="hum1">0%</small>
+                                        <i class="fa fa-tint" aria-hidden="true"><span> </span></i><small
+                                            id="hum1">0%</small>
+
                                     </div>
                                     <div class="real-clock">
-                                        <span>
-                                            <img src="images/icon-clock.png" height="20px" alt="Time">
-                                            <span id="Time">time</span>
+                                        <span class="size-clock">
+                                            <i class="fa fa-clock-o" aria-hidden="true" alt="Time"></i>
+                                            <span> </span><span id="Time">time</span>
                                         </span>
                                         <script>
                                             function updateClock() {
@@ -94,12 +100,6 @@
                                                 time = hours + ':' + minutes,
                                                     document.getElementById('Time').innerHTML = time;
 
-                                                if (6 < hours, hours < 23) {
-                                                    document.getElementById("uteicon").src = "images/icons/helsol.svg"
-                                                }
-                                                else {
-                                                    document.getElementById("uteicon").src = "images/icons/moon.png"
-                                                }
                                                 setTimeout(updateClock, 1000);
                                             }
                                             updateClock();
@@ -115,46 +115,54 @@
                             <div class="day">Klassrumet</div>
                         </div> <!-- .forecast-header -->
                         <div class="forecast-content">
-
+                            <!-- Graf -->
                         </div>
                     </div>
 
 
                     <div class="forecast">
                         <div class="forecast-header">
-                            <ul class="nav-list">
+                            <div class="day">
+                                <ul class="nav-list">
 
-                                <a href="../../Weather-Hemsida/index.html">
-                                    <div class="list-item">
-                                        Hem
-                                    </div>
-                                </a>
+                                    <a href="../../Weather-Hemsida/index.html">
+                                        <div class="list-item">
+                                            Hem
+                                        </div>
+                                    </a>
 
-                                <a href="../../Klassrum2/graf2.html">
-                                    <div class="list-item">
-                                        Terrariet
-                                    </div>
-                                </a>
+                                    <a href="../../Graf/Ute/graf0.html">
+                                        <div class="list-item">
+                                            Ute
+                                        </div>
+                                    </a>
 
-                                <a href="../../Klassrum3/graf3.html">
-                                    <div class="list-item">
-                                        Vardagsrummet
-                                    </div>
-                                </a>
+                                    <a href="../../Klassrum2/graf2.html">
+                                        <div class="list-item">
+                                            Terrariet
+                                        </div>
+                                    </a>
 
-                                <a href="../../Caféterian/graf4.html">
-                                    <div class="list-item">
-                                        Cafeterian
-                                    </div>
-                                </a>
+                                    <a href="../../Klassrum3/graf3.html">
+                                        <div class="list-item">
+                                            Vardagsrummet
+                                        </div>
+                                    </a>
 
-                                <a href="../../Pinis Rummet/graf5.html">
-                                    <div class="list-item">
-                                        Pingis rummet
-                                    </div>
-                                </a>
+                                    <a href="../../Caféterian/graf4.html">
+                                        <div class="list-item">
+                                            Cafeterian
+                                        </div>
+                                    </a>
 
-                            </ul>
+                                    <a href="../../Pinis Rummet/graf5.html">
+                                        <div class="list-item">
+                                            Pingis rummet
+                                        </div>
+                                    </a>
+
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
