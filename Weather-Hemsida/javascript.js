@@ -64,166 +64,41 @@ let dataBaseRef = ref(database, "Temp/Current")
 onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val()
 
-    // function TempImg (degree, id) {
-    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    //     if (degrees < 15) {
-    //         document.getElementById(id).src = "images/icons/temp-0.png"
-    //     }
-    //     else if (degrees < 20) {
-    //         document.getElementById(id).src = "images/icons/temp-1.png"
-    //     }
-    //     else if (parseFloat(degrees) < 25) {
-    //         document.getElementById(id).src = "images/icons/temp-2.png"
-    //     }
-    //     else if (degrees < 30) {
-    //         document.getElementById(id).src = "images/icons/temp-3.png"
-    //     }
-    //     else {
-    //         document.getElementById(id).src = "images/icons/temp-4.png"
-    //     }
-    //     setTimeout(TempImg, 1000)
-    // }
-
     TempImg("klassrum1-temp", "klassrum1-img")
-    // TempImg("klassrum2-temp", "klassrum2-img")
-    // TempImg("klassrum3-temp", "klassrum3-img")
-    // TempImg("cafeterian-temp", "cafeterian-img")
-    // TempImg("pingis-temp", "pingis-img")
-}
-
-)
+})
 
 // skriv ut temperatur Klassrum2
 let dataBaseRef2 = ref(database, "Temp2/Current")
 onValue(dataBaseRef2, (snapshot) => {
     document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
 
-    // function TempImg (degree, id) {
-    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    //     if (degrees < 15) {
-    //         document.getElementById(id).src = "images/icons/temp-0.png"
-    //     }
-    //     else if (degrees < 20) {
-    //         document.getElementById(id).src = "images/icons/temp-1.png"
-    //     }
-    //     else if (parseFloat(degrees) < 25) {
-    //         document.getElementById(id).src = "images/icons/temp-2.png"
-    //     }
-    //     else if (degrees < 30) {
-    //         document.getElementById(id).src = "images/icons/temp-3.png"
-    //     }
-    //     else {
-    //         document.getElementById(id).src = "images/icons/temp-4.png"
-    //     }
-    //     setTimeout(TempImg, 1000)
-    // }
-
-    // TempImg("klassrum1-temp", "klassrum1-img")
     TempImg("klassrum2-temp", "klassrum2-img")
-    // TempImg("klassrum3-temp", "klassrum3-img")
-    // TempImg("cafeterian-temp", "cafeterian-img")
-    // TempImg("pingis-temp", "pingis-img")
-}
-
-)
+})
 
 // skriv ut temperatur Klassrum3
 let dataBaseRef3 = ref(database, "Temp3/Current")
 onValue(dataBaseRef3, (snapshot) => {
     document.getElementById("klassrum3-temp").innerHTML = snapshot.val()
 
-    // function TempImg (degree, id) {
-    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    //     if (degrees < 15) {
-    //         document.getElementById(id).src = "images/icons/temp-0.png"
-    //     }
-    //     else if (degrees < 20) {
-    //         document.getElementById(id).src = "images/icons/temp-1.png"
-    //     }
-    //     else if (parseFloat(degrees) < 25) {
-    //         document.getElementById(id).src = "images/icons/temp-2.png"
-    //     }
-    //     else if (degrees < 30) {
-    //         document.getElementById(id).src = "images/icons/temp-3.png"
-    //     }
-    //     else {
-    //         document.getElementById(id).src = "images/icons/temp-4.png"
-    //     }
-    //     setTimeout(TempImg, 1000)
-    // }
-
-    // TempImg("klassrum1-temp", "klassrum1-img")
-    // TempImg("klassrum2-temp", "klassrum2-img")
     TempImg("klassrum3-temp", "klassrum3-img")
     // TempImg("cafeterian-temp", "cafeterian-img")
     // TempImg("pingis-temp", "pingis-img")
-}
-
-)
+})
 
 // skriv ut temperatur Cafeterian
 let dataBaseRef4 = ref(database, "Temp4/Current")
 onValue(dataBaseRef4, (snapshot) => {
     document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
 
-    // function TempImg (degree, id) {
-    //     var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    //     if (degrees < 15) {
-    //         document.getElementById(id).src = "images/icons/temp-0.png"
-    //     }
-    //     else if (degrees < 20) {
-    //         document.getElementById(id).src = "images/icons/temp-1.png"
-    //     }
-    //     else if (parseFloat(degrees) < 25) {
-    //         document.getElementById(id).src = "images/icons/temp-2.png"
-    //     }
-    //     else if (degrees < 30) {
-    //         document.getElementById(id).src = "images/icons/temp-3.png"
-    //     }
-    //     else {
-    //         document.getElementById(id).src = "images/icons/temp-4.png"
-    //     }
-    //     setTimeout(TempImg, 1000)
-    // }
-
-    // TempImg("klassrum1-temp", "klassrum1-img")
-    // TempImg("klassrum2-temp", "klassrum2-img")
-    // TempImg("klassrum3-temp", "klassrum3-img")
     TempImg("cafeterian-temp", "cafeterian-img")
     // TempImg("pingis-temp", "pingis-img")
-}
-
-)
+})
 
 // skriv ut temperatur Pingisrummet
 let dataBaseRef5 = ref(database, "Temp5/Current")
 onValue(dataBaseRef5, (snapshot) => {
     document.getElementById("pingis-temp").innerHTML = snapshot.val()
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
     TempImg("pingis-temp", "pingis-img")
 })
 
