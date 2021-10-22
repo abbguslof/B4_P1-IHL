@@ -69,16 +69,20 @@
                         <div class="forecast-content">
                             <div class="location">
                                 <div class="main-table">
-                                    <div class="forecast-icon">
-                                        <img id="klassrum1-img" src="images/icons/temp-2.png" alt="" width=48>
+                                    <div class="table-temp">
+                                        <div class="forecast-icon">
+                                            <img id="klassrum1-img" src="images/icons/temp-2.png" alt="" width=48>
+                                        </div>
+                                        <div class="degree">
+                                            <span id="klassrum1-temp">0<sup>o</sup>C</span>
+                                        </div>
+                                        <small id="hum1">0%</small>
                                     </div>
-
-                                    <div class="degree"><span id="klassrum1-temp"></span><sup>o</sup>C</div>
-                                    <small id="hum1">0%</small>
-
                                     <div class="real-clock">
-                                        <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-                                                id="Time">time</span></span>
+                                        <span>
+                                            <img src="images/icon-clock.png" height="20px" alt="Time">
+                                            <span id="Time">time</span>
+                                        </span>
                                         <script>
                                             function updateClock() {
                                                 var now = new Date()
@@ -96,8 +100,6 @@
                                                 else {
                                                     document.getElementById("uteicon").src = "images/icons/moon.png"
                                                 }
-
-
                                                 setTimeout(updateClock, 1000);
                                             }
                                             updateClock();
