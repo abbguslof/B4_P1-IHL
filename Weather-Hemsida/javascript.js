@@ -81,8 +81,6 @@ onValue(dataBaseRef3, (snapshot) => {
     document.getElementById("klassrum3-temp").innerHTML = snapshot.val()
 
     TempImg("klassrum3-temp", "klassrum3-img")
-    // TempImg("cafeterian-temp", "cafeterian-img")
-    // TempImg("pingis-temp", "pingis-img")
 })
 
 // skriv ut temperatur Cafeterian
