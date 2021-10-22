@@ -301,6 +301,7 @@ form textarea {
 
 .site-header {
   padding: 1% 0;
+  background: linear-gradient(#323544,#1e232b);
 }
 
 .site-header .branding {
@@ -361,7 +362,20 @@ form textarea {
   border-color: #009ad8;
   color: #009ad8;
 }
+.nav-list .list-item{
+  padding: 5px 25px;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  color: white;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  font-weight: 400;
+}
 
+.nav-list .list-item:hover, .nav-list .list-item:active  {
+border-color: #009ad8;
+  color: #009ad8;
+}
 .main-navigation .menu {
   list-style: none;
   display: inline-block;
@@ -482,7 +496,12 @@ form textarea {
   font-size: 1.2857142857em;
   font-weight: 400;
 }
-
+.forecast-container .forecast.today .location .main-table{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 .forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
   display: inline-block;
   vertical-align: middle;
