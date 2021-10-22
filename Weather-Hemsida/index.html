@@ -57,6 +57,7 @@
 							<div class="day"><a href="../Graf/Ute/graf0.html"" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
+								//skriver ut datum, dag, månad och år.
 								window.onload = setInterval(clock, 1000);
 								function clock() {
 									var d = new Date();
@@ -86,6 +87,7 @@
 										id="lufthastighet"></span>
 									<span><img src="images/icon-compass.png" height="20px" alt="Direction"></span>
 									<script>
+										//skriver ut tid och byter icon.
 										function updateClock() {
 											var now = new Date()
 											var minutes = now.getMinutes()
@@ -95,17 +97,16 @@
 											}
 											time = hours + ':' + minutes,
 												document.getElementById('Time').innerHTML = time;
-
+                                            
+											//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
 											if (6 < hours, hours < 23) {
 												document.getElementById("uteicon").src = "images/icons/helsol.svg"
 											}
 											else {
 												document.getElementById("uteicon").src = "images/icons/moon.png"
 											}
+											setTimeout(updateClock, 1000);} //uppdaterar varje sekund.
 
-
-											setTimeout(updateClock, 1000);
-										}
 										updateClock();
 									</script>
 						</div>
