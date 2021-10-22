@@ -549,6 +549,11 @@ form textarea {
   font-size: 1.1428571429em;
 }
 
+.luftimg {
+  position: relative;
+  float: left;
+}
+
 /*
  * Footer Styles
  */

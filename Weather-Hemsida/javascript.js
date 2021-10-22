@@ -21,14 +21,15 @@ const firebaseConfig = {
 async function getapitemp () {
 
     // Storing response
-    const response = await fetch('https://api.temperatur.nu/tnu_1.16b.php?lat=59.638502&lon=16.590032&num=2&graph&cli=api_demo')
+    const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&q=Vasteras&appid=e4db439cc72909853ab9ee518b298cbc')
     const gradc = "°C"
 
     var data = await response.json()
-    let temp = data.stations[0].temp
-    // let distans = data.staions[0].dist
+    let temp = data.list[0].main.temp
+    let dist = data.list[0].wind.speed
     document.getElementById("num").innerHTML = temp + gradc
     document.getElementById("lufthastighet").innerHTML = dist
+    console.log(data)
     if (response) {
     }
 }
