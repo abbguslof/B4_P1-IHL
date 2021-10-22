@@ -371,6 +371,7 @@ form textarea {
   transition: .3s ease;
   font-weight: 400;
 }
+
 .nav-list .list-item:hover, .nav-list .list-item:active  {
 border-color: #009ad8;
   color: #009ad8;
@@ -495,7 +496,12 @@ border-color: #009ad8;
   font-size: 1.2857142857em;
   font-weight: 400;
 }
-
+.forecast-container .forecast.today .location .main-table{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 .forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
   display: inline-block;
   vertical-align: middle;
