@@ -112,7 +112,12 @@ q:before, q:after {
 small {
   font-size: 80%;
 }
-
+.fa fa-tint{
+  font-size: 80%;
+}
+.size-clock{
+font-size: 80%;
+}
 sub, sup {
   font-size: 75%;
   line-height: 0;
