@@ -57,7 +57,7 @@ function TempImg (degree, id) {
     else if (degrees < 20) {
         document.getElementById(id).src = "images/icons/temp-1.png"
     }
-    else if (parseFloat(degrees) < 25) {
+    else if (degrees < 25) {
         document.getElementById(id).src = "images/icons/temp-2.png"
     }
     else if (degrees < 30) {
@@ -106,7 +106,6 @@ onValue(dataBaseRef4, (snapshot) => {
     document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
 
     TempImg("cafeterian-temp", "cafeterian-img")
-    // TempImg("pingis-temp", "pingis-img")
 })
 
 // skriv ut temperatur Pingisrummet
