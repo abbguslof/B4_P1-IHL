@@ -29,6 +29,7 @@ async function getapitemp () {
     document.getElementById("temp1").innerHTML = temper + gradc
     if (response) {
     }
+    setTimeout(getapitemp, 1000)
 }
 
 async function getapi () {
@@ -37,17 +38,22 @@ async function getapi () {
     const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&q=Vasteras&appid=e4db439cc72909853ab9ee518b298cbc')
     const ms = "m/s"
     const prcnt = "%"
+    const deg = "°"
 
     var data = await response.json()
     let temp = data.list[0].main.temp
     let dist = data.list[0].wind.speed
     let hum = data.list[0].main.humidity
+    let vdegree = data.list[0].wind.deg
+    const riktning = {Nord:"0",Nordost:"45",Ost:"90",Sydost:"135",Syd:"180",Sydväst:"225",Väst:"270",Nordväst:"315"}
 
     document.getElementById("lufthastighet").innerHTML = dist + ms
     document.getElementById("hum1").innerHTML = hum + prcnt
-    console.log(data)
+    document.getElementById("wind-degree").innerHTML = vdegree + deg
+                         
     if (response) {
     }
+    setTimeout(getapi, 1000)
 }
 function TempImg (degree, id) {
     var degrees = parseFloat(document.getElementById(degree).innerHTML)

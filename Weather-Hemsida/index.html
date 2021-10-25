@@ -54,10 +54,10 @@
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
-							<div class="day"><a href="../Graf/Ute/graf0.html"" class=" fortnamn">Utomhus</a></div>
+							<div class="day"><a href="../Graf/Ute/graf0.html" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
-								//skriver ut datum, dag, månad och år.
+								//funktion som skriver ut datum, dag, månad och år.
 								window.onload = setInterval(clock, 1000);
 								function clock() {
 									var d = new Date();
@@ -80,14 +80,14 @@
 								</div>
 							</div>
 							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-									id="Time">a</span></span>
+									id="Time"></span></span>
 							<span><img src="images/icons/humidity.png" height="20px" alt="Rain Chance"><span
-									id="hum1"></span>
+									id="hum1"></span></span>
 								<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
-										id="lufthastighet"></span>
-									<span><img src="images/icon-compass.png" height="20px" alt="Direction"></span>
+										id="lufthastighet"></span></span>
+									<span><img src="images/icon-compass.png" height="20px" alt="Direction"><span id="wind-degree"></span></span>
 									<script>
-										//skriver ut tid och byter icon.
+										//funktion som skriver ut tid och byter icon.
 										function updateClock() {
 											var now = new Date()
 											var minutes = now.getMinutes()
@@ -105,8 +105,8 @@
 											else {
 												document.getElementById("uteicon").src = "images/icons/moon.png"
 											}
-											setTimeout(updateClock, 1000);
-										} //uppdaterar varje sekund.
+											setTimeout(updateClock, 1000); //uppdaterar varje sekund.
+										}
 
 										updateClock();
 									</script>
