@@ -44,9 +44,9 @@ async function getapi () {
     let temp = data.list[0].main.temp
     let dist = data.list[0].wind.speed
     let hum = data.list[0].main.humidity
-    let vdegree = data.list[0].wind.deg
-    //const riktning = {Nord:"0",Nordost:"45",Ost:"90",Sydost:"135",Syd:"180",Sydväst:"225",Väst:"270",Nordväst:"315"}
+    let vdegree = data.list[0].wind.deg //api på vind riktning (grader)
 
+    //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
     function WindDegree (wdeg){
         if (wdeg>=337.5 || wdeg<22.5){
             document.getElementById("wind-degree").innerHTML = "Nord"
@@ -77,12 +77,12 @@ async function getapi () {
 
     document.getElementById("lufthastighet").innerHTML = dist + ms
     document.getElementById("hum1").innerHTML = hum + prcnt
-    //document.getElementById("wind-degree").innerHTML = vdegree + deg + direction
                          
     if (response) {
     }
     setTimeout(getapi, 1000)
 }
+//funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
     if (degrees < 15) {
@@ -150,27 +150,32 @@ onValue(dataBaseRef5, (snapshot) => {
     TempImg("pingis-temp", "pingis-img")
 })
 
+//skriver ut luftfuktighet klassrum1
 const prcent = "%"
 let humref1 = ref(database, "hum/Current")
 onValue(humref1, (snapshot) => {
     document.getElementById("hum1").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet klassrum2
 let humref2 = ref(database, "hum2/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet klassrum3
 let humref3 = ref(database, "hum3/Current")
 onValue(humref3, (snapshot) => {
     document.getElementById("hum3").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet cafeterian
 let humref4 = ref(database, "hum4/Current")
 onValue(humref4, (snapshot) => {
     document.getElementById("hum4").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet pingisrummet
 let humref5 = ref(database, "hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
