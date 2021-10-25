@@ -45,11 +45,39 @@ async function getapi () {
     let dist = data.list[0].wind.speed
     let hum = data.list[0].main.humidity
     let vdegree = data.list[0].wind.deg
-    const riktning = {Nord:"0",Nordost:"45",Ost:"90",Sydost:"135",Syd:"180",Sydväst:"225",Väst:"270",Nordväst:"315"}
+    //const riktning = {Nord:"0",Nordost:"45",Ost:"90",Sydost:"135",Syd:"180",Sydväst:"225",Väst:"270",Nordväst:"315"}
+
+    function WindDegree (wdeg){
+        if (wdeg>=337.5 || wdeg<22.5){
+            document.getElementById("wind-degree").innerHTML = "Nord"
+        }
+        else if (wdeg>=22.5 && wdeg<67.5){
+            document.getElementById("wind-degree").innerHTML = "Nordost"
+        }
+        else if (wdeg>=67.5 && wdeg<112.5){
+            document.getElementById("wind-degree").innerHTML = "Ost"
+        }
+        else if (wdeg>=112.5 && wdeg<157.5){
+            document.getElementById("wind-degree").innerHTML = "Sydost"
+        }
+        else if (wdeg>=157.5 && wdeg<202.5){
+            document.getElementById("wind-degree").innerHTML = "Syd"
+        }
+        else if (wdeg>=202.5 && wdeg<247.5){
+            document.getElementById("wind-degree").innerHTML = "Sydväst"
+        }
+        else if (wdeg>=247.5 && wdeg<292.5){
+            document.getElementById("wind-degree").innerHTML = "Väst"
+        }
+        else {
+            document.getElementById("wind-degree").innerHTML = "Nordväst"
+        }
+    }
+    WindDegree(vdegree)
 
     document.getElementById("lufthastighet").innerHTML = dist + ms
     document.getElementById("hum1").innerHTML = hum + prcnt
-    document.getElementById("wind-degree").innerHTML = vdegree + deg
+    //document.getElementById("wind-degree").innerHTML = vdegree + deg + direction
                          
     if (response) {
     }
