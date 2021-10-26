@@ -114,11 +114,20 @@
                                 </div>
                             </div>
                             <div>siffror
-                                <div class="degree"><span id="klassrum2-temp"></span><sup>o</sup>C</div>
-                                <img class="humidicon" src="images/icons/humidity.png" width="15px"><small
-                                    id="hum2">0%</small></img>
-                                <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-                                        id="Time"></span></span>
+                                <div class="degree">
+                                    <span id="klassrum2-temp"></span><sup>o</sup>C
+                                </div>
+                                <div>
+                                    <span><img src="images/icons/humidity.png" height="15px" alt="Rain Chance: "><span
+                                            id="hum2"></span></span>
+                                </div>
+                                <div>
+                                    <span><img src="Weather-hemsida/images/icon-clock.png" height="15px"
+                                            alt="Time: "><span id="Time"></span></span>
+                                </div>
+                                <div id="date">
+                                    <span>Date</span>
+                                </div>
                                 <script>
                                     //funktion som skriver ut tid och byter icon.
                                     function updateClock() {
@@ -135,7 +144,7 @@
                                     }
                                     updateClock();
                                 </script>
-                                <div id="date"></div>
+
                                 <script>
                                     //funktion som skriver ut datum, dag, månad och år.
                                     window.onload = setInterval(clock, 1000);
