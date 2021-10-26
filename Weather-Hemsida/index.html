@@ -12,12 +12,12 @@
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Loading main css file -->
+	<!-- Laddar CSS filen -->
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+	<!-- Sidan topp(Header) -->
 	<div class="site-content">
 		<div class="site-header">
 			<div class="container">
@@ -25,9 +25,8 @@
 					<img src="images/logo.png" alt="" class="logo">
 				</a>
 
-				<!-- Default snippet for navigation -->
+				<!-- Navigation På toppen, De olika knapparna. -->
 				<div class="main-navigation">
-					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 					<ul class="menu">
 						<li class="menu-item"><a href="../Website/Website.html">Lucas Hemsida</a></li>
 						<li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
@@ -36,12 +35,12 @@
 						</li>
 						<li class="menu-item"><a href="https://www.temperatur.nu/vasteras">Temperatur.nu</a></li>
 						<li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
-					</ul> <!-- .menu -->
-				</div> <!-- .main-navigation -->
-
+					</ul>
+				</div>
 			</div>
-		</div> <!-- .site-header -->
+		</div>
 
+		<!-- Länk till Google maps när man trycker på backgrundsbilden -->
 		<a
 			href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
 			<div class="Banner-Image">
@@ -49,16 +48,18 @@
 			</div>
 		</a>
 
+		<!-- Tabell/Boarden i mitten av sidan med de olika temperatur värderna -->
 		<div class="forecast-table">
-			<input id="ButtonCF" onclick=ChangeCF() type="checkbox"></input>
 			<div class="container">
+				<!-- Knapp till Celisus Farenheit switch -->
+				<input id="ButtonCF" type="checkbox"></input>
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
 							<div class="day"><a href="../Graf/Ute/graf0.html" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
-								//funktion som skriver ut datum, dag, månad och år.
+								// funktion som skriver ut datum, dag, månad och år.
 								window.onload = setInterval(clock, 1000);
 								function clock() {
 									var d = new Date();
@@ -72,6 +73,7 @@
 								clock()
 							</script>
 						</div>
+						<!-- Första blocket, Utomhus Temperaturen -->
 						<div class="forecast-content">
 							<div class="location">ABB Gymnasiet - Spets</div>
 							<div class="degree">
@@ -124,6 +126,7 @@
 							</script>
 						</div>
 					</div>
+					<!-- Andra Blocket med temperaturer, Klassrummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a>
@@ -140,13 +143,14 @@
 								id="hum1">0%</small></img>
 						</div>
 					</div>
+					<!-- Tredje blocket, Terrariet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a>
 								<div class="day"><a href="../Graf/Klassrum2/graf2.html" class="fortnamn">Terrariet</a>
 								</div>
 							</a>
-						</div> <!-- .forecast-header -->
+						</div>
 						<div class="forecast-content">
 							<div class="forecast-icon">
 								<img id="klassrum2-img" src="images/icons/temp-2.png" alt="" width=48>
@@ -156,6 +160,7 @@
 								id="hum2">0%</small></img>
 						</div>
 					</div>
+					<!-- Fjärde blocket, Vardagsrummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a href="../Graf/Klassrum3/graf3.html">
@@ -172,9 +177,10 @@
 						</div>
 					</div>
 
+					<!-- Femte blocket, Kafeterian -->
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day"><a class="fortnamn">Cafeterian</a></div>
+							<div class="day"><a class="fortnamn">Kafeterian</a></div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
@@ -186,6 +192,7 @@
 						</div>
 					</div>
 
+					<!-- Sjätte blocket, Pingis Rummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<div class="day"><a class="fortnamn">Pingis Rummet</a></div>
@@ -205,6 +212,7 @@
 	</div>
 	</div>
 
+	<!-- Sidans botten -->
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">

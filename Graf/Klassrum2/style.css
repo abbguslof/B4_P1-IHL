@@ -181,6 +181,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   background: #1e232b;
+  padding-top: 20;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -244,24 +245,6 @@ form textarea {
   height: 0;
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -301,6 +284,7 @@ form textarea {
 
 .site-header {
   padding: 1% 0;
+  background: linear-gradient(#323544,#1e232b);
 }
 
 .site-header .branding {
@@ -335,33 +319,24 @@ form textarea {
   margin-top: 2%;
 }
 
-.main-navigation .menu-toggle, .main-navigation .menu {
+.main-navigation .menu {
   vertical-align: middle;
 }
 
-.main-navigation .menu-toggle {
-  background: none;
+.nav-list .list-item{
+  padding: 5px 25px;
   border: 2px solid transparent;
+  border-radius: 30px;
   color: white;
-  padding: 20px;
-  border-radius: 40px;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  display: none;
-  outline: none;
+  font-weight: 400;
 }
 
-@media screen and (max-width: 990px) {
-  .main-navigation .menu-toggle {
-    display: inline-block;
-  }
-}
-
-.main-navigation .menu-toggle:hover, .main-navigation .menu-toggle:active {
-  border-color: #009ad8;
+.nav-list .list-item:hover, .nav-list .list-item:active  {
+border-color: #009ad8;
   color: #009ad8;
 }
-
 .main-navigation .menu {
   list-style: none;
   display: inline-block;
@@ -374,12 +349,6 @@ form textarea {
   display: block;
   overflow: hidden;
   height: 0;
-}
-
-@media screen and (max-width: 990px) {
-  .main-navigation .menu {
-    display: none;
-  }
 }
 
 .main-navigation .menu .menu-item {
@@ -409,14 +378,9 @@ form textarea {
   background-size: cover;
   padding: 70px 0;
   min-height: 350px;
-  border-top: 1px solid black;
 }
 
 /* Temperatur och datum block */
-
-#date {
-  float: right;
-}
 
 .forecast-container {
   width: 100%;
@@ -439,13 +403,6 @@ form textarea {
   background-color: #262936;
 }
 
-@media screen and (max-width: 990px) {
-  .forecast-container .forecast {
-    display: block;
-    width: 16.6667%;
-    float: left;
-  }
-}
 
 .forecast-container .forecast.today {
   width: 420px;
@@ -467,10 +424,6 @@ form textarea {
   float: left;
 }
 
-.forecast-container .forecast.today .forecast-header .date {
-  float: right;
-}
-
 .forecast-container .forecast.today .forecast-content {
   text-align: left;
   padding-top: 30px;
@@ -482,7 +435,12 @@ form textarea {
   font-size: 1.2857142857em;
   font-weight: 400;
 }
-
+.forecast-container .forecast.today .location .main-table{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 .forecast-container .forecast.today .degree .num, .forecast-container .forecast.today .degree .forecast-icon {
   display: inline-block;
   vertical-align: middle;
@@ -508,13 +466,6 @@ form textarea {
 .forecast-container .forecast.today span img {
   margin-right: 5px;
   vertical-align: middle;
-}
-
-@media screen and (max-width: 990px) {
-  .forecast-container .forecast.today {
-    display: block;
-    width: 100%;
-  }
 }
 
 .forecast-container .forecast .forecast-header {

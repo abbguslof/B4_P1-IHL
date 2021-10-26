@@ -1,11 +1,7 @@
-// Import the functions you need from the SDKs you need
+// Hämtar Firebase och berättar olika värden som tillåter sidan att hämta information
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBhy84ujYdgfTDt4TwvFpHd_aJy_X3B8R0",
     authDomain: "abb-temp-project-d1548.firebaseapp.com",
@@ -16,11 +12,12 @@ const firebaseConfig = {
     appId: "1:1054092009303:web:dc9e55016d78a26066e812",
     measurementId: "G-JC26DGQY7X"
 }
-// get api
+
+// Hämtar Temperatur.Nu API och tar olika värden
 async function getapitemp () {
 
     const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
-    const grader = "°"
+    const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
 
     var dataa = await response.json()
     let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
@@ -95,6 +92,7 @@ async function getapi () {
 }
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
+
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
     if (degrees < 15) {
         document.getElementById(id).src = "images/icons/temp-0.png"
@@ -191,3 +189,7 @@ let humref5 = ref(database, "hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })
+
+if getElementById("ButtonCF") {
+
+}
