@@ -1,3 +1,5 @@
+/* Olika inställningar för att sidan skall se bra ut*/
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block;
 }
@@ -167,7 +169,7 @@ table {
 }
 
 /*
- * Global Styles
+ Sidans Globala inställningar
  */
 
 html {
@@ -224,9 +226,7 @@ form textarea {
   resize: vertical;
 }
 
-/*
- * Reusable Components Style
- */
+/* Färg och block på toppen bakom header */
 
 .container {
   margin-right: auto;
@@ -295,9 +295,7 @@ form textarea {
   height: 0;
 }
 
-/*
- * Header Styles
- */
+/* Sidans topp, Abb gymnasie logan osv */
 
 .site-header {
   padding: 1% 0;
@@ -329,6 +327,8 @@ form textarea {
   display: block;
   color: #bfc1c8;
 }
+
+/* Översta länkarnas utssende och hover funktioner */
 
 .main-navigation {
   float: right;
@@ -433,6 +433,8 @@ form textarea {
 #date {
   float: right;
 }
+
+/* Tabell skaen i mittens uttsende */
 
 .forecast-container {
   width: 100%;
@@ -571,13 +573,15 @@ form textarea {
 }
 
 /*
- * Footer Styles
+ * Footen längst ned
  */
 
 .site-footer {
   background: #262936;
   padding: 1em 0;
 }
+
+/* Knapp för att ändra Celsius och Farenheit  */
 
 #ButtonCF {
   display: flex;
@@ -590,7 +594,7 @@ form textarea {
   background-color: #262936;
   border-radius: 50px;
   outline: none;
-  transition: .35s;
+  transition: .25s;
 }
 
 #ButtonCF:before {
@@ -603,17 +607,17 @@ form textarea {
   background-color: white;
   border-radius: 50px;
   box-shadow: 0px 2px 5px 1px gray;
-  transition: .35s;
+  transition: .25s;
 }
 
 #ButtonCF:checked {
   background-color: #32cd32;
-  transition: .50s;
+  transition: .25s;
 }
 
 #ButtonCF:checked:before {
   transform: translate(100%);
-  transition: .35s;
+  transition: .25s;
 }
 
 #Smallicons {
