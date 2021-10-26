@@ -16,7 +16,6 @@ const firebaseConfig = {
     appId: "1:1054092009303:web:dc9e55016d78a26066e812",
     measurementId: "G-JC26DGQY7X"
 }
-
 // get api
 async function getapitemp () {
 
@@ -25,20 +24,19 @@ async function getapitemp () {
 
     var dataa = await response.json()
     let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
-    let tempK = parseFloat(tempC) + 273.15  //grader i kelvin
-    let tempF = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
-    let F = "off"
-    let K = "off"
-    if (F == "on") {
-        document.getElementById("temp1").innerHTML = tempF + grader + "F"
-    }
-    else if (K == "on") {
-        document.getElementById("temp1").innerHTML = tempK + grader + "K"
-    }
-    else {
-        document.getElementById("temp1").innerHTML = tempC + grader + "C"
-    }
+    //let tempK = parseFloat(tempC) + 273.15  //grader i kelvin
+    let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
+    let tempF = tempf.toFixed(1)
 
+const checkbutton = document.getElementById("ButtonCF");
+let button = checkbutton.checked
+if (button == false){
+    document.getElementById("temp1").innerHTML = tempC + grader + "C"
+
+}
+else {
+    document.getElementById("temp1").innerHTML = tempF + grader + "F"
+}
     if (response) {
     }
     setTimeout(getapitemp, 1000)
@@ -62,28 +60,28 @@ async function getapi () {
     //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
     function WindDegree (wdeg) {
         if (wdeg >= 337.5 || wdeg < 22.5) {
-            document.getElementById("wind-degree").innerHTML = "Nord" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Nord" 
         }
         else if (wdeg >= 22.5 && wdeg < 67.5) {
-            document.getElementById("wind-degree").innerHTML = "Nordost" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Nordost" 
         }
         else if (wdeg >= 67.5 && wdeg < 112.5) {
-            document.getElementById("wind-degree").innerHTML = "Ost" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Ost" 
         }
         else if (wdeg >= 112.5 && wdeg < 157.5) {
-            document.getElementById("wind-degree").innerHTML = "Sydost" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Sydost" 
         }
         else if (wdeg >= 157.5 && wdeg < 202.5) {
-            document.getElementById("wind-degree").innerHTML = "Syd" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Syd" 
         }
         else if (wdeg >= 202.5 && wdeg < 247.5) {
-            document.getElementById("wind-degree").innerHTML = "Sydväst" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Sydväst" 
         }
         else if (wdeg >= 247.5 && wdeg < 292.5) {
-            document.getElementById("wind-degree").innerHTML = "Väst" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Väst"
         }
         else {
-            document.getElementById("wind-degree").innerHTML = "Nordväst" // + vdeg1
+            document.getElementById("wind-degree").innerHTML = "Nordväst" 
         }
     }
     WindDegree(vdegree)
@@ -193,6 +191,3 @@ let humref5 = ref(database, "hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })
-
-function ChangeCF () {
-}
