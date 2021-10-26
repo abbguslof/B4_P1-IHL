@@ -24,9 +24,9 @@ async function getapitemp () {
     const grader = "°"
 
     var dataa = await response.json()
-    let tempC = dataa.stations[0].temp
-    let tempK = parseFloat(tempC) + 273.15
-    let tempF = parseFloat(tempC)*1.8 + 32
+    let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
+    let tempK = parseFloat(tempC) + 273.15  //grader i kelvin
+    let tempF = parseFloat(tempC)*1.8 + 32  //grader i Farenheit
     let F = "off"
     let K = "off"
     if (F=="on"){
