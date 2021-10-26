@@ -55,6 +55,7 @@
                             <div class="day">Klassrummet</div>
                             <div id="date"></div>
                             <script>
+                                //funktion som skriver ut datum, dag, månad och år.
                                 window.onload = setInterval(clock, 1000);
                                 function clock() {
                                     var d = new Date();
@@ -86,34 +87,28 @@
                                             <span id="klassrum1-temp">0</span><sup>o</sup>C
                                         </div>
 
-                                        <div>
-                                            <!--hum-->
-                                            <i class="fa fa-tint" aria-hidden="true"><span> </span></i><small
-                                                id="hum1">0%</small>
-                                        </div>
-
-                                        <div>
-                                            <!--klocka-->
-                                            <span class="size-clock">
-                                                <i class="fa fa-clock-o" aria-hidden="true" alt="Time"></i>
-                                                <span> </span><span id="Time">time</span>
-                                            </span>
-                                            <script>
-                                                function updateClock() {
-                                                    var now = new Date()
-                                                    var minutes = now.getMinutes()
-                                                    var hours = now.getHours()
-                                                    if (minutes < 10) {
-                                                        minutes = "0" + minutes
-                                                    }
-                                                    time = hours + ':' + minutes,
-                                                        document.getElementById('Time').innerHTML = time;
-
-                                                    setTimeout(updateClock, 1000);
+                                    </div>
+                                    <div class="real-clock">
+                                        <span class="size-clock">
+                                            <i class="fa fa-clock-o" aria-hidden="true" alt="Time"></i>
+                                            <span> </span><span id="Time">time</span>
+                                        </span>
+                                        <script>
+                                            //funktion som skriver ut tid och byter icon.
+                                            function updateClock() {
+                                                var now = new Date()
+                                                var minutes = now.getMinutes()
+                                                var hours = now.getHours()
+                                                if (minutes < 10) {
+                                                    minutes = "0" + minutes
                                                 }
-                                                updateClock();
-                                            </script>
-                                        </div>
+                                                time = hours + ':' + minutes,
+                                                    document.getElementById('Time').innerHTML = time;
+
+                                                setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
+                                            }
+                                            updateClock();
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +124,6 @@
                         </div>
                     </div>
 
-
                     <div class="forecast">
                         <div class="forecast-header">
                             <div class="day">
@@ -143,7 +137,7 @@
 
                                     <a href="../../Graf/Ute/graf0.html">
                                         <div class="list-item">
-                                            Ute
+                                            Utomhus
                                         </div>
                                     </a>
 
@@ -167,10 +161,9 @@
 
                                     <a href="../../Pinis Rummet/graf5.html">
                                         <div class="list-item">
-                                            Pingis rummet
+                                            Pingisrummet
                                         </div>
                                     </a>
-
                                 </ul>
                             </div>
                         </div>

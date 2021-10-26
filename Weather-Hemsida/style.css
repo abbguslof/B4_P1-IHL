@@ -511,6 +511,11 @@ form textarea {
   margin-top: 1%;
 }
 
+.humidicon {
+  position: relative;
+  margin-bottom: -2px;
+}
+
 .forecast-container .forecast.today .degree .num {
   font-size: 90px;
   font-size: 6.4285714286rem;

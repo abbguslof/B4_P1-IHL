@@ -151,6 +151,7 @@ margin-right: auto;
 #curve_chart {
     margin-top: 5vh;
     margin-bottom: 5vh;
+    z-index: 2;
    
 }
 #w {
@@ -182,6 +183,7 @@ font-size: 1.875em;
   
     
 }
+
 #imgr {
 
     height:30% ;
