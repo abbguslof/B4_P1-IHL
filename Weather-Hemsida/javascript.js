@@ -24,10 +24,21 @@ async function getapitemp () {
     const grader = "°"
 
     var dataa = await response.json()
-    let tempc = dataa.stations[0].temp
-    let tempK = parseFloat(tempc) + 273.15
+    let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
+    let tempK = parseFloat(tempC) + 273.15  //grader i kelvin
+    let tempF = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
+    let F = "off"
+    let K = "off"
+    if (F == "on") {
+        document.getElementById("temp1").innerHTML = tempF + grader + "F"
+    }
+    else if (K == "on") {
+        document.getElementById("temp1").innerHTML = tempK + grader + "K"
+    }
+    else {
+        document.getElementById("temp1").innerHTML = tempC + grader + "C"
+    }
 
-    document.getElementById("temp1").innerHTML = tempc + grader + "C"
     if (response) {
     }
     setTimeout(getapitemp, 1000)

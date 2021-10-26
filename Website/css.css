@@ -1,7 +1,7 @@
 body {
     
     color: black;
-    background-image: url(https://wallpaperaccess.com/full/647233.jpg);
+    background-image: url(https://images2.alphacoders.com/752/thumb-1920-752440.jpg);
  background-image: fixed;
  background-repeat: no-repeat;
  background-attachment: fixed;
@@ -25,6 +25,7 @@ body {
    rgba(255, 255, 255, 0.582);
     margin-left: 55%;
     margin-top: 2.5em;
+    
     
     
    
@@ -51,12 +52,12 @@ font-size: 1.875em;
 }
 
 
-#DivRum {
+ #DivRum {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-}
+}   
 
 #KRum1 {
     border:0.15625em solid whitesmoke;
@@ -101,7 +102,7 @@ font-size: 1.875em;
     margin-right: auto;
     width: 8.125em;
 }
-#uter {
+#caff {
     border: 0.15625em solid whitesmoke;
     border-radius: 1.25em;
     padding: 0.125em;
@@ -151,7 +152,7 @@ margin-right: auto;
 #curve_chart {
     margin-top: 5vh;
     margin-bottom: 5vh;
-    z-index: 2;
+    
    
 }
 #w {
@@ -215,7 +216,7 @@ font-size: 1.875em;
 #lol {
     height: 30vh;
     display: block;
-    margin-top: 30%;
+    margin-top: 50vh;
     border-top: 0.3125em solid white;
 }
 
