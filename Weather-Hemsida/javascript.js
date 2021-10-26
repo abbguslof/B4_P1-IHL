@@ -24,11 +24,21 @@ async function getapitemp () {
     const grader = "°"
 
     var dataa = await response.json()
-    let tempc = dataa.stations[0].temp
-    let tempK = parseFloat(tempc) + 273.15
-    document.getElementById("temp1").innerHTML = tempK
-
-    //document.getElementById("temp1").innerHTML = tempc + grader + "C"
+    let tempC = dataa.stations[0].temp
+    let tempK = parseFloat(tempC) + 273.15
+    let tempF = parseFloat(tempC)*1.8 + 32
+    let F = "off"
+    let K = "off"
+    if (F=="on"){
+        document.getElementById("temp1").innerHTML = tempF + grader + "F"
+    }
+    else if (K=="on"){
+        document.getElementById("temp1").innerHTML = tempK + grader + "K"
+    }
+    else {
+        document.getElementById("temp1").innerHTML = tempC + grader + "C"
+    }
+   
     if (response) {
     }
     setTimeout(getapitemp, 1000)
