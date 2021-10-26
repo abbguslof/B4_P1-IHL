@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Spets Termometern | ABB</title>
+    <link ref="shortcut icon" sizes="128x128" href="images/icons/temp-4.png">
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="Header">
+        <div class="container">
+            <a target="_blank" href="https://www.abbgymnasiet.se/" class="branding">
+                <img src="images/logo.png" alt="" class="logo">
+            </a>
+            <div class="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item"><a href="../../Weather-Hemsida/index.html">Hem</a></li>
+                    <li class="menu-item"><a target="_blank" href="../../Website/Website.html">Om projektet</a></li>
+                    <li class="menu-item"><a target="_blank"
+                            href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
+                    <li class="menu-item"><a target="_blank"
+                            href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
+                    </li>
+                    <li class="menu-item"><a target="_blank" href="https://new.abb.com/se">ABB</a></li>
+                </ul> <!-- .menu -->
+            </div> <!-- .main-navigation -->
+        </div>
+
+    </div>
+    <div class="site-content">
+        <div class="container">
+
+            <div class="Banner-Image">
+                <!-- bild -->
+            </div>
+
+            <div>tidning
+                <div>rubrik
+                    <div>tillbaka
+                        <p class="menu-title">
+                            Hem
+                        </p>
+                    </div>
+                    <div>titel
+                        <p class="menu-title">
+                            Terrariet
+                        </p>
+                    </div>
+
+                    <div>info
+                        <div>lista
+                            <div>grafer
+                                <p class="menu-title">
+                                    Grafer
+                                </p>
+                            </div>
+                            <div>punkter
+                                <ul class="nav-list">
+
+                                    <a href="../../Weather-Hemsida/index.html">
+                                        <div class="list-item">
+                                            Hem
+                                        </div>
+                                    </a>
+
+                                    <a href="../../Graf/Ute/graf0.html">
+                                        <div class="list-item">
+                                            Utomhus
+                                        </div>
+                                    </a>
+
+                                    <a href="../../Klassrum2/graf2.html">
+                                        <div class="list-item">
+                                            Terrariet
+                                        </div>
+                                    </a>
+
+                                    <a href="../../Klassrum3/graf3.html">
+                                        <div class="list-item">
+                                            Vardagsrummet
+                                        </div>
+                                    </a>
+
+                                    <a href="../../Caféterian/graf4.html">
+                                        <div class="list-item">
+                                            Cafeterian
+                                        </div>
+                                    </a>
+
+                                    <a href="../../Pinis Rummet/graf5.html">
+                                        <div class="list-item">
+                                            Pingisrummet
+                                        </div>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>fakta
+                        <div>väder
+                            <div>temp-bild
+                                <div class="forecast-icon">
+                                    <img id="klassrum2-img" src="images/icons/temp-2.png" alt="" width=48>
+                                </div>
+                            </div>
+                            <div>siffror
+                                <div class="degree"><span id="klassrum2-temp"></span><sup>o</sup>C</div>
+                                <img class="humidicon" src="images/icons/humidity.png" width="15px"><small
+                                    id="hum2">0%</small></img>
+                                <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
+                                        id="Time"></span></span>
+                                <script>
+                                    //funktion som skriver ut tid och byter icon.
+                                    function updateClock() {
+                                        var now = new Date()
+                                        var minutes = now.getMinutes()
+                                        var hours = now.getHours()
+                                        if (minutes < 10) {
+                                            minutes = "0" + minutes
+                                        }
+                                        time = hours + ':' + minutes,
+                                            document.getElementById('Time').innerHTML = time;
+
+                                        setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
+                                    }
+                                    updateClock();
+                                </script>
+                                <div id="date"></div>
+                                <script>
+                                    //funktion som skriver ut datum, dag, månad och år.
+                                    window.onload = setInterval(clock, 1000);
+                                    function clock() {
+                                        var d = new Date();
+                                        var date = d.getDate();
+                                        var year = d.getFullYear();
+                                        var month = d.getMonth();
+                                        var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                        month = monthArr[month];
+                                        document.getElementById("date").innerHTML = date + " " + month + ", " + year;
+                                    }
+                                    clock()
+                                </script>
+                            </div>
+                        </div>
+                        <div>graf-här
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="Footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="colophon">Copyright
+
+                            2021 Basgrupp 4.
+                            Designed by Gustav and Christopher.
+                            All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <script type="module" src="javascript.js"></script>
+</body>
+
+</html>
