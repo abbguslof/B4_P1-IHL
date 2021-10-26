@@ -89,3 +89,8 @@ onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = Hum + snapshot.val() + prcent 
 })
 
+
+
+// var hejsan= document.getElementById("hej")
+// hejsan.className= "bro";
+
