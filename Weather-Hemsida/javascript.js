@@ -191,5 +191,6 @@ onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })
 
-function ChangeCF () {
+if getElementById("ButtonCF") {
+
 }
