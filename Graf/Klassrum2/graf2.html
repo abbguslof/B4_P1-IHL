@@ -34,8 +34,8 @@
                 </ul> <!-- .menu -->
             </div> <!-- .main-navigation -->
         </div>
-
     </div>
+
     <div class="site-content">
         <div class="container">
 
@@ -55,67 +55,69 @@
                             Terrariet
                         </p>
                     </div>
+                </div>
 
-                    <div class="Nyheter">
+                <div class="Nyheter">
+                    <div class="List-Field">
                         <div class="Li-title">
-                            <div>
-                                <!-- grafer -->
-                                <p class="menu-title">
-                                    Grafer
-                                </p>
-                            </div>
-                            <div>
-                                <!-- lista -->
-                                <ul class="nav-list">
+                            <!-- grafer -->
+                            <p class="menu-title">
+                                Grafer
+                            </p>
+                        </div>
+                        <div class="Graf-List">
+                            <!-- lista -->
+                            <ul class="nav-list">
 
-                                    <a href="../../Weather-Hemsida/index.html">
-                                        <div class="list-item">
-                                            Hem
-                                        </div>
-                                    </a>
+                                <a href="../../Weather-Hemsida/index.html">
+                                    <div class="list-item">
+                                        Hem
+                                    </div>
+                                </a>
 
-                                    <a href="../../Graf/Ute/graf0.html">
-                                        <div class="list-item">
-                                            Utomhus
-                                        </div>
-                                    </a>
+                                <a href="../../Graf/Ute/graf0.html">
+                                    <div class="list-item">
+                                        Utomhus
+                                    </div>
+                                </a>
 
-                                    <a href="../../Graf/Klassrum1/graf1.html">
-                                        <div class="list-item">
-                                            Klassrummet
-                                        </div>
-                                    </a>
+                                <a href="../../Graf/Klassrum1/graf1.html">
+                                    <div class="list-item">
+                                        Klassrummet
+                                    </div>
+                                </a>
 
-                                    <a href="../../Graf/Klassrum3/graf3.html">
-                                        <div class="list-item">
-                                            Vardagsrummet
-                                        </div>
-                                    </a>
+                                <a href="../../Graf/Klassrum3/graf3.html">
+                                    <div class="list-item">
+                                        Vardagsrummet
+                                    </div>
+                                </a>
 
-                                    <a href="../../Graf/Caféterian/graf4.html">
-                                        <div class="list-item">
-                                            Cafeterian
-                                        </div>
-                                    </a>
+                                <a href="../../Graf/Caféterian/graf4.html">
+                                    <div class="list-item">
+                                        Cafeterian
+                                    </div>
+                                </a>
 
-                                    <a href="../../Graf/Pingis Rummet/graf5.html">
-                                        <div class="list-item">
-                                            Pingisrummet
-                                        </div>
-                                    </a>
-                                </ul>
-                            </div>
+                                <a href="../../Graf/Pingis Rummet/graf5.html">
+                                    <div class="list-item">
+                                        Pingisrummet
+                                    </div>
+                                </a>
+
+                            </ul>
                         </div>
                     </div>
 
-                    <div>
-                        <div>väder
-                            <div>temp-bild
+                    <div class="Graf-blad">
+                        <div class="Väder-ruta">
+                            <div class="Temp-bild">
                                 <div class="forecast-icon">
-                                    <img id="klassrum2-img" src="images/icons/temp-2.png" alt="" width=48>
+                                    <img id="klassrum2-img" src="Weather-Hemsida/images/icons/temp-2.png" alt=""
+                                        width=16%>
                                 </div>
                             </div>
-                            <div>siffror
+                            <div class="Fakta">
                                 <div class="degree">
                                     <span id="klassrum2-temp"></span><sup>o</sup>C
                                 </div>
@@ -124,8 +126,8 @@
                                             id="hum2"></span></span>
                                 </div>
                                 <div>
-                                    <span><img src="Weather-hemsida/images/icon-clock.png" height="15px"
-                                            alt="Time: "><span id="Time"></span></span>
+                                    <span><img src="images/icon-clock.png" height="15px" alt="Time: "><span
+                                            id="Time"></span></span>
                                 </div>
                                 <div id="date">
                                     <span>Date</span>
@@ -163,15 +165,59 @@
                                 </script>
                             </div>
                         </div>
-                        <div>graf-här
 
+                        <div class="Graf-here">
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                            <script type="text/javascript">
+                                google.charts.load('current', { 'packages': ['corechart'] });
+                                google.charts.setOnLoadCallback(drawChart);
+
+                                function drawChart() {
+                                    var data = google.visualization.arrayToDataTable([
+                                        ['Time', 'Rum 1', 'Rum 2', 'Rum 3', 'Cafterian', 'Pingis Rummet'],
+                                        ['00:00', 21, 24, 21, 18, 25],
+                                        ['01:00', 19, 23, 21, 18, 25],
+                                        ['02:00', 20, 25, 21, 18, 25],
+                                        ['03:00', 18, 26, 21, 18, 25],
+                                        ['04:00', 17, 22, 21, 18, 25],
+                                        ['05:00', 20, 19, 21, 18, 25],
+                                        ['06:00', 23, 23, 21, 18, 25],
+                                        ['07:00', 20, 19, 18, 23, 21],
+                                        ['08:00', 22, 24, 21, 18, 25],
+                                        ['09:00', 24, 23, 20, 27, 19],
+                                        ['10:00', 19, 21, 22, 24, 18],
+                                        ['11:00', 23, 25, 24, 22, 23],
+                                        ['12:00', 25, 26, 23, 19, 24],
+                                        ['13:00', 26, 27, 21, 18, 25],
+                                        ['14:00', 26, 27, 21, 18, 25],
+                                        ['15:00', 26, 27, 21, 18, 25],
+                                        ['16:00', 26, 27, 21, 18, 25],
+                                        ['17:00', 26, 27, 21, 18, 25],
+                                        ['18:00', 26, 27, 21, 18, 25],
+                                        ['19:00', 26, 27, 21, 18, 25],
+                                        ['20:00', 26, 27, 21, 18, 25],
+                                        ['21:00', 26, 27, 21, 18, 25],
+                                        ['22:00', 26, 27, 21, 18, 25],
+                                        ['23:00', 26, 27, 21, 18, 25],
+
+                                    ]);
+
+                                    var options = {
+                                        title: 'Temperature Change',
+                                        curveType: 'function',
+                                        legend: { position: 'bottom' }
+                                    };
+
+                                    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                                    chart.draw(data, options);
+                                }
+                            </script>
+                            <div id="curve_chart" style="width: 100%; height: auto; "></div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
         <div class="Footer">
@@ -181,7 +227,7 @@
                         <p class="colophon">Copyright
 
                             2021 Basgrupp 4.
-                            Designed by Gustav and Christopher.
+                            Designed by Gustav, Christopher & Erling.
                             All rights reserved.
                         </p>
                     </div>
