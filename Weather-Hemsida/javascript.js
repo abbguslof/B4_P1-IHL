@@ -21,12 +21,14 @@ const firebaseConfig = {
 async function getapitemp () {
 
     const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
-    const gradc = "°C"
+    const grader = "°"
 
     var dataa = await response.json()
-    let temper = dataa.stations[0].temp
+    let tempc = dataa.stations[0].temp
+    let tempK = parseFloat(tempc) + 273.15
+    document.getElementById("temp1").innerHTML = tempK
 
-    document.getElementById("temp1").innerHTML = temper + gradc
+    //document.getElementById("temp1").innerHTML = tempc + grader + "C"
     if (response) {
     }
     setTimeout(getapitemp, 1000)
