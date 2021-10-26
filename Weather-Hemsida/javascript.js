@@ -25,20 +25,23 @@ async function getapitemp () {
     let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
     let tempF = tempf.toFixed(1)
 
-const checkbutton = document.getElementById("ButtonCF");
-let button = checkbutton.checked
-if (button == false){
-    document.getElementById("temp1").innerHTML = tempC + grader + "C"
+    // Switch för att ändra från celsius till farenheit
+    const checkbutton = document.getElementById("ButtonCF")
+    let button = checkbutton.checked
+    if (button == false) {
+        document.getElementById("temp1").innerHTML = tempC + grader + "C"
 
-}
-else {
-    document.getElementById("temp1").innerHTML = tempF + grader + "F"
-}
+    }
+    else {
+        document.getElementById("temp1").innerHTML = tempF + grader + "F"
+    }
+
     if (response) {
     }
     setTimeout(getapitemp, 1000)
 }
 
+// hämtar api från openweathermap och tar lite olika värden där ifrån
 async function getapi () {
 
     // Storing response
@@ -57,28 +60,28 @@ async function getapi () {
     //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
     function WindDegree (wdeg) {
         if (wdeg >= 337.5 || wdeg < 22.5) {
-            document.getElementById("wind-degree").innerHTML = "Nord" 
+            document.getElementById("wind-degree").innerHTML = "Nord"
         }
         else if (wdeg >= 22.5 && wdeg < 67.5) {
-            document.getElementById("wind-degree").innerHTML = "Nordost" 
+            document.getElementById("wind-degree").innerHTML = "Nordost"
         }
         else if (wdeg >= 67.5 && wdeg < 112.5) {
-            document.getElementById("wind-degree").innerHTML = "Ost" 
+            document.getElementById("wind-degree").innerHTML = "Ost"
         }
         else if (wdeg >= 112.5 && wdeg < 157.5) {
-            document.getElementById("wind-degree").innerHTML = "Sydost" 
+            document.getElementById("wind-degree").innerHTML = "Sydost"
         }
         else if (wdeg >= 157.5 && wdeg < 202.5) {
-            document.getElementById("wind-degree").innerHTML = "Syd" 
+            document.getElementById("wind-degree").innerHTML = "Syd"
         }
         else if (wdeg >= 202.5 && wdeg < 247.5) {
-            document.getElementById("wind-degree").innerHTML = "Sydväst" 
+            document.getElementById("wind-degree").innerHTML = "Sydväst"
         }
         else if (wdeg >= 247.5 && wdeg < 292.5) {
             document.getElementById("wind-degree").innerHTML = "Väst"
         }
         else {
-            document.getElementById("wind-degree").innerHTML = "Nordväst" 
+            document.getElementById("wind-degree").innerHTML = "Nordväst"
         }
     }
     WindDegree(vdegree)
@@ -190,6 +193,3 @@ onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })
 
-if getElementById("ButtonCF") {
-
-}
