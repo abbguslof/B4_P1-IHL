@@ -1,7 +1,7 @@
 body {
     
     color: black;
-    background-image: url(https://wallpaperaccess.com/full/647233.jpg);
+    background-image: url(https://images2.alphacoders.com/752/thumb-1920-752440.jpg);
  background-image: fixed;
  background-repeat: no-repeat;
  background-attachment: fixed;
@@ -25,6 +25,7 @@ body {
    rgba(255, 255, 255, 0.582);
     margin-left: 55%;
     margin-top: 2.5em;
+    
     
     
    
@@ -357,4 +358,9 @@ background-color:
     height: 4vh;
     font-size: 23px;
     margin-bottom: 5vh;
+}
+.bro {
+    color: aqua;
+    background-color: black;
+    font-family: fantasy;
 }
