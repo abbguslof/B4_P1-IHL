@@ -578,3 +578,44 @@ form textarea {
   background: #262936;
   padding: 1em 0;
 }
+
+#ButtonCF {
+  display: flex;
+  position: relative;
+  top: -11.8em;
+  left: 6em;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 25px;
+  background-color: #262936;
+  border-radius: 50px;
+  outline: none;
+  transition: .35s;
+}
+
+#ButtonCF:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px 1px gray;
+  transition: .35s;
+}
+
+#ButtonCF:checked {
+  background-color: #32cd32;
+  transition: .50s;
+}
+
+#ButtonCF:checked:before {
+  transform: translate(100%);
+  transition: .35s;
+}
+
+#Smallicons {
+  display: flex;
+}

@@ -50,6 +50,7 @@
 		</a>
 
 		<div class="forecast-table">
+			<input id="ButtonCF" onclick=ChangeCF() type="checkbox"></input>
 			<div class="container">
 				<div class="forecast-container">
 					<div class="today forecast">
@@ -79,37 +80,48 @@
 									<img id="uteicon" src="" alt="sun or moon" width=65>
 								</div>
 							</div>
-							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-									id="Time"></span></span>
-							<span><img src="images/icons/humidity.png" height="20px" alt="Rain Chance"><span
-									id="hum1"></span></span>
-								<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
-										id="lufthastighet"></span></span>
-									<span><img src="images/icon-compass.png" height="20px" alt="Direction"><span id="wind-degree"></span></span>
-									<script>
-										//funktion som skriver ut tid och byter icon.
-										function updateClock() {
-											var now = new Date()
-											var minutes = now.getMinutes()
-											var hours = now.getHours()
-											if (minutes < 10) {
-												minutes = "0" + minutes
-											}
-											time = hours + ':' + minutes,
-												document.getElementById('Time').innerHTML = time;
+							<div id="Smallicons">
+								<div>
+									<span><img src="images/icon-clock.png" height="15px" alt="Time"><span
+											id="Time"></span></span>
+								</div>
+								<div>
+									<span><img src="images/icons/humidity.png" height="15px" alt="Rain Chance"><span
+											id="hum1"></span></span>
+								</div>
+								<div>
+									<span><img src="images/icon-wind.png" height="15px" alt="Wind speed"><span
+											id="lufthastighet"></span></span>
+								</div>
+								<div>
+									<span class="wind"><img src="images/icon-compass.png" height="15px"
+											alt="Direction"><span id="wind-degree"></span></span>
+								</div>
+							</div>
+							<script>
+								//funktion som skriver ut tid och byter icon.
+								function updateClock() {
+									var now = new Date()
+									var minutes = now.getMinutes()
+									var hours = now.getHours()
+									if (minutes < 10) {
+										minutes = "0" + minutes
+									}
+									time = hours + ':' + minutes,
+										document.getElementById('Time').innerHTML = time;
 
-											//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
-											if (6 < hours && hours < 23) {
-												document.getElementById("uteicon").src = "images/icons/helsol.svg"
-											}
-											else {
-												document.getElementById("uteicon").src = "images/icons/moon.png"
-											}
-											setTimeout(updateClock, 1000); //uppdaterar varje sekund.
-										}
+									//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
+									if (6 < hours && hours < 23) {
+										document.getElementById("uteicon").src = "images/icons/helsol.svg"
+									}
+									else {
+										document.getElementById("uteicon").src = "images/icons/moon.png"
+									}
+									setTimeout(updateClock, 1000); //uppdaterar varje sekund.
+								}
 
-										updateClock();
-									</script>
+								updateClock();
+							</script>
 						</div>
 					</div>
 					<div class="forecast">
