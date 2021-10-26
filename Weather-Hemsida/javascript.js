@@ -21,14 +21,17 @@ const firebaseConfig = {
 async function getapitemp () {
 
     const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
-    const gradc = "°C"
+    const grader = "°"
 
     var dataa = await response.json()
-    let temper = dataa.stations[0].temp
+    let tempc = dataa.stations[0].temp
+    let tempK = parseFloat(tempc) + 273.15
+    document.getElementById("temp1").innerHTML = tempK
 
-    document.getElementById("temp1").innerHTML = temper + gradc
+    //document.getElementById("temp1").innerHTML = tempc + grader + "C"
     if (response) {
     }
+    setTimeout(getapitemp, 1000)
 }
 
 async function getapi () {
@@ -37,18 +40,51 @@ async function getapi () {
     const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&q=Vasteras&appid=e4db439cc72909853ab9ee518b298cbc')
     const ms = "m/s"
     const prcnt = "%"
+    const deg = "°"
 
     var data = await response.json()
     let temp = data.list[0].main.temp
     let dist = data.list[0].wind.speed
     let hum = data.list[0].main.humidity
+    let vdegree = data.list[0].wind.deg //api på vind riktning (grader)
+
+    //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
+    function WindDegree (wdeg){
+        if (wdeg>=337.5 || wdeg<22.5){
+            document.getElementById("wind-degree").innerHTML = "Nord"
+        }
+        else if (wdeg>=22.5 && wdeg<67.5){
+            document.getElementById("wind-degree").innerHTML = "Nordost"
+        }
+        else if (wdeg>=67.5 && wdeg<112.5){
+            document.getElementById("wind-degree").innerHTML = "Ost"
+        }
+        else if (wdeg>=112.5 && wdeg<157.5){
+            document.getElementById("wind-degree").innerHTML = "Sydost"
+        }
+        else if (wdeg>=157.5 && wdeg<202.5){
+            document.getElementById("wind-degree").innerHTML = "Syd"
+        }
+        else if (wdeg>=202.5 && wdeg<247.5){
+            document.getElementById("wind-degree").innerHTML = "Sydväst"
+        }
+        else if (wdeg>=247.5 && wdeg<292.5){
+            document.getElementById("wind-degree").innerHTML = "Väst"
+        }
+        else {
+            document.getElementById("wind-degree").innerHTML = "Nordväst"
+        }
+    }
+    WindDegree(vdegree)
 
     document.getElementById("lufthastighet").innerHTML = dist + ms
     document.getElementById("hum1").innerHTML = hum + prcnt
-    console.log(data)
+                         
     if (response) {
     }
+    setTimeout(getapi, 1000)
 }
+//funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
     if (degrees < 15) {
@@ -57,7 +93,7 @@ function TempImg (degree, id) {
     else if (degrees < 20) {
         document.getElementById(id).src = "images/icons/temp-1.png"
     }
-    else if (parseFloat(degrees) < 25) {
+    else if (degrees < 25) {
         document.getElementById(id).src = "images/icons/temp-2.png"
     }
     else if (degrees < 30) {
@@ -106,7 +142,6 @@ onValue(dataBaseRef4, (snapshot) => {
     document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
 
     TempImg("cafeterian-temp", "cafeterian-img")
-    // TempImg("pingis-temp", "pingis-img")
 })
 
 // skriv ut temperatur Pingisrummet
@@ -117,27 +152,32 @@ onValue(dataBaseRef5, (snapshot) => {
     TempImg("pingis-temp", "pingis-img")
 })
 
+//skriver ut luftfuktighet klassrum1
 const prcent = "%"
 let humref1 = ref(database, "hum/Current")
 onValue(humref1, (snapshot) => {
     document.getElementById("hum1").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet klassrum2
 let humref2 = ref(database, "hum2/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet klassrum3
 let humref3 = ref(database, "hum3/Current")
 onValue(humref3, (snapshot) => {
     document.getElementById("hum3").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet cafeterian
 let humref4 = ref(database, "hum4/Current")
 onValue(humref4, (snapshot) => {
     document.getElementById("hum4").innerHTML = snapshot.val() + prcent
 })
 
+//skriver ut luftfuktighet pingisrummet
 let humref5 = ref(database, "hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent

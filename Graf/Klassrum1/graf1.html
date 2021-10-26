@@ -54,6 +54,7 @@
                             <div class="day">Klassrummet</div>
                             <div id="date"></div>
                             <script>
+                                //funktion som skriver ut datum, dag, månad och år.
                                 window.onload = setInterval(clock, 1000);
                                 function clock() {
                                     var d = new Date();
@@ -87,6 +88,7 @@
                                             <span> </span><span id="Time">time</span>
                                         </span>
                                         <script>
+                                            //funktion som skriver ut tid och byter icon.
                                             function updateClock() {
                                                 var now = new Date()
                                                 var minutes = now.getMinutes()
@@ -97,7 +99,7 @@
                                                 time = hours + ':' + minutes,
                                                     document.getElementById('Time').innerHTML = time;
 
-                                                setTimeout(updateClock, 1000);
+                                                setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
                                             }
                                             updateClock();
                                         </script>
@@ -115,7 +117,6 @@
                             <!-- Graf -->
                         </div>
                     </div>
-
 
                     <div class="forecast">
                         <div class="forecast-header">
@@ -157,7 +158,6 @@
                                             Pingisrummet
                                         </div>
                                     </a>
-
                                 </ul>
                             </div>
                         </div>

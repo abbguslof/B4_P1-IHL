@@ -54,9 +54,10 @@
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
-							<div class="day"><a href="../Graf/Ute/graf0.html"" class=" fortnamn">Utomhus</a></div>
+							<div class="day"><a href="../Graf/Ute/graf0.html" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
+								//funktion som skriver ut datum, dag, månad och år.
 								window.onload = setInterval(clock, 1000);
 								function clock() {
 									var d = new Date();
@@ -75,17 +76,18 @@
 							<div class="degree">
 								<div class="num" id="temp1"><sup></sup></div>
 								<div class="forecast-icon">
-									<img id="uteicon" src="" alt="" width=65>
+									<img id="uteicon" src="" alt="sun or moon" width=65>
 								</div>
 							</div>
 							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-									id="Time">a</span></span>
+									id="Time"></span></span>
 							<span><img src="images/icons/humidity.png" height="20px" alt="Rain Chance"><span
-									id="hum1"></span>
+									id="hum1"></span></span>
 								<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
-										id="lufthastighet"></span>
-									<span><img src="images/icon-compass.png" height="20px" alt="Direction"></span>
+										id="lufthastighet"></span></span>
+									<span><img src="images/icon-compass.png" height="20px" alt="Direction"><span id="wind-degree"></span></span>
 									<script>
+										//funktion som skriver ut tid och byter icon.
 										function updateClock() {
 											var now = new Date()
 											var minutes = now.getMinutes()
@@ -96,16 +98,16 @@
 											time = hours + ':' + minutes,
 												document.getElementById('Time').innerHTML = time;
 
-											if (6 < hours, hours < 23) {
+											//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
+											if (6 < hours && hours < 23) {
 												document.getElementById("uteicon").src = "images/icons/helsol.svg"
 											}
 											else {
 												document.getElementById("uteicon").src = "images/icons/moon.png"
 											}
-
-
-											setTimeout(updateClock, 1000);
+											setTimeout(updateClock, 1000); //uppdaterar varje sekund.
 										}
+
 										updateClock();
 									</script>
 						</div>
