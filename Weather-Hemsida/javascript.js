@@ -93,6 +93,7 @@ async function getapi () {
 }
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
+
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
     if (degrees < 15) {
         document.getElementById(id).src = "images/icons/temp-0.png"

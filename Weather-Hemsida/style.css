@@ -587,7 +587,7 @@ form textarea {
   display: flex;
   position: relative;
   top: -11.8em;
-  left: 6em;
+  justify-content: flex-end;
   -webkit-appearance: none;
   width: 50px;
   height: 25px;
