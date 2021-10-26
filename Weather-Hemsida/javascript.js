@@ -1,11 +1,7 @@
-// Import the functions you need from the SDKs you need
+// Hämtar Firebase och berättar olika värden som tillåter sidan att hämta information
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBhy84ujYdgfTDt4TwvFpHd_aJy_X3B8R0",
     authDomain: "abb-temp-project-d1548.firebaseapp.com",
@@ -17,11 +13,11 @@ const firebaseConfig = {
     measurementId: "G-JC26DGQY7X"
 }
 
-// get api
+// Hämtar Temperatur.Nu API och tar olika värden
 async function getapitemp () {
 
     const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
-    const grader = "°"
+    const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
 
     var dataa = await response.json()
     let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
