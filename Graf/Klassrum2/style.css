@@ -359,6 +359,8 @@ border-color: #009ad8;
   border-radius: 10px;
   margin-top: -16%;
   margin-bottom: 12%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -399,7 +401,8 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-.Tabell .forecast.today .degree .num, .Tabell .forecast.today .degree .forecast-icon {
+
+.Tabell .Nyheter.Graf-blad.Väder-ruta.Temp-bild .degree .num, .Tabell .Nyheter.Graf-blad.Väder-ruta.Temp-bild .degree .degree .forecast-icon {
   display: inline-block;
   vertical-align: middle;
 }
@@ -478,15 +481,29 @@ align-items: center;
   width: auto;
   display: flex;
   justify-content:center;
+  align-items: center;
   padding:2%;
 }
 .Li-title{
 height: 4%;
+display: flex;
+align-items: center;
+}
+
+.menu-title{
+font-weight: 400;
+font-size: 20px;
+color: #bfc1c8;
 }
 
 .List-Field{
+  margin-left: -2%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(#1e232b, #323544);
 }
+
 .Graf-blad{
 flex-direction: column;
 }
@@ -499,6 +516,8 @@ flex-direction: column;
 .Graf-Here{
   overflow: hidden;
 }
+
+
 
 
 /*
