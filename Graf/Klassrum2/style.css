@@ -532,6 +532,8 @@ color: #c0c0c0;
  */
 
 .Footer {
+  display: flex;
+  justify-content: center;
   bottom: 0px;
   background: #262936;
   padding: 1em 0;
