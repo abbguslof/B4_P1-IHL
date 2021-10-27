@@ -12,12 +12,12 @@
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Loading main css file -->
+	<!-- Laddar CSS filen -->
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+	<!-- Sidan topp(Header) -->
 	<div class="site-content">
 		<div class="site-header">
 			<div class="container">
@@ -25,9 +25,8 @@
 					<img src="images/logo.png" alt="" class="logo">
 				</a>
 
-				<!-- Default snippet for navigation -->
+				<!-- Navigation På toppen, De olika knapparna. -->
 				<div class="main-navigation">
-					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 					<ul class="menu">
 						<li class="menu-item"><a href="../Website/Website.html">Lucas Hemsida</a></li>
 						<li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
@@ -36,12 +35,12 @@
 						</li>
 						<li class="menu-item"><a href="https://www.temperatur.nu/vasteras">Temperatur.nu</a></li>
 						<li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
-					</ul> <!-- .menu -->
-				</div> <!-- .main-navigation -->
-
+					</ul>
+				</div>
 			</div>
-		</div> <!-- .site-header -->
+		</div>
 
+		<!-- Länk till Google maps när man trycker på backgrundsbilden -->
 		<a
 			href="https://www.google.se/maps/@59.6382071,16.5895557,3a,75y,18.68h,79.06t/data=!3m6!1e1!3m4!1svtEi6G_7blbKjAKBZOighg!2e0!7i16384!8i8192">
 			<div class="Banner-Image">
@@ -49,15 +48,18 @@
 			</div>
 		</a>
 
+		<!-- Tabell/Boarden i mitten av sidan med de olika temperatur värderna -->
 		<div class="forecast-table">
 			<div class="container">
+				<!-- Knapp till Celisus Farenheit switch -->
+				<input id="ButtonCF" type="checkbox"></input>
 				<div class="forecast-container">
 					<div class="today forecast">
 						<div class="forecast-header">
 							<div class="day"><a href="../Graf/Ute/graf0.html" class=" fortnamn">Utomhus</a></div>
 							<div id="date"></div>
 							<script>
-								//funktion som skriver ut datum, dag, månad och år.
+								// funktion som skriver ut datum, dag, månad och år.
 								window.onload = setInterval(clock, 1000);
 								function clock() {
 									var d = new Date();
@@ -71,6 +73,7 @@
 								clock()
 							</script>
 						</div>
+						<!-- Första blocket, Utomhus Temperaturen -->
 						<div class="forecast-content">
 							<div class="location">ABB Gymnasiet - Spets</div>
 							<div class="degree">
@@ -79,39 +82,54 @@
 									<img id="uteicon" src="" alt="sun or moon" width=65>
 								</div>
 							</div>
-							<span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-									id="Time"></span></span>
-							<span><img src="images/icons/humidity.png" height="20px" alt="Rain Chance"><span
-									id="hum1"></span></span>
-								<span><img src="images/icon-wind.png" height="20px" alt="Wind speed"><span
-										id="lufthastighet"></span></span>
-									<span><img src="images/icon-compass.png" height="20px" alt="Direction"><span id="wind-degree"></span></span>
-									<script>
-										//funktion som skriver ut tid och byter icon.
-										function updateClock() {
-											var now = new Date()
-											var minutes = now.getMinutes()
-											var hours = now.getHours()
-											if (minutes < 10) {
-												minutes = "0" + minutes
-											}
-											time = hours + ':' + minutes,
-												document.getElementById('Time').innerHTML = time;
+							<div id="Smallicons">
+								<div>
+									<span><img src="images/icon-clock.png" height="15px" alt="Time"><span
+											id="Time"></span></span>
+								</div>
+								<div>
+									<span><img src="images/icons/humidity.png" height="15px" alt="Rain Chance"><span
+											id="hum1"></span></span>
+								</div>
+								<div>
+									<span><img src="images/icon-wind.png" height="15px" alt="Wind speed"><span
+											id="lufthastighet"></span></span>
+								</div>
+								<div>
+									<span class="wind"><img src="images/icon-compass.png" height="15px"
+											alt="Direction"><span id="wind-degree"></span></span>
+								</div>
+							</div>
+							<script>
+								//funktion som skriver ut tid och byter icon.
+								function updateClock() {
+									var now = new Date()
+									var minutes = now.getMinutes()
+									var hours = now.getHours()
+									if (minutes < 10) {
+										minutes = "0" + minutes
+									}
+									time = hours + ':' + minutes,
+										document.getElementById('Time').innerHTML = time;
 
-											//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
-											if (6 < hours && hours < 23) {
-												document.getElementById("uteicon").src = "images/icons/helsol.svg"
-											}
-											else {
-												document.getElementById("uteicon").src = "images/icons/moon.png"
-											}
-											setTimeout(updateClock, 1000); //uppdaterar varje sekund.
-										}
+									//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
+									if (6 < hours && hours < 16) {
+										document.getElementById("uteicon").src = "images/icons/helsol.svg"
+									}
+									else if (16 < hours && hours < 19) {
+										document.getElementById("uteicon").src = "images/icons/halvsol.svg"
+									}
+									else {
+										document.getElementById("uteicon").src = "images/icons/moon.png"
+									}
+									setTimeout(updateClock, 1000); //uppdaterar varje sekund.
+								}
 
-										updateClock();
-									</script>
+								updateClock();
+							</script>
 						</div>
 					</div>
+					<!-- Andra Blocket med temperaturer, Klassrummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a>
@@ -123,27 +141,29 @@
 							<div class="forecast-icon">
 								<img id="klassrum1-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum1-temp"></span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum1-temp" class="degree2"></span></div>
 							<img class="humidicon" src="images/icons/humidity.png" width="15px"><small
 								id="hum1">0%</small></img>
 						</div>
 					</div>
+					<!-- Tredje blocket, Terrariet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a>
 								<div class="day"><a href="../Graf/Klassrum2/graf2.html" class="fortnamn">Terrariet</a>
 								</div>
 							</a>
-						</div> <!-- .forecast-header -->
+						</div>
 						<div class="forecast-content">
 							<div class="forecast-icon">
 								<img id="klassrum2-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum2-temp"></span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum2-temp" class="degree2"></span></div>
 							<img class="humidicon" src="images/icons/humidity.png" width="15px"><small
 								id="hum2">0%</small></img>
 						</div>
 					</div>
+					<!-- Fjärde blocket, Vardagsrummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<a href="../Graf/Klassrum3/graf3.html">
@@ -154,26 +174,28 @@
 							<div class="forecast-icon">
 								<img id="klassrum3-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="klassrum3-temp"></span><sup>o</sup>C</div>
+							<div class="degree"><span id="klassrum3-temp" class="degree2"></span></div>
 							<img class="humidicon" src="images/icons/humidity.png" width="15px"><small
 								id="hum3">0%</small></img>
 						</div>
 					</div>
 
+					<!-- Femte blocket, Kafeterian -->
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day"><a class="fortnamn">Cafeterian</a></div>
+							<div class="day"><a class="fortnamn">Kafeterian</a></div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
 								<img id="cafeterian-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="cafeterian-temp"></span><sup>o</sup>C</div>
+							<div class="degree"><span id="cafeterian-temp" class="degree2"></span></div>
 							<img class="humidicon" src="images/icons/humidity.png" width="15px"><small
 								id="hum4">0%</small></img>
 						</div>
 					</div>
 
+					<!-- Sjätte blocket, Pingis Rummet -->
 					<div class="forecast">
 						<div class="forecast-header">
 							<div class="day"><a class="fortnamn">Pingis Rummet</a></div>
@@ -182,7 +204,7 @@
 							<div class="forecast-icon">
 								<img id="pingis-img" src="images/icons/temp-2.png" alt="" width=48>
 							</div>
-							<div class="degree"><span id="pingis-temp"></span><sup>o</sup>C</div>
+							<div class="degree"><span id="pingis-temp" class="degree2"></span></div>
 							<img class="humidicon" src="images/icons/humidity.png" width="15px"><small
 								id="hum5">0%</small></img>
 						</div>
@@ -193,6 +215,7 @@
 	</div>
 	</div>
 
+	<!-- Sidans botten -->
 	<footer class="site-footer">
 		<div class="container">
 			<div class="row">
