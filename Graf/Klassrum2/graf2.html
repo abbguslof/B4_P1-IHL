@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
     <title>Spets Termometern | ABB</title>
-    <link ref="shortcut icon" sizes="128x128" href="images/icons/temp-4.png">
+    <link rel="shortcut icon" href="../../Weather-Hemsida/images/TabLogo.png" />
 
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -111,58 +111,62 @@
 
                     <div class="Graf-blad">
                         <div class="Väder-ruta">
-                            <div class="Temp-bild">
+                            <img id="picture" src="../../Weather-Hemsida/images/icons/temp-2.png" width="20%"></img>
+                            <div class=" Temp-bild">
                                 <div class="forecast-icon">
                                     <img id="klassrum2-img" src="Weather-Hemsida/images/icons/temp-2.png" alt=""
                                         width=16%>
                                 </div>
                             </div>
                             <div class="Fakta">
-                                <div class="degree">
-                                    <span id="klassrum2-temp"></span><sup>o</sup>C
-                                </div>
-                                <div>
-                                    <span><img src="images/icons/humidity.png" height="15px" alt="Rain Chance: "><span
-                                            id="hum2"></span></span>
-                                </div>
-                                <div>
-                                    <span><img src="images/icon-clock.png" height="15px" alt="Time: "><span
-                                            id="Time"></span></span>
-                                </div>
-                                <div id="date">
-                                    <span>Date</span>
-                                </div>
-                                <script>
-                                    //funktion som skriver ut tid och byter icon.
-                                    function updateClock() {
-                                        var now = new Date()
-                                        var minutes = now.getMinutes()
-                                        var hours = now.getHours()
-                                        if (minutes < 10) {
-                                            minutes = "0" + minutes
+                                <div class="faktasize">
+                                    <div class="degree">
+                                        <span id="klassrum2-temp"></span><sup>o</sup>C
+                                    </div>
+                                    <div>
+                                        <span><img class="faktabild" src="images/icons/humidity.png" height="25px"
+                                                alt="Rain Chance: "><span id="hum2"></span></span>
+                                    </div>
+                                    <div>
+                                        <span><img class="faktabild" src="images/icon-clock.png" height="25px"
+                                                alt="Time: "><span id="Time"></span></span>
+                                    </div>
+
+                                    <div id="date">
+                                        <span>Date</span>
+                                    </div>
+                                    <script>
+                                        //funktion som skriver ut tid och byter icon.
+                                        function updateClock() {
+                                            var now = new Date()
+                                            var minutes = now.getMinutes()
+                                            var hours = now.getHours()
+                                            if (minutes < 10) {
+                                                minutes = "0" + minutes
+                                            }
+                                            time = hours + ':' + minutes,
+                                                document.getElementById('Time').innerHTML = time;
+
+                                            setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
                                         }
-                                        time = hours + ':' + minutes,
-                                            document.getElementById('Time').innerHTML = time;
+                                        updateClock();
+                                    </script>
 
-                                        setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
-                                    }
-                                    updateClock();
-                                </script>
-
-                                <script>
-                                    //funktion som skriver ut datum, dag, månad och år.
-                                    window.onload = setInterval(clock, 1000);
-                                    function clock() {
-                                        var d = new Date();
-                                        var date = d.getDate();
-                                        var year = d.getFullYear();
-                                        var month = d.getMonth();
-                                        var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                                        month = monthArr[month];
-                                        document.getElementById("date").innerHTML = date + " " + month + ", " + year;
-                                    }
-                                    clock()
-                                </script>
+                                    <script>
+                                        //funktion som skriver ut datum, dag, månad och år.
+                                        window.onload = setInterval(clock, 1000);
+                                        function clock() {
+                                            var d = new Date();
+                                            var date = d.getDate();
+                                            var year = d.getFullYear();
+                                            var month = d.getMonth();
+                                            var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                            month = monthArr[month];
+                                            document.getElementById("date").innerHTML = date + " " + month + ", " + year;
+                                        }
+                                        clock()
+                                    </script>
+                                </div>
                             </div>
                         </div>
 

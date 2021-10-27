@@ -6,6 +6,7 @@ body {
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-position: center;
+
 }
 
 #kr {
@@ -15,28 +16,32 @@ body {
 }
 #nr1 {
     height: 2.5em;
-    width: 6.25em;
-    border: 0.15625em solid white;
-    border-radius:  0.9375em;
+    width: 150%;
+    border: 3px solid white;
+    border-radius:  24px;
     text-align: center;
-    margin-left: 3.75em;
-    margin-top: 1.875em;
+    align-items: center;
+    
+    
     background-color: 
    rgba(255, 255, 255, 0.582);
     margin-left: 55%;
-    margin-top: 2.5em;
+    margin-top: 10vh;
+    z-index: 1;
+}
+#nr1:hover{
+    border:3px solid blue;
     
-    
-    
-   
+    transition: 0.25s;
+
 }
 #nr1b {
     text-decoration: none;
     color: Black;
     margin-top: 0.5em;
 }
-#nr2 {
-    width: 20%;
+#header {
+    width: 100%;
     border: 0.15625em solid white;
     border-radius: 1.25em;
     text-align: center;
@@ -45,7 +50,17 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: -2.5em;
+    height: 25vh;
     
+    
+}
+#spets {
+    width: 20%;
+    height: 20vh;
+   
+    position: absolute;
+    top: 0%;
+    left: 40%;
 }
 h1 {
 font-size: 1.875em;
@@ -68,6 +83,7 @@ font-size: 1.875em;
     margin-left: auto;
     margin-right: auto;
     width: 8.125em;
+   
 }
 
 #KRum2 {
@@ -79,6 +95,7 @@ font-size: 1.875em;
     margin-left: auto;
     margin-right: auto;
     width: 8.125em;
+   
 }
 
 #KRum3 {
@@ -90,6 +107,7 @@ font-size: 1.875em;
     margin-right: auto;
     width: 8.125em;
     text-align: center;
+   
 }
 
 #RPing {
@@ -101,6 +119,7 @@ font-size: 1.875em;
     margin-left: auto;
     margin-right: auto;
     width: 8.125em;
+  
 }
 #caff {
     border: 0.15625em solid whitesmoke;
@@ -111,6 +130,7 @@ font-size: 1.875em;
     margin-left: auto;
     margin-right: auto;
     width: 8.125em;
+    
    
 
 }
@@ -172,18 +192,16 @@ font-size: 1.875em;
 }
 #q {
     height:1.0416666666667 vh ;
-    width: 70%;
-    margin-right: auto;
+        width: 70%;
+        margin-right: auto;
     margin-left: auto; 
-    background-color: rgba(255, 255, 255, 0.582);
+   border-radius: 20px;
     padding: 4px;
     padding-left: 4px;
     padding-right: 4px;
-    border-radius: 20px;
-   
+    background-color: rgba(255, 255, 255, 0.582);
+  }
   
-    
-}
 
 #imgr {
 
@@ -191,15 +209,15 @@ font-size: 1.875em;
     position: absolute;
     left: 7%;
    top: 230vh;
- border-radius: 20px;
+ border-radius: 24px;
  
 }
 #img2 {
    height: 30%;
     position: absolute;
-    left: 34%;
+    left: 37%;
    top: 230vh;
- border-radius: 20px;
+ border-radius: 24px;
  
 
 }
@@ -207,9 +225,9 @@ font-size: 1.875em;
   
     height:30%;
     position: absolute;
-    left: 66%;
+    left: 70%;
    top: 230vh;
- border-radius: 20px;
+ border-radius: 24px;
  
 
 }
@@ -217,26 +235,27 @@ font-size: 1.875em;
     height: 30vh;
     display: block;
     margin-top: 50vh;
-    border-top: 0.3125em solid white;
+    /* border-top: 0.3125em solid white; */
+
 }
 
 #kontakt-ram {
 
-width: 30%;
+width: 33%;
 
-margin-left: 1%;
+
 
 display: flex;
 
 float: left;
 
-margin-right: 1%;
+
 
 height: 110%;
 
 border: 0.125em solid white;
 
-border-radius: 20px;
+
 
 background-color: 
 
@@ -350,12 +369,4 @@ background-color:
  
 
 }
-#copyright {
-    
-    margin-top: 38vh;
-    color: Black;
-    background-color: rgba(255, 255, 255, 0.658);
-    height: 4vh;
-    font-size: 23px;
-    margin-bottom: 5vh;
-}
+
