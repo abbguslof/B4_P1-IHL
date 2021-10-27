@@ -350,11 +350,11 @@ border-color: #009ad8;
 /* Temperatur och datum block */
 
 .Tabell {
-  width: 100%;
+  width: 90%;
   background: #323544;
   display: table;
   table-layout: fixed;
-  width: 90%;
+  width: 80%;
   overflow: hidden;
   border-radius: 10px;
   margin-top: -16%;
@@ -506,7 +506,6 @@ color: #bfc1c8;
 
 .Graf-blad{
 flex-direction: column;
-margin-right: -2%;
 }
 
 .Väder-ruta{
