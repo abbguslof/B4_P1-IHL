@@ -350,11 +350,11 @@ form textarea {
 /* Temperatur och datum block */
 
 .Tabell {
-  width: 90%;
+  width: 100%;
   background: #323544;
   display: table;
   table-layout: fixed;
-  width: 80%;
+  width: 90%;
   overflow: hidden;
   border-radius: 10px;
   margin-top: -16%;
@@ -519,19 +519,8 @@ form textarea {
   justify-content: space-around;
 }
 
-<<<<<<< HEAD
 .Graf-Here {
-=======
-.Fakta{
-font-size: 16px;
-font-size: 1.1428571429em;
-color: #c0c0c0;
-}
-
-.Graf-Here{
->>>>>>> 8fd265647f439b3bb78c09ba3206d29e57fb705b
   overflow: hidden;
-  
 }
 
 #picture {
@@ -566,8 +555,6 @@ color: #c0c0c0;
  */
 
 .Footer {
-  display: flex;
-  justify-content: center;
   bottom: 0px;
   background: #262936;
   padding: 1em 0;
