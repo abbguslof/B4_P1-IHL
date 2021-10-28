@@ -5,87 +5,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spets Termometern | ABB  </title>
+    <title>Spets Termometern | ABB </title>
     <link rel="stylesheet" href="css.css">
 </head>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {
+    function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Time', 'Rum 1', 'Rum 2', 'Rum 3', 'Cafterian', 'Pingis Rummet'],
-          ['00:00',  21,      24   ,  21    ,  18    ,         25       ],
-          ['01:00',  19,      23   ,  21    ,  18    ,         25       ],
-          ['02:00',  20,      25   ,  21    ,  18    ,         25       ],
-          ['03:00',  18,      26   ,  21    ,  18    ,         25       ],
-          ['04:00',  17,      22   ,  21    ,  18    ,         25       ],
-          ['05:00',  20,      19   ,  21    ,  18    ,         25       ],
-          ['06:00',  23,      23   ,  21    ,  18    ,         25       ],
-          ['07:00',  20,      19   ,  18    ,  23    ,         21       ],
-          ['08:00',  22,      24   ,  21    ,  18    ,         25       ],
-          ['09:00',  24,      23   ,  20    ,  27    ,         19       ],
-          ['10:00',  19,      21   ,  22    ,  24    ,         18       ],
-          ['11:00',  23,      25   ,  24    ,  22    ,         23       ],
-          ['12:00',  25,      26   ,  23    ,  19    ,         24       ],  
-          ['13:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['14:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['15:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['16:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['17:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['18:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['19:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['20:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['21:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['22:00',  26,      27   ,  21    ,  18    ,         25       ],
-          ['23:00',  26,      27   ,  21    ,  18    ,         25       ],
-          
-    ]);
+            ['Time', 'Rum 1', 'Rum 2', 'Rum 3', 'Cafterian', 'Pingis Rummet'],
+            ['00:00', 21, 24, 21, 18, 25],
+            ['01:00', 19, 23, 21, 18, 25],
+            ['02:00', 20, 25, 21, 18, 25],
+            ['03:00', 18, 26, 21, 18, 25],
+            ['04:00', 17, 22, 21, 18, 25],
+            ['05:00', 20, 19, 21, 18, 25],
+            ['06:00', 23, 23, 21, 18, 25],
+            ['07:00', 20, 19, 18, 23, 21],
+            ['08:00', 22, 24, 21, 18, 25],
+            ['09:00', 24, 23, 20, 27, 19],
+            ['10:00', 19, 21, 22, 24, 18],
+            ['11:00', 23, 25, 24, 22, 23],
+            ['12:00', 25, 26, 23, 19, 24],
+            ['13:00', 26, 27, 21, 18, 25],
+            ['14:00', 26, 27, 21, 18, 25],
+            ['15:00', 26, 27, 21, 18, 25],
+            ['16:00', 26, 27, 21, 18, 25],
+            ['17:00', 26, 27, 21, 18, 25],
+            ['18:00', 26, 27, 21, 18, 25],
+            ['19:00', 26, 27, 21, 18, 25],
+            ['20:00', 26, 27, 21, 18, 25],
+            ['21:00', 26, 27, 21, 18, 25],
+            ['22:00', 26, 27, 21, 18, 25],
+            ['23:00', 26, 27, 21, 18, 25],
+
+        ]);
 
         var options = {
-          title: 'Temperature Change',
-          curveType: 'function',
-          legend: { position: 'bottom' }
+            title: 'Temperature Change',
+            curveType: 'function',
+            legend: { position: 'bottom' }
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
         chart.draw(data, options);
-      }
-    </script>
+    }
+</script>
 
 
 <body>
- 
 
 
-<!-- 
+
+    <!-- 
 Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
-        <div id="header">
-            <div id="kr"> <a  style="text-decoration: none;"  href=" ../Weather-Hemsida/index.html">
+    <div id="header">
+        <div id="kr"> <a style="text-decoration: none;" href=" ../Weather-Hemsida/index.html">
                 <div id="nr1">
                     <div id="nr1b"> Tillbacka</div>
                 </div>
-                    </a>
-        </div>
-            
-            <div id="spets">
-                <h1> Spets <br> Termostaten </h1>
-            </div>
-
+            </a>
         </div>
 
-<!-- Temperatur rutorna -->
+        <div id="spets">
+            <h1> Spets <br> Termostaten </h1>
+        </div>
+
+    </div>
+
+    <!-- Temperatur rutorna -->
     <div id="DivRum">
         <div class="kk">
-                <div id="KRum1">
-                <h2>Klassrum 1</h2>
-                </div>
-                <div id="temp"> 
-                    <span id="klass1"></span>
-                </div>
-            <div id="hum"> 
+            <div id="KRum1">
+                <h2>Klassrummet</h2>
+            </div>
+            <div id="temp">
+                <span id="klass1"></span>
+            </div>
+            <div id="hum">
                 <span id="hum1"></span>
             </div>
         </div>
@@ -93,14 +93,14 @@ Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
 
         <div class="kk">
             <div id="KRum2">
-                <h2>Klassrum 2</h2>
-                
+                <h2>Terrariet</h2>
+
             </div>
-            <div id="temp"> 
+            <div id="temp">
                 <span id="klass2">
                 </span>
             </div>
-            <div id="hum"> 
+            <div id="hum">
                 <span id="hum2"></span>
             </div>
         </div>
@@ -110,13 +110,13 @@ Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
 
         <div class="kk">
             <div id="KRum3">
-                <h2>Klassrum 3</h2>
-                
+                <h2>Vardagsrummet</h2>
+
             </div>
-            <div id="temp"> 
+            <div id="temp">
                 <span id="klass3"></span>
             </div>
-            <div id="hum"> 
+            <div id="hum">
                 <span id="hum3"></span>
             </div>
         </div>
@@ -125,57 +125,77 @@ Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
             <div id="caff">
                 <h2>Cafeterian</h2>
             </div>
-            <div id="temp"> 
+            <div id="temp">
                 <span id="cafeterian"> </span>
             </div>
-            <div id="hum"> 
+            <div id="hum">
                 <span id="hum4"></span>
             </div>
-            
-               
+
+
         </div>
 
         <div class="kk">
             <div id="RPing">
                 <h2>Pingis Rum</h2>
-                
+
             </div>
-            <div id="temp"> 
+            <div id="temp">
                 <span id="pingis"> </span>
             </div>
-            <div id="hum"> 
+            <div id="hum">
                 <span id="hum5"></span>
             </div>
         </div>
 
     </div>
 
- <!-- Graph -->
-<div id="curve_chart" style="width: 100%; height: 70vh"></div>
-       
-<!-- Info om projektet -->
+    <!-- Graph -->
+    <div id="curve_chart" style="width: 100%; height: 70vh"></div>
+
+    <!-- Info om projektet -->
     <h1 id="w"> Vad är projektet?</h1>
     <div id="q">
-        <p><strong>Detta projektet går ut på att använda sig utav dessa kunskaper vi lärt oss den första månaden här på ABB. Vi
-            ska vissa att vi lärt oss dessa kunskaper genom detta projektet som går ut på att skapa en hemsida, 3D
-            printa, koppla elektronik, skapa en fire base och sätta ut sensorer lite överallt i skolan. Vi ska sedan
-            koppla sensorerna med fire base så att vi kan se teperaturen på hemsidan som vi gjort. När allt är klart så
-            ska vi presentera vårt jobb för lärarna och resten av klassen.</strong> </p>
+        <p>
+            I projektet "I hetaste laget" är samarbetet inom gruppen mist lika viktigt som resultatet.
+            I vår grupp bestämde vi oss tidigt för att dela upp arbetet mellan oss.
+            Varje medlem fick sitt område som de skulle fördjupa sina kunskaper i.
+            På det viset blir vi mer effektiva eftersom alla kan bidra till arbetet konstant.
+            Nackdelen med denna metod är att gruppen inte kan hjälpa till om man stöter på problem.
+            Men det är lätt åtgärdat eftersom det alltid finns någon annan i klassen som kan.
+            När vi planerade kom vi fram till tre huvudsakliga mål för gruppen:<br>
+            1. Att arduino sensorerna skulle skicka värden till en databas<br>
+            2. Att göra hemsidan trevlig, interaktiv och stilren<br>
+            3. Att hemsidan skulle visa värdena från databasen på ett optimalt sätt.<br>
+            För att underlätta vårt arbete har vi tagit inspiration till vår hemsida från en template.
+            Vi har valt att använda Erlings design till alla arduino hållare.
+            Vi använder även databasen Fire-Base som är en google tjänst.
+            Och självfalletvis fråga våra kära klasskamrater om hjälp.
+            Gustav ansvarade för hemsidans alla funktioner inklusive Fire-Base, bilder samt finslipade layouten.
+            Christopher ansvarade för all JavaScript på hemsidan samt delar av kommunikationen mellan den och databasen.
+            Erling ansvarade för 3D-printning av arduino hållarna och layouten på hemsidan.
+            Viktor ansvarade för att arduino sensorerna laddade upp värden på databasen samt grafen som skulle
+            visualisera dem.
+            Luca ansvarade för dokumentation under arbetets gång.
+
+        </p>
     </div>
 
 
-<!-- 3 bilder som beskriver projektet -->
-    <img id="imgr" src="https://cdn.discordapp.com/attachments/810133220619583488/897465887328702474/image1.jpg">
-    <img id="img2" src="https://wallpapercave.com/wp/NGQKb54.jpg">
-    <img id="img3" src="https://www.numerama.com/wp-content/uploads/2016/10/3d-impression.jpg">
+    <!-- 3 bilder som beskriver projektet -->
+    <div class="Bilder">
+        <img id="imgr" src="https://cdn.discordapp.com/attachments/810133220619583488/897465887328702474/image1.jpg">
+        <img id="img2" src="https://wallpapercave.com/wp/NGQKb54.jpg">
+        <img id="img3" src="https://www.numerama.com/wp-content/uploads/2016/10/3d-impression.jpg">
+    </div>
 
-
-<!-- Kontakt rutorna -->
+    <!-- Kontakt rutorna -->
     <div id="lol">
         <div id="kontakt-ram">
             <div id="osss"> Om oss</div>
             <div id="ossp"> Vi är basgrupp 4 här på ABB spets gymnasiet. Det här är vårt första teknik projekt och vi
-                har jobbat hårt för att få detta att funka. På vägen har vi lärt oss massa nya kunskaper om programmering, kad, elektronik och att sammarbeta i grupp. 
+                har jobbat hårt för att få detta att funka. På vägen har vi lärt oss massa nya kunskaper om
+                programmering, kad, elektronik och att sammarbeta i grupp.
             </div>
         </div>
         <div id="kontakt-ram">
@@ -202,8 +222,8 @@ Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
             </div>
         </div>
 
-        
-        
+
+
         <script type="module" src="javascript.js"> </script>
 </body>
 

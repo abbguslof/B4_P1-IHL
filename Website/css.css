@@ -200,6 +200,8 @@ font-size: 1.875em;
     padding-left: 4px;
     padding-right: 4px;
     background-color: rgba(255, 255, 255, 0.582);
+    font-weight: bold;
+    font-style: italic;
   }
   
 
@@ -208,7 +210,7 @@ font-size: 1.875em;
     height:30% ;
     position: absolute;
     left: 7%;
-   top: 230vh;
+   top: 270vh;
  border-radius: 24px;
  
 }
@@ -216,9 +218,8 @@ font-size: 1.875em;
    height: 30%;
     position: absolute;
     left: 37%;
-   top: 230vh;
+   top: 270vh;
  border-radius: 24px;
- 
 
 }
 #img3 {
@@ -226,9 +227,8 @@ font-size: 1.875em;
     height:30%;
     position: absolute;
     left: 70%;
-   top: 230vh;
+   top: 270vh;
  border-radius: 24px;
- 
 
 }
 #lol {
@@ -243,19 +243,13 @@ font-size: 1.875em;
 
 width: 33%;
 
-
-
 display: flex;
 
 float: left;
 
-
-
 height: 110%;
 
 border: 0.125em solid white;
-
-
 
 background-color: 
 
@@ -286,8 +280,6 @@ background-color:
 
    margin-left: -95%;
 
-    
-
     width: 97%;
 
     height: 15vh;
@@ -297,6 +289,7 @@ background-color:
     font-family: 'Times New Roman', Times, serif;
 
 }
+
 #skolann {
 
   
@@ -314,16 +307,11 @@ background-color:
     margin-right: auto;
 }
 
-
-
-
 #skolaninfo {
 
     margin-top: 10%;
 
     margin-left: -95%;
- 
-     
  
      width: 97%;
  
@@ -357,8 +345,6 @@ background-color:
 
     margin-left: -95%;
  
-     
- 
      width: 97%;
  
      height: 15vh;
@@ -369,4 +355,3 @@ background-color:
  
 
 }
-
