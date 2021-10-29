@@ -529,6 +529,7 @@ form textarea {
 .Väder-ruta {
   display: flex;
   justify-content: space-around;
+  margin-top:-6%;
 }
 
 .Graf-Here {
@@ -561,26 +562,18 @@ form textarea {
   left: -35px;
   margin: 6px;
 }
-
-/*
- * Footer Styles
- */
-
-.Footer {
-  bottom: 0px;
-  background: #262936;
-  padding: 1em 0;
-}
-.Graf-blad.Väder-ruta.knapp{
+/* 
+Knapp mellan C och F 
+*/
+.knapp{
 display: flex;
 justify-content: flex-end;
 }
 
 #ButtonCF {
   display: flex;
-  position: relative;
   top: 2em;
-  /* justify-content: flex-start; */
+  /* justify-content: flex-end; */
   -webkit-appearance: none;
   width: 50px;
   height: 25px;
@@ -592,7 +585,6 @@ justify-content: flex-end;
 
 #ButtonCF:before {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   height: 25px;
@@ -610,4 +602,13 @@ justify-content: flex-end;
 #ButtonCF:checked:before {
   transform: translate(100%);
   transition: .25s;
+}
+/*
+ * Footer Styles
+ */
+
+.Footer {
+  bottom: 0px;
+  background: #262936;
+  padding: 1em 0;
 }
