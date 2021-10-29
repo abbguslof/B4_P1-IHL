@@ -506,15 +506,14 @@ form textarea {
 .Graf-Datum{
   font-weight: 400;
   font-size: 22px;
-  color: #bfc1c8;
+  color: #c0c0c0;
   background: transparent;
 }
 
 input[type="date"]{
   background: #323544;
-  color: #bfc1c8;
+  color: #c0c0c0;
   font-size: 22px;
-
 }
 
 ::-webkit-calendar-picker-indicator{
