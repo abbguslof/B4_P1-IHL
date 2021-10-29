@@ -520,11 +520,11 @@ input[type="date"]{
   color: #c0c0c0;
   font-size: 22px;
 }
-
+/* 
 ::-webkit-calendar-picker-indicator{
   
   
-}
+} */
 
 .List-Field {
   margin-left: -2%;
@@ -570,6 +570,10 @@ input[type="date"]{
   font-size: 25px;
 }
 
+#utomhus-temp{
+width: max-content;
+height: max-content;
+}
 .Fakta {
   display: flex;
   position: relative;

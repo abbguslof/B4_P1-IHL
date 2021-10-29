@@ -497,6 +497,10 @@ form textarea {
   align-items: center;
 }
 
+.Rubrik{
+  margin-bottom: -2em;
+}
+
 .menu-title {
   font-weight: 400;
   font-size: 32px;
@@ -515,11 +519,11 @@ input[type="date"]{
   color: #c0c0c0;
   font-size: 22px;
 }
-
+/* 
 ::-webkit-calendar-picker-indicator{
   
   
-}
+} */
 
 .List-Field {
   margin-left: -2%;
@@ -535,14 +539,12 @@ input[type="date"]{
   padding-top: 50%;
 }
 #bild {
-  position: absolute;
-  left: 19%;
-  width: 7%;
-  top: 43vh;
+  position: relative;
+  height: 6em;
+  margin-bottom: 4em;
+  margin-left: 18em;
 }
-#bild:hover{
-  width: 7.5%;
-}
+
 .Graf-List {
   display: block;
   padding-top: 20%;
