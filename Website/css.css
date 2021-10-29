@@ -57,7 +57,8 @@ body {
 #spets {
     width: 20%;
     height: 20vh;
-   
+   border-left: 3px solid white;
+   border-right:3px solid white ;
     position: absolute;
     top: 0%;
     left: 40%;
