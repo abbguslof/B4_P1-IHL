@@ -503,12 +503,41 @@ form textarea {
   color: #bfc1c8;
 }
 
+.Graf-Datum{
+  font-weight: 400;
+  font-size: 22px;
+  color: #c0c0c0;
+  background: transparent;
+}
+
+input[type="date"]{
+  background: #323544;
+  color: #c0c0c0;
+  font-size: 22px;
+}
+
+::-webkit-calendar-picker-indicator{
+  
+  
+}
+
 .List-Field {
   margin-left: -2%;
   display: flex;
   align-items: center;
   flex-direction: column;
   background: linear-gradient(#1e232b, #323544);
+  justify-content: flex-start;
+}
+
+#graftitle {
+  display: block;
+  padding-top: 50%;
+}
+
+.Graf-List {
+  display: block;
+  padding-top: 20%;
 }
 
 .Graf-blad {
@@ -518,6 +547,7 @@ form textarea {
 .Väder-ruta {
   display: flex;
   justify-content: space-around;
+  margin-top:-6%;
 }
 
 .Graf-Here {
@@ -541,16 +571,57 @@ form textarea {
   flex-flow: column-reverse;
   justify-content: space-around;
   align-self: center;
-  right: 55%;
+  right: 48%;
 }
 
 .faktabild {
   display: flex;
   position: absolute;
   left: -35px;
-  margin: 5px;
+  margin: 6px;
+}
+/* 
+Knapp mellan C och F 
+*/
+.knapp{
+display: flex;
+justify-content: flex-end;
 }
 
+#ButtonCF {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  top: 2em;
+  -webkit-appearance: none;
+  width: 50px;
+  height: 25px;
+  background-color: #262936;
+  border-radius: 50px;
+  outline: none;
+  transition: .25s;
+}
+
+#ButtonCF:before {
+  content: "";
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 2px 5px 1px gray;
+  transition: .25s;
+}
+#ButtonCF:checked {
+  background-color: #009ad8;
+  transition: .25s;
+}
+
+#ButtonCF:checked:before {
+  transform: translate(100%);
+  transition: .25s;
+}
 /*
  * Footer Styles
  */

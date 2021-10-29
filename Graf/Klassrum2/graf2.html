@@ -12,14 +12,14 @@
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
     <div class="Header">
         <div class="container">
             <a target="_blank" href="https://www.abbgymnasiet.se/" class="branding">
-                <img src="images/logo.png" alt="" class="logo">
+                <img src="../../Weather-Hemsida/images/logo.PNG" alt="" class="logo">
             </a>
             <div class="main-navigation">
                 <ul class="menu">
@@ -46,9 +46,11 @@
             <div class="Tabell">
                 <div class="Top-Bar">
                     <div class="Re-Page">
-                        <p class="menu-title">
-                            Hem
-                        </p>
+                        <a href="../../Weather-Hemsida/index.html">
+                            <p class="menu-title">
+                                Hem
+                            </p>
+                        </a>
                     </div>
                     <div class="Rubrik">
                         <p class="menu-title">
@@ -61,7 +63,7 @@
                     <div class="List-Field">
                         <div class="Li-title">
                             <!-- grafer -->
-                            <p class="menu-title">
+                            <p id="graftitle" class="menu-title">
                                 Grafer
                             </p>
                         </div>
@@ -110,26 +112,29 @@
                     </div>
 
                     <div class="Graf-blad">
+                        <!-- Knapp till Celisus Farenheit switch -->
+                        <div class="knapp">
+                            <input id="ButtonCF" type="checkbox"></input>
+                        </div>
                         <div class="Väder-ruta">
                             <img id="picture" src="../../Weather-Hemsida/images/icons/temp-2.png" width="20%"></img>
-                            <div class=" Temp-bild">
+                            <div class="Temp-bild">
                                 <div class="forecast-icon">
-                                    <img id="klassrum2-img" src="Weather-Hemsida/images/icons/temp-2.png" alt=""
-                                        width=16%>
                                 </div>
                             </div>
                             <div class="Fakta">
                                 <div class="faktasize">
                                     <div class="degree">
-                                        <span id="klassrum2-temp"></span><sup>o</sup>C
+                                        <span id="klassrum2-temp"></span>
                                     </div>
                                     <div>
-                                        <span><img class="faktabild" src="images/icons/humidity.png" height="25px"
+                                        <span><img class="faktabild"
+                                                src="../../Weather-Hemsida/images/icons/humidity.png" height="25px"
                                                 alt="Rain Chance: "><span id="hum2"></span></span>
                                     </div>
                                     <div>
-                                        <span><img class="faktabild" src="images/icon-clock.png" height="25px"
-                                                alt="Time: "><span id="Time"></span></span>
+                                        <span><img class="faktabild" src="../../Weather-Hemsida/images/icon-clock.png"
+                                                height="25px" alt="Time: "><span id="Time"></span></span>
                                     </div>
 
                                     <div id="date">
@@ -169,55 +174,12 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="Graf-Datum">
+                            <label for="datum">Välj datum:</label>
+                            <input type="date" id="datum" name="datum" min="2021-10-28">
+                        </div>
                         <div class="Graf-here">
-                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                            <script type="text/javascript">
-                                google.charts.load('current', { 'packages': ['corechart'] });
-                                google.charts.setOnLoadCallback(drawChart);
-
-                                function drawChart() {
-                                    var data = google.visualization.arrayToDataTable([
-                                        ['Time', 'Rum 1', 'Rum 2', 'Rum 3', 'Cafterian', 'Pingis Rummet'],
-                                        ['00:00', 21, 24, 21, 18, 25],
-                                        ['01:00', 19, 23, 21, 18, 25],
-                                        ['02:00', 20, 25, 21, 18, 25],
-                                        ['03:00', 18, 26, 21, 18, 25],
-                                        ['04:00', 17, 22, 21, 18, 25],
-                                        ['05:00', 20, 19, 21, 18, 25],
-                                        ['06:00', 23, 23, 21, 18, 25],
-                                        ['07:00', 20, 19, 18, 23, 21],
-                                        ['08:00', 22, 24, 21, 18, 25],
-                                        ['09:00', 24, 23, 20, 27, 19],
-                                        ['10:00', 19, 21, 22, 24, 18],
-                                        ['11:00', 23, 25, 24, 22, 23],
-                                        ['12:00', 25, 26, 23, 19, 24],
-                                        ['13:00', 26, 27, 21, 18, 25],
-                                        ['14:00', 26, 27, 21, 18, 25],
-                                        ['15:00', 26, 27, 21, 18, 25],
-                                        ['16:00', 26, 27, 21, 18, 25],
-                                        ['17:00', 26, 27, 21, 18, 25],
-                                        ['18:00', 26, 27, 21, 18, 25],
-                                        ['19:00', 26, 27, 21, 18, 25],
-                                        ['20:00', 26, 27, 21, 18, 25],
-                                        ['21:00', 26, 27, 21, 18, 25],
-                                        ['22:00', 26, 27, 21, 18, 25],
-                                        ['23:00', 26, 27, 21, 18, 25],
-
-                                    ]);
-
-                                    var options = {
-                                        title: 'Temperature Change',
-                                        curveType: 'function',
-                                        legend: { position: 'bottom' }
-                                    };
-
-                                    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-                                    chart.draw(data, options);
-                                }
-                            </script>
-                            <div id="curve_chart" style="width: fit-content; min-height: 270px; "></div>
+                            <div id="curve_chart" style="width: 100%; min-height: 270px; "></div>
                         </div>
                     </div>
                 </div>
@@ -229,7 +191,6 @@
                 <div class="row">
                     <div class="col-md-8">
                         <p class="colophon">Copyright
-
                             2021 Basgrupp 4.
                             Designed by Gustav, Christopher & Erling.
                             All rights reserved.
@@ -238,6 +199,11 @@
                 </div>
             </div>
             <script type="module" src="javascript.js"></script>
+            <!-- <script type="text/javascript">
+                    ('.input-group.date').datepicker({
+                        format: 'DD/MM/YYYY'
+                    });
+            </script> -->
 </body>
 
 </html>

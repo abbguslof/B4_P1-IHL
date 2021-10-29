@@ -20,57 +20,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getDatabase()
 
+
+let values = [
+    ['Tidpunkt', 'Temperatur'],
+    ['2004', 1000],
+    ['2005', 1170],
+    ['2006', 660],
+    ['2007', 1030]
+]
+
+
 let datePicker = document.getElementById('datum')
-
-// skriv ut temperatur Klassrum2
-let dataBaseRef2 = ref(db, "Temp2/Current")
-onValue(dataBaseRef2, (snapshot) => {
-    //document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
-    let tempC = snapshot.val()//document.getElementById("klassrum2-temp").innerHTML
-    const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
-    let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
-    let tempF = tempf.toFixed(1)
-
-    function Farenheit(){
-    let checkbutton = document.getElementById("ButtonCF").checked
-    if (checkbutton == false) {
-        document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
-    }
-    else {
-        document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
-    }
-    setTimeout(Farenheit, 1000)
-}
-Farenheit()
-
-    function TempImg (degree, id) {
-        let degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
-        }
-        else if (degrees < 25) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-    TempImg("klassrum2-temp", "picture")
-})
-
-const prcent = "%"
-
-let humref2 = ref(db, "hum2/Current")
-onValue(humref2, (snapshot) => {
-    document.getElementById("hum2").innerHTML = snapshot.val() + prcent
-})
 
 google.charts.load('current', { 'packages': ['corechart'] })
 google.charts.setOnLoadCallback(drawChart)
@@ -87,16 +47,7 @@ function drawChart () {
     var options = {
         title: 'Temperatur',
         curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
+        legend: { position: 'bottom' }
     }
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
@@ -131,21 +82,20 @@ function updateChart (nyData) {
     var data = google.visualization.arrayToDataTable(nyData)
 
     var options = {
-        title: 'Temperatur',
+        title: 'Company Performance',
         curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
+        legend: { position: 'bottom' }
     }
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
 
     chart.draw(data, options)
 }
+
+
+
+
+
+
+
+
