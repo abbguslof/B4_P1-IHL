@@ -16,32 +16,30 @@ const firebaseConfig = {
     appId: "1:1054092009303:web:dc9e55016d78a26066e812",
     measurementId: "G-JC26DGQY7X"
 }
-
 const app = initializeApp(firebaseConfig)
 const db = getDatabase()
 
-let datePicker = document.getElementById('datum')
+// Hämtar Temperatur.Nu API och tar olika värden
+async function getapitemp () {
 
-// skriv ut temperatur Klassrum2
-let dataBaseRef2 = ref(db, "Temp2/Current")
-onValue(dataBaseRef2, (snapshot) => {
-    //document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
-    let tempC = snapshot.val()//document.getElementById("klassrum2-temp").innerHTML
+    const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
     const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
+
+    var dataa = await response.json()
+    let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
     let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
     let tempF = tempf.toFixed(1)
 
-    function Farenheit () {
-        let checkbutton = document.getElementById("ButtonCF").checked
-        if (checkbutton == false) {
-            document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
-        }
-        else {
-            document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
-        }
-        setTimeout(Farenheit, 1000)
+    let checkbutton = document.getElementById("ButtonCF").checked
+    if (checkbutton == false) {
+        document.getElementById("utomhus-temp").innerHTML = tempC + grader + "C"
     }
-    Farenheit()
+    else {
+        document.getElementById("utomhus-temp").innerHTML = tempF + grader + "F"
+    }
+  
+    if (response) {
+    }
 
     function TempImg (degree, id) {
         let degrees = parseFloat(document.getElementById(degree).innerHTML)
@@ -62,9 +60,31 @@ onValue(dataBaseRef2, (snapshot) => {
         }
         setTimeout(TempImg, 1000)
     }
-    TempImg("klassrum2-temp", "picture")
-})
+TempImg("utomhus-temp", "picture")
 
+    setTimeout(getapitemp, 1000)
+}
+getapitemp()
+//     function TempImg (degree, id) {
+//         let degrees = parseFloat(document.getElementById(degree).innerHTML)
+//         if (degrees < 15) {
+//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
+//         }
+//         else if (degrees < 20) {
+//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
+//         }
+//         else if (degrees < 25) {
+//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
+//         }
+//         else if (degrees < 30) {
+//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
+//         }
+//         else {
+//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
+//         }
+//         setTimeout(TempImg, 1000)
+//     }
+// TempImg("utomhus-temp", "picture")
 // const prcent = "%"
 
 // let humref2 = ref(db, "hum2/Current")

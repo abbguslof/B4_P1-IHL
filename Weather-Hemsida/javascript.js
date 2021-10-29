@@ -171,7 +171,7 @@ const database = getDatabase()
 
 // Hämtar firebase saker
 // Skriv ut värde på temperaturen Klassrum1
-let dataBaseRef = ref(database, "Temp/Current")
+let dataBaseRef = ref(database, "Temp")
 onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val() + "°C"
 
