@@ -20,16 +20,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getDatabase()
 
-
-let values = [
-    ['Tidpunkt', 'Temperatur'],
-    ['2004', 1000],
-    ['2005', 1170],
-    ['2006', 660],
-    ['2007', 1030]
-]
-
-
 let datePicker = document.getElementById('datum')
 
 // skriv ut temperatur Klassrum2
