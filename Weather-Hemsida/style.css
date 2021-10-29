@@ -300,6 +300,9 @@ form textarea {
 .site-header {
   padding: 1% 0;
   background: linear-gradient(#323544, #1e232b);
+   position: fixed;
+  width: 100%;
+  margin-top: 0px;
   z-index: 3;
 }
 
@@ -427,7 +430,12 @@ form textarea {
   background-size: cover;
   padding: 70px 0;
   min-height: 350px;
-  border-top: 1px solid black;
+  margin-bottom: -6%;
+}
+
+.space{
+  background: #1e232b;
+  padding:4%;
 }
 
 /* Temperatur och datum block */
@@ -446,8 +454,10 @@ form textarea {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: -150px;
-  margin-bottom: 36%;
+  margin-top: -10%;
+  margin-bottom: 18%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .forecast-container .forecast {
@@ -588,7 +598,7 @@ form textarea {
 #ButtonCF {
   display: flex;
   position: relative;
-  top: -11.8em;
+  top: -9em;
   justify-content: flex-end;
   -webkit-appearance: none;
   width: 50px;

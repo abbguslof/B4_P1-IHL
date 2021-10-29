@@ -614,10 +614,13 @@ justify-content: flex-end;
   transition: .25s;
 }
 #btnlabel{
-  color: white;
-  position: absolute;
-  right: 23%;
-  top: 66.5vh;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  top: 2.3em;
+  padding-right: 6px;
+  height: 25px;
+  color: #c0c0c0;
 }
 #ButtonCF:checked {
   background-color: #009ad8;
