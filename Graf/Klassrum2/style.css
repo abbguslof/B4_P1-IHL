@@ -572,8 +572,9 @@ justify-content: flex-end;
 
 #ButtonCF {
   display: flex;
+  position: relative;
+  justify-content: flex-start;
   top: 2em;
-  /* justify-content: flex-end; */
   -webkit-appearance: none;
   width: 50px;
   height: 25px;
