@@ -47,7 +47,7 @@ onValue(dataBaseRef2, (snapshot) => {
         setTimeout(TempImg, 1000)
     }
 
-    TempImg("klassrum2-temp", "klassrum2-img")
+    TempImg("klassrum2-temp", "picture")
 })
 
 const prcent = "%"
