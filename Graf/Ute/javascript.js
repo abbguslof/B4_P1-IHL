@@ -41,8 +41,7 @@ async function getapitemp () {
     if (response) {
     }
 
-    function TempImg (degree, id) {
-        let degrees = parseFloat(document.getElementById(degree).innerHTML)
+    function TempImg (degrees, id) {
         if (degrees < 15) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
@@ -60,7 +59,7 @@ async function getapitemp () {
         }
         setTimeout(TempImg, 1000)
     }
-TempImg("utomhus-temp", "picture")
+TempImg(tempC, "picture")
 
     setTimeout(getapitemp, 1000)
 }
@@ -86,6 +85,7 @@ getapitemp()
 //     }
 // TempImg("utomhus-temp", "picture")
 // const prcent = "%"
+
 
 // let humref2 = ref(db, "hum2/Current")
 // onValue(humref2, (snapshot) => {
