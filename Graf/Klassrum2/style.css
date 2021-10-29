@@ -247,10 +247,11 @@ form textarea {
 
 .Header {
   padding: 1% 0;
-  background: linear-gradient(#323544,#1e232b);
+  background: linear-gradient(#323544, #1e232b);
   position: fixed;
   width: 100%;
   margin-top: 0px;
+  z-index: 3;
 }
 
 .Header .branding {
@@ -323,7 +324,7 @@ form textarea {
   color: #009ad8;
 }
 
-.nav-list .list-item{
+.nav-list .list-item {
   padding: 5px 25px;
   border: 2px solid transparent;
   border-radius: 30px;
@@ -333,8 +334,8 @@ form textarea {
   font-weight: 400;
 }
 
-.nav-list .list-item:hover, .nav-list .list-item:active  {
-border-color: #009ad8;
+.nav-list .list-item:hover, .nav-list .list-item:active {
+  border-color: #009ad8;
   color: #009ad8;
 }
 
@@ -350,15 +351,17 @@ border-color: #009ad8;
 /* Temperatur och datum block */
 
 .Tabell {
-  width: 100%;
+  width: 80%;
   background: #323544;
   display: table;
   table-layout: fixed;
-  width: 90%;
+  width: 70%;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: -16%;
+  margin-top: -10%;
   margin-bottom: 12%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 
@@ -393,13 +396,15 @@ border-color: #009ad8;
   font-size: 1.2857142857em;
   font-weight: 400;
 }
-.Tabell .forecast.today .location .main-table{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+
+.Tabell .forecast.today .location .main-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.Tabell .forecast.today .degree .num, .Tabell .forecast.today .degree .forecast-icon {
+
+.Tabell .Nyheter.Graf-blad.Väder-ruta.Temp-bild .degree .num, .Tabell .Nyheter.Graf-blad.Väder-ruta.Temp-bild .degree .degree .forecast-icon {
   display: inline-block;
   vertical-align: middle;
 }
@@ -420,11 +425,13 @@ align-items: center;
 .forecast-container .forecast.today span {
   margin-right: 20px;
 } */
+
 /* 
 .forecast-container .forecast.today span img {
   margin-right: 5px;
   vertical-align: middle;
 } */
+
 /* 
 .forecast-container .forecast .forecast-header {
   background: rgba(0, 0, 0, 0.1);
@@ -458,9 +465,9 @@ align-items: center;
   font-size: 1.1428571429em;
 }  */
 
-.Top-Bar, .Nyheter{
+.Top-Bar, .Nyheter {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .Top-Bar {
@@ -468,38 +475,81 @@ align-items: center;
   background: #262936;
   align-items: center;
 }
-.Rubrik, .Graf-blad{
+
+.Rubrik, .Graf-blad {
   width: 80%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   padding: 2%;
 }
-.Re-Page, .List-Field{
+
+.Re-Page, .List-Field {
   width: auto;
   display: flex;
-  justify-content:center;
-  padding:2%;
-}
-.Li-title{
-height: 4%;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
 }
 
-.List-Field{
+.Li-title {
+  height: 4%;
+  display: flex;
+  align-items: center;
+}
+
+.menu-title {
+  font-weight: 400;
+  font-size: 32px;
+  color: #bfc1c8;
+}
+
+.List-Field {
+  margin-left: -2%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background: linear-gradient(#1e232b, #323544);
 }
-.Graf-blad{
-flex-direction: column;
+
+.Graf-blad {
+  flex-direction: column;
 }
 
-.Väder-ruta{
+.Väder-ruta {
   display: flex;
   justify-content: space-around;
 }
 
-.Graf-Here{
+.Graf-Here {
   overflow: hidden;
 }
 
+#picture {
+  display: flex;
+  margin: 25px;
+  position: relative;
+  right: 18%;
+}
+
+.faktasize {
+  font-size: 25px;
+}
+
+.Fakta {
+  display: flex;
+  position: relative;
+  flex-flow: column-reverse;
+  justify-content: space-around;
+  align-self: center;
+  right: 55%;
+}
+
+.faktabild {
+  display: flex;
+  position: absolute;
+  left: -35px;
+  margin: 5px;
+}
 
 /*
  * Footer Styles

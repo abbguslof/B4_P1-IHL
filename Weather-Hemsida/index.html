@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
 	<title>Spets Termometern | ABB</title>
-	<link ref="shortcut icon" sizes="128x128" href="images/icons/temp-4.png">
+	<link rel="shortcut icon" href="images/TabLogo.png" />
 	<!-- Loading third party fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
 	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -28,13 +28,15 @@
 				<!-- Navigation På toppen, De olika knapparna. -->
 				<div class="main-navigation">
 					<ul class="menu">
-						<li class="menu-item"><a href="../Website/Website.html">Lucas Hemsida</a></li>
-						<li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
-						<li class="menu-item"><a
+						<li class="menu-item"><a target="_blank" href="../Website/Website.html">Lucas Hemsida</a></li>
+						<li class="menu-item"><a target="_blank"
+								href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
+						<li class="menu-item"><a target="_blank"
 								href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
 						</li>
-						<li class="menu-item"><a href="https://www.temperatur.nu/vasteras">Temperatur.nu</a></li>
-						<li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
+						<li class="menu-item"><a target="_blank"
+								href="https://www.temperatur.nu/vasteras">Temperatur.nu</a></li>
+						<li class="menu-item"><a target="_blank" href="https://new.abb.com/se">ABB</a></li>
 					</ul>
 				</div>
 			</div>
@@ -112,11 +114,11 @@
 									time = hours + ':' + minutes,
 										document.getElementById('Time').innerHTML = time;
 
-									//byter icon. Sol mellan klockan 6 och 23, och måne mellan 23 och 6.
+									//byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
 									if (6 < hours && hours < 16) {
 										document.getElementById("uteicon").src = "images/icons/helsol.svg"
 									}
-									else if (16 < hours && hours < 19) {
+									else if (16 <= hours && hours <= 19) {
 										document.getElementById("uteicon").src = "images/icons/halvsol.svg"
 									}
 									else {
@@ -198,7 +200,7 @@
 					<!-- Sjätte blocket, Pingis Rummet -->
 					<div class="forecast">
 						<div class="forecast-header">
-							<div class="day"><a class="fortnamn">Pingis Rummet</a></div>
+							<div class="day"><a class="fortnamn">Pingisrummet</a></div>
 						</div> <!-- .forecast-header -->
 						<div class="forecast-content">
 							<div class="forecast-icon">
