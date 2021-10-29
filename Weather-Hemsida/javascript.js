@@ -34,7 +34,7 @@ function knapp () {
             changeType(object, checkbutton)
         }
     }
-
+    
     return checkbutton
 }
 
