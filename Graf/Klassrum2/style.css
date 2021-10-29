@@ -503,6 +503,25 @@ form textarea {
   color: #bfc1c8;
 }
 
+.Graf-Datum{
+  font-weight: 400;
+  font-size: 22px;
+  color: #bfc1c8;
+  background: transparent;
+}
+
+input[type="date"]{
+  background: #323544;
+  color: #bfc1c8;
+  font-size: 22px;
+
+}
+
+::-webkit-calendar-picker-indicator{
+  
+  
+}
+
 .List-Field {
   margin-left: -2%;
   display: flex;
