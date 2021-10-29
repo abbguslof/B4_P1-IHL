@@ -299,6 +299,8 @@ form textarea {
 
 .site-header {
   padding: 1% 0;
+  background: linear-gradient(#323544, #1e232b);
+  z-index: 3;
 }
 
 .site-header .branding {
