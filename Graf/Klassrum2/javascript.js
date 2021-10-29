@@ -25,10 +25,26 @@ let datePicker = document.getElementById('datum')
 // skriv ut temperatur Klassrum2
 let dataBaseRef2 = ref(db, "Temp2/Current")
 onValue(dataBaseRef2, (snapshot) => {
-    document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
+    //document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
+    let tempC = snapshot.val()//document.getElementById("klassrum2-temp").innerHTML
+    const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
+    let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
+    let tempF = tempf.toFixed(1)
+
+    function Farenheit(){
+    let checkbutton = document.getElementById("ButtonCF").checked
+    if (checkbutton == false) {
+        document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
+    }
+    else {
+        document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
+    }
+    setTimeout(Farenheit, 1000)
+}
+Farenheit()
 
     function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+        let degrees = parseFloat(document.getElementById(degree).innerHTML)
         if (degrees < 15) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
@@ -46,7 +62,6 @@ onValue(dataBaseRef2, (snapshot) => {
         }
         setTimeout(TempImg, 1000)
     }
-
     TempImg("klassrum2-temp", "picture")
 })
 
