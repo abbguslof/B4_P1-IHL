@@ -65,87 +65,9 @@ onValue(dataBaseRef2, (snapshot) => {
     TempImg("klassrum2-temp", "picture")
 })
 
-const prcent = "%"
+// const prcent = "%"
 
-let humref2 = ref(db, "hum2/Current")
-onValue(humref2, (snapshot) => {
-    document.getElementById("hum2").innerHTML = snapshot.val() + prcent
-})
-
-google.charts.load('current', { 'packages': ['corechart'] })
-google.charts.setOnLoadCallback(drawChart)
-
-function drawChart () {
-    var data = google.visualization.arrayToDataTable([
-        ['Tidpunkt', 'Temperatur'],
-        ['12:00', 22],
-        ['13:00', 12],
-        ['14:00', 33],
-        ['15:00', 33]
-    ])
-
-    var options = {
-        title: 'Temperatur',
-        curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
-    }
-
-    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
-
-    chart.draw(data, options)
-}
-
-datePicker.onchange = function () {
-    console.log(datePicker.value)
-    if (datePicker.value != null) {
-        const datumRef = ref(db, datePicker.value + '/vardagsrummet' + '/temperature')
-        onValue(datumRef, (snapshot) => {
-            const data = snapshot.val()
-            console.log(data)
-            let newArray = [
-                ['Tidpunkt', 'Temperatur']
-            ]
-            if (data != null && data.length > 0) {
-                for (let i = 0; i < data.length; i++) {
-                    const element = [data[i].time, data[i].value]
-                    newArray.push(element)
-                }
-            }
-            console.log(newArray)
-            updateChart(newArray)
-        })
-    }
-
-}
-
-function updateChart (nyData) {
-    var data = google.visualization.arrayToDataTable(nyData)
-
-    var options = {
-        title: 'Temperatur',
-        curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
-    }
-
-    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
-
-    chart.draw(data, options)
-}
+// let humref2 = ref(db, "hum2/Current")
+// onValue(humref2, (snapshot) => {
+//     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
+// })
