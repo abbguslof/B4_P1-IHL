@@ -28,8 +28,9 @@ async function getapitemp () {
     var dataa = await response.json()
     let tempC = dataa.stations[0].temp  //api på grader celcius utomhus i västerås
     let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
-    let tempF = tempf.toFixed(1)
+    let tempF = tempf.toFixed(1)  //avrundar till närmaste tiondel
 
+    //omvandlar till farenheit när man trycker på switchen, byter tillbaka till celcius när man trycker igen.
     let checkbutton = document.getElementById("ButtonCF").checked
     if (checkbutton == false) {
         document.getElementById("utomhus-temp").innerHTML = tempC + grader + "C"
@@ -41,6 +42,7 @@ async function getapitemp () {
     if (response) {
     }
 
+    //funktion som byter icon beroende på utetemperatur.
     function TempImg (degrees, id) {
         if (degrees < 15) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
@@ -57,34 +59,15 @@ async function getapitemp () {
         else {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
         }
-        setTimeout(TempImg, 1000)
+        setTimeout(TempImg, 1000)//uppdaterar varje sekund.
     }
 TempImg(tempC, "picture")
 
-    setTimeout(getapitemp, 1000)
+    setTimeout(getapitemp, 1000)//uppdaterar varje sekund.
 }
 getapitemp()
-//     function TempImg (degree, id) {
-//         let degrees = parseFloat(document.getElementById(degree).innerHTML)
-//         if (degrees < 15) {
-//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
-//         }
-//         else if (degrees < 20) {
-//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
-//         }
-//         else if (degrees < 25) {
-//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
-//         }
-//         else if (degrees < 30) {
-//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
-//         }
-//         else {
-//             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
-//         }
-//         setTimeout(TempImg, 1000)
-//     }
-// TempImg("utomhus-temp", "picture")
-// const prcent = "%"
+
+const prcent = "%"
 
 
 // let humref2 = ref(db, "hum2/Current")
