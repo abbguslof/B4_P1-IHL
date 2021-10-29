@@ -35,7 +35,7 @@ onValue(dataBaseRef2, (snapshot) => {
         else if (degrees < 20) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
         }
-        else if (parseFloat(degrees) < 25) {
+        else if (degrees < 25) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
         }
         else if (degrees < 30) {
