@@ -71,9 +71,38 @@ async function getapi () {
     const prcnt = "%"
 
     var data = await response.json()
-    let dist = data.list[0].wind.speed
-    let hum = data.list[0].main.humidity
-    let vdegree = data.list[0].wind.deg //api på vind riktning (grader)
+    let dist = data.list[0].wind.speed   //api på vindhastighet
+    let hum = data.list[0].main.humidity   //api på luftfuktighet
+    let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
+    let rain = data.list[0].weather.main  //api på regn
+    if (rain=="rain"){
+        document.getElementById("uteicon").src = "images/icons/regn.svg"
+    }
+    function updateClock() {
+        var now = new Date()
+        var minutes = now.getMinutes()
+        var hours = now.getHours()
+        if (minutes < 10) {
+            minutes = "0" + minutes
+        }
+        let time = hours + ':' + minutes
+        document.getElementById('Time').innerHTML = time;
+
+        //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
+        if (rain != "rain"){
+        if (6 < hours && hours < 16) {
+            document.getElementById("uteicon").src = "images/icons/helsol.svg"
+        }
+        else if (16 <= hours && hours <= 19) {
+            document.getElementById("uteicon").src = "images/icons/halvsol.svg"
+        }
+        else {
+            document.getElementById("uteicon").src = "images/icons/moon.png"
+        }
+        setTimeout(updateClock, 1000); //uppdaterar varje sekund.
+    }}
+
+    updateClock();
 
     //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
     function WindDegree (wdeg) {
@@ -211,4 +240,3 @@ let humref5 = ref(database, "hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })
-
