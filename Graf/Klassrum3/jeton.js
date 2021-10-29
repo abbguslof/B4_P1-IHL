@@ -32,41 +32,6 @@ let values = [
 
 let datePicker = document.getElementById('datum')
 
-// skriv ut temperatur Klassrum2
-let dataBaseRef2 = ref(db, "Temp2/Current")
-onValue(dataBaseRef2, (snapshot) => {
-    document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
-
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum2-temp", "klassrum2-img")
-})
-
-const prcent = "%"
-
-let humref2 = ref(db, "hum2/Current")
-onValue(humref2, (snapshot) => {
-    document.getElementById("hum2").innerHTML = snapshot.val() + prcent
-})
-
 google.charts.load('current', { 'packages': ['corechart'] })
 google.charts.setOnLoadCallback(drawChart)
 
@@ -82,16 +47,7 @@ function drawChart () {
     var options = {
         title: 'Temperatur',
         curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
+        legend: { position: 'bottom' }
     }
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
@@ -126,21 +82,20 @@ function updateChart (nyData) {
     var data = google.visualization.arrayToDataTable(nyData)
 
     var options = {
-        title: 'Temperatur',
+        title: 'Company Performance',
         curveType: 'function',
-        legend: { position: 'bottom' },
-        legendTextStyle: { color: '#FFF' },
-        titleTextStyle: { color: '#FFF' },
-        backgroundColor: '#323544',
-        hAxis: {
-            textStyle: { color: '#FFF' },
-        },
-        vAxis: {
-            textStyle: { color: '#FFF' },
-        }
+        legend: { position: 'bottom' }
     }
 
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
 
     chart.draw(data, options)
 }
+
+
+
+
+
+
+
+

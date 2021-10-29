@@ -509,6 +509,17 @@ form textarea {
   align-items: center;
   flex-direction: column;
   background: linear-gradient(#1e232b, #323544);
+  justify-content: flex-start;
+}
+
+#graftitle {
+  display: block;
+  padding-top: 50%;
+}
+
+.Graf-List {
+  display: block;
+  padding-top: 20%;
 }
 
 .Graf-blad {
@@ -541,14 +552,14 @@ form textarea {
   flex-flow: column-reverse;
   justify-content: space-around;
   align-self: center;
-  right: 55%;
+  right: 48%;
 }
 
 .faktabild {
   display: flex;
   position: absolute;
   left: -35px;
-  margin: 5px;
+  margin: 6px;
 }
 
 /*
