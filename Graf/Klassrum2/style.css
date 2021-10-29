@@ -534,7 +534,15 @@ input[type="date"]{
   display: block;
   padding-top: 50%;
 }
-
+#bild {
+  position: absolute;
+  left: 19%;
+  width: 7%;
+  top: 43vh;
+}
+#bild:hover{
+  width: 7.5%;
+}
 .Graf-List {
   display: block;
   padding-top: 20%;
