@@ -64,8 +64,8 @@
 							<div id="date"></div>
 							<script>
 								// funktion som skriver ut datum, dag, månad och år.
-								window.onload = setInterval(clock, 1000);
-								function clock() {
+								window.onload = setInterval(date, 1000);
+								function date() {
 									var d = new Date();
 									var date = d.getDate();
 									var year = d.getFullYear();
@@ -74,7 +74,7 @@
 									month = monthArr[month];
 									document.getElementById("date").innerHTML = date + " " + month + ", " + year;
 								}
-								clock()
+								date()
 							</script>
 						</div>
 						<!-- Första blocket, Utomhus Temperaturen -->
@@ -83,7 +83,7 @@
 							<div class="degree">
 								<div class="num" id="temp1"><sup></sup></div>
 								<div class="forecast-icon">
-									<img id="uteicon" src="" alt="sun or moon" width=65>
+									<img id="uteicon" src="" alt="" width=65>
 								</div>
 							</div>
 							<div id="Smallicons">

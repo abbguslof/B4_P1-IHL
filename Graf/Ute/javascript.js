@@ -1,24 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyBhy84ujYdgfTDt4TwvFpHd_aJy_X3B8R0",
-    authDomain: "abb-temp-project-d1548.firebaseapp.com",
-    databaseURL: "https://abb-temp-project-d1548-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "abb-temp-project-d1548",
-    storageBucket: "abb-temp-project-d1548.appspot.com",
-    messagingSenderId: "1054092009303",
-    appId: "1:1054092009303:web:dc9e55016d78a26066e812",
-    measurementId: "G-JC26DGQY7X"
-}
-const app = initializeApp(firebaseConfig)
-const db = getDatabase()
-
 // Hämtar Temperatur.Nu API och tar olika värden
 async function getapitemp () {
 
@@ -63,7 +42,7 @@ async function getapitemp () {
     }
 TempImg(tempC, "picture")
 
-    setTimeout(getapitemp, 1000)//uppdaterar varje sekund.
+setTimeout(getapitemp, 1000)//uppdaterar varje sekund.
 }
 getapitemp()
 
@@ -72,7 +51,6 @@ async function getapi () {
     const response = await fetch('http://api.openweathermap.org/data/2.5/forecast?id=524901&q=Vasteras&appid=e4db439cc72909853ab9ee518b298cbc')
     const ms = "m/s"
     const prcnt = "%"
-
     var data = await response.json()
     let dist = data.list[0].wind.speed   //api på vindhastighet
     let hum = data.list[0].main.humidity   //api på luftfuktighet
@@ -80,6 +58,7 @@ async function getapi () {
     document.getElementById("utehum").innerHTML = hum + prcnt
 
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
+
     // let rain = data.list[0].weather.main  //api på regn
     // if (rain=="rain"){
     //     document.getElementById("uteicon").src = "images/icons/regn.svg"
