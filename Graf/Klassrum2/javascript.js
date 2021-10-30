@@ -31,17 +31,17 @@ onValue(dataBaseRef2, (snapshot) => {
     let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
     let tempF = tempf.toFixed(1)
 
-    function Farenheit(){
-    let checkbutton = document.getElementById("ButtonCF").checked
-    if (checkbutton == false) {
-        document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
+    function Farenheit () {
+        let checkbutton = document.getElementById("ButtonCF").checked
+        if (checkbutton == false) {
+            document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
+        }
+        else {
+            document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
+        }
+        setTimeout(Farenheit, 1000)
     }
-    else {
-        document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
-    }
-    setTimeout(Farenheit, 1000)
-}
-Farenheit()
+    Farenheit()
 
     function TempImg (degree, id) {
         let degrees = parseFloat(document.getElementById(degree).innerHTML)
@@ -78,10 +78,30 @@ google.charts.setOnLoadCallback(drawChart)
 function drawChart () {
     var data = google.visualization.arrayToDataTable([
         ['Tidpunkt', 'Temperatur'],
+        ['01:00', 20],
+        ['02:00', 19],
+        ['03:00', 19],
+        ['04:00', 20],
+        ['05:00', 19],
+        ['06:00', 20],
+        ['07:00', 20],
+        ['08:00', 21],
+        ['09:00', 21],
+        ['10:00', 22],
+        ['11:00', 21],
         ['12:00', 22],
-        ['13:00', 12],
-        ['14:00', 33],
-        ['15:00', 33]
+        ['13:00', 23],
+        ['14:00', 22],
+        ['15:00', 22],
+        ['16:00', 23],
+        ['17:00', 22],
+        ['18:00', 22],
+        ['19:00', 21],
+        ['20:00', 20],
+        ['21:00', 20],
+        ['22:00', 20],
+        ['23:00', 20],
+        ['24:00', 19]
     ])
 
     var options = {
