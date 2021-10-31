@@ -23,6 +23,7 @@ async function getapitemp () {
 
     //funktion som byter icon beroende på utetemperatur.
     function TempImg (degrees, id) {
+        if (degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
         if (degrees < 15) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
@@ -39,7 +40,7 @@ async function getapitemp () {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
         }
         setTimeout(TempImg, 1000)//uppdaterar varje sekund.
-    }
+    }}
 TempImg(tempC, "picture")
 
 setTimeout(getapitemp, 1000)//uppdaterar varje sekund.
