@@ -34,7 +34,7 @@ function knapp () {
             changeType(object, checkbutton)
         }
     }
-    
+
     return checkbutton
 }
 
@@ -75,10 +75,10 @@ async function getapi () {
     let hum = data.list[0].main.humidity   //api på luftfuktighet
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
     let rain = data.list[0].weather.main  //api på regn
-    if (rain=="rain"){
+    if (rain == "rain") {
         document.getElementById("uteicon").src = "images/icons/regn.svg"
     }
-    function updateClock() {
+    function updateClock () {
         var now = new Date()
         var minutes = now.getMinutes()
         var hours = now.getHours()
@@ -86,23 +86,24 @@ async function getapi () {
             minutes = "0" + minutes
         }
         let time = hours + ':' + minutes
-        document.getElementById('Time').innerHTML = time;
+        document.getElementById('Time').innerHTML = time
 
         //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
-        if (rain != "rain"){
-        if (6 < hours && hours < 16) {
-            document.getElementById("uteicon").src = "images/icons/helsol.svg"
+        if (rain != "rain") {
+            if (6 < hours && hours < 16) {
+                document.getElementById("uteicon").src = "images/icons/helsol.svg"
+            }
+            else if (16 <= hours && hours <= 19) {
+                document.getElementById("uteicon").src = "images/icons/halvsol.svg"
+            }
+            else {
+                document.getElementById("uteicon").src = "images/icons/moon.png"
+            }
+            setTimeout(updateClock, 1000) //uppdaterar varje sekund.
         }
-        else if (16 <= hours && hours <= 19) {
-            document.getElementById("uteicon").src = "images/icons/halvsol.svg"
-        }
-        else {
-            document.getElementById("uteicon").src = "images/icons/moon.png"
-        }
-        setTimeout(updateClock, 1000); //uppdaterar varje sekund.
-    }}
+    }
 
-    updateClock();
+    updateClock()
 
     //funktion som konverterar grader till riktning och skriver ut riktningen på hemsidan.
     function WindDegree (wdeg) {
@@ -146,24 +147,25 @@ async function getapi () {
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    if (degrees){ //kör bara funktionen om variabeln inte är undefined, empty eller null
-    if (degrees < 15) {
-        document.getElementById(id).src = "images/icons/temp-0.png"
+    if (degrees) { //kör bara funktionen om variabeln inte är undefined, empty eller null
+        if (degrees < 15) {
+            document.getElementById(id).src = "images/icons/temp-0.png"
+        }
+        else if (degrees < 20) {
+            document.getElementById(id).src = "images/icons/temp-1.png"
+        }
+        else if (degrees < 25) {
+            document.getElementById(id).src = "images/icons/temp-2.png"
+        }
+        else if (degrees < 30) {
+            document.getElementById(id).src = "images/icons/temp-3.png"
+        }
+        else {
+            document.getElementById(id).src = "images/icons/temp-4.png"
+        }
+        setTimeout(TempImg, 1000)
     }
-    else if (degrees < 20) {
-        document.getElementById(id).src = "images/icons/temp-1.png"
-    }
-    else if (degrees < 25) {
-        document.getElementById(id).src = "images/icons/temp-2.png"
-    }
-    else if (degrees < 30) {
-        document.getElementById(id).src = "images/icons/temp-3.png"
-    }
-    else {
-        document.getElementById(id).src = "images/icons/temp-4.png"
-    }
-    setTimeout(TempImg, 1000)
-}}
+}
 
 getapi()
 getapitemp()
@@ -174,11 +176,13 @@ const database = getDatabase()
 
 // Hämtar firebase saker
 // Skriv ut värde på temperaturen Klassrum1
-let dataBaseRef = ref(database, "Temp")
+let dataBaseRef = ref(database, "Temp1/Current")
 onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val() + "°C"
 
     TempImg("klassrum1-temp", "klassrum1-img")
+    console.log(dataBaseRef)
+    console.log(snapshot.val())
 })
 
 // skriv ut temperatur Terrariet
