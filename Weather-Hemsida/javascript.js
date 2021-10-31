@@ -140,10 +140,13 @@ async function getapi () {
     }
     setTimeout(getapi, 1000)
 }
+
+// undefined || document.getElementById(degree).innerHTML != "" || document.getElementById(degree).innerHTML != null 
+
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
-
     var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    if (degrees){ //kör bara funktionen om variabeln inte är undefined, empty eller null
     if (degrees < 15) {
         document.getElementById(id).src = "images/icons/temp-0.png"
     }
@@ -160,7 +163,7 @@ function TempImg (degree, id) {
         document.getElementById(id).src = "images/icons/temp-4.png"
     }
     setTimeout(TempImg, 1000)
-}
+}}
 
 getapi()
 getapitemp()

@@ -43,8 +43,8 @@ onValue(dataBaseRef2, (snapshot) => {
     }
     Farenheit()
 
-    function TempImg (degree, id) {
-        let degrees = parseFloat(document.getElementById(degree).innerHTML)
+    function TempImg (degrees, id) {
+        if(degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
         if (degrees < 15) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
@@ -61,8 +61,8 @@ onValue(dataBaseRef2, (snapshot) => {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
         }
         setTimeout(TempImg, 1000)
-    }
-    TempImg("klassrum2-temp", "picture")
+    }}
+    TempImg(tempC, "picture")
 })
 
 const prcent = "%"
