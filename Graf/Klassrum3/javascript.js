@@ -17,215 +17,155 @@ const firebaseConfig = {
     measurementId: "G-JC26DGQY7X"
 }
 
-// get api
-async function getapitemp () {
-
-    // Storing response
-    const response = await fetch('https://api.temperatur.nu/tnu_1.17.php?p=vasteras&cli=api_demo')
-    const gradc = "°C"
-
-    var data = await response.json()
-    let temp = data.stations[0].temp
-    document.getElementById("num").innerHTML = temp + gradc
-    if (response) {
-    }
-}
-getapitemp()
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig)
-const database = getDatabase()
+const db = getDatabase()
 
-// Skriv ut värde på temperaturen Klassrum1
-let dataBaseRef = ref(database, "Temp/Current")
-onValue(dataBaseRef, (snapshot) => {
-    document.getElementById("klassrum1-temp").innerHTML = snapshot.val()
-
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
-}
-
-)
+let datePicker = document.getElementById('datum')
 
 // skriv ut temperatur Klassrum2
-let dataBaseRef2 = ref(database, "Temp2/Current")
-onValue(dataBaseRef2, (snapshot) => {
-    document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
-
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
-}
-
-)
-
-// skriv ut temperatur Klassrum3
-let dataBaseRef3 = ref(database, "Temp3/Current")
+let dataBaseRef3 = ref(db, "Temp3/Current")
 onValue(dataBaseRef3, (snapshot) => {
-    document.getElementById("klassrum3-temp").innerHTML = snapshot.val()
+    //document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
+    let tempC = snapshot.val()//document.getElementById("klassrum2-temp").innerHTML
+    const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
+    let tempf = parseFloat(tempC) * 1.8 + 32  //grader i Farenheit
+    let tempF = tempf.toFixed(1)
 
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
+    function Farenheit () {
+        let checkbutton = document.getElementById("ButtonCF").checked
+        if (checkbutton == false) {
+            document.getElementById("klassrum3-temp").innerHTML = tempC + grader + "C"
         }
         else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
+            document.getElementById("klassrum3-temp").innerHTML = tempF + grader + "F"
         }
-        setTimeout(TempImg, 1000)
+        setTimeout(Farenheit, 1000)
     }
+    Farenheit()
 
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
-}
-
-)
-
-// skriv ut temperatur Cafeterian
-let dataBaseRef4 = ref(database, "Temp4/Current")
-onValue(dataBaseRef4, (snapshot) => {
-    document.getElementById("cafeterian-temp").innerHTML = snapshot.val()
-
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+    function TempImg (degrees, id) {
+        if(degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
         if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
+            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
         else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
+            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
         }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
-}
-
-)
-
-// skriv ut temperatur Pingisrummet
-let dataBaseRef5 = ref(database, "Temp5/Current")
-onValue(dataBaseRef5, (snapshot) => {
-    document.getElementById("pingis-temp").innerHTML = snapshot.val()
-
-    function TempImg (degree, id) {
-        var degrees = parseFloat(document.getElementById(degree).innerHTML)
-        if (degrees < 15) {
-            document.getElementById(id).src = "images/icons/temp-0.png"
-        }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "images/icons/temp-1.png"
-        }
-        else if (parseFloat(degrees) < 25) {
-            document.getElementById(id).src = "images/icons/temp-2.png"
+        else if (degrees < 25) {
+            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
         }
         else if (degrees < 30) {
-            document.getElementById(id).src = "images/icons/temp-3.png"
+            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
         }
         else {
-            document.getElementById(id).src = "images/icons/temp-4.png"
+            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
         }
         setTimeout(TempImg, 1000)
-    }
-
-    TempImg("klassrum1-temp", "klassrum1-img")
-    TempImg("klassrum2-temp", "klassrum2-img")
-    TempImg("klassrum3-temp", "klassrum3-img")
-    TempImg("cafeterian-temp", "cafeterian-img")
-    TempImg("pingis-temp", "pingis-img")
+    }}
+    TempImg(tempC, "picture")
 })
 
 const prcent = "%"
-let humref1 = ref(database, "hum/Current")
-onValue(humref1, (snapshot) => {
-    document.getElementById("hum1").innerHTML = snapshot.val() + prcent
-})
 
-let humref2 = ref(database, "hum2/Current")
+let humref2 = ref(db, "hum2/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
 
-let humref3 = ref(database, "hum3/Current")
-onValue(humref3, (snapshot) => {
-    document.getElementById("hum3").innerHTML = snapshot.val() + prcent
-})
+google.charts.load('current', { 'packages': ['corechart'] })
+google.charts.setOnLoadCallback(drawChart)
 
-let humref4 = ref(database, "hum4/Current")
-onValue(humref4, (snapshot) => {
-    document.getElementById("hum4").innerHTML = snapshot.val() + prcent
-})
+function drawChart () {
+    var data = google.visualization.arrayToDataTable([
+        ['Tidpunkt', 'Temperatur'],
+        ['01:00', 20],
+        ['02:00', 19],
+        ['03:00', 19],
+        ['04:00', 20],
+        ['05:00', 19],
+        ['06:00', 20],
+        ['07:00', 20],
+        ['08:00', 21],
+        ['09:00', 21],
+        ['10:00', 22],
+        ['11:00', 21],
+        ['12:00', 22],
+        ['13:00', 23],
+        ['14:00', 22],
+        ['15:00', 22],
+        ['16:00', 23],
+        ['17:00', 22],
+        ['18:00', 22],
+        ['19:00', 21],
+        ['20:00', 20],
+        ['21:00', 20],
+        ['22:00', 20],
+        ['23:00', 20],
+        ['24:00', 19]
+    ])
 
-let humref5 = ref(database, "hum5/Current")
-onValue(humref5, (snapshot) => {
-    document.getElementById("hum5").innerHTML = snapshot.val() + prcent
-})
+    var options = {
+        title: 'Temperatur',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        legendTextStyle: { color: '#FFF' },
+        titleTextStyle: { color: '#FFF' },
+        backgroundColor: '#323544',
+        hAxis: {
+            textStyle: { color: '#FFF' },
+        },
+        vAxis: {
+            textStyle: { color: '#FFF' },
+        }
+    }
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
+
+    chart.draw(data, options)
+}
+
+datePicker.onchange = function () {
+    console.log(datePicker.value)
+    if (datePicker.value != null) {
+        const datumRef = ref(db, datePicker.value + '/vardagsrummet' + '/temperature')
+        onValue(datumRef, (snapshot) => {
+            const data = snapshot.val()
+            console.log(data)
+            let newArray = [
+                ['Tidpunkt', 'Temperatur']
+            ]
+            if (data != null && data.length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    const element = [data[i].time, data[i].value]
+                    newArray.push(element)
+                }
+            }
+            console.log(newArray)
+            updateChart(newArray)
+        })
+    }
+
+}
+
+function updateChart (nyData) {
+    var data = google.visualization.arrayToDataTable(nyData)
+
+    var options = {
+        title: 'Temperatur',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        legendTextStyle: { color: '#FFF' },
+        titleTextStyle: { color: '#FFF' },
+        backgroundColor: '#323544',
+        hAxis: {
+            textStyle: { color: '#FFF' },
+        },
+        vAxis: {
+            textStyle: { color: '#FFF' },
+        }
+    }
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'))
+
+    chart.draw(data, options)
+}

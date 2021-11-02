@@ -323,12 +323,6 @@ form textarea {
   outline: none;
 }
 
-@media screen and (max-width: 990px) {
-  .main-navigation .menu-toggle {
-    display: inline-block;
-  }
-}
-
 .main-navigation .menu-toggle:hover, .main-navigation .menu-toggle:active {
   border-color: #009ad8;
   color: #009ad8;
@@ -346,12 +340,6 @@ form textarea {
   display: block;
   overflow: hidden;
   height: 0;
-}
-
-@media screen and (max-width: 990px) {
-  .main-navigation .menu {
-    display: none;
-  }
 }
 
 .main-navigation .menu .menu-item {
@@ -421,8 +409,8 @@ form textarea {
   width: 100%;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: -10%;
-  margin-bottom: 18%;
+  margin-top: -6%;
+  margin-bottom: 20%;
   margin-left: auto;
   margin-right: auto;
 }

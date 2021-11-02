@@ -7,137 +7,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
     <title>Spets Termometern | ABB</title>
-    <link ref="shortcut icon" sizes="128x128" href="images/icons/temp-4.png">
-    <!-- Loading third party fonts -->
+    <link rel="shortcut icon" href="../../Weather-Hemsida/images/TabLogo.png" />
+
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Loading main css file -->
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <body>
+    <div class="Header">
+        <div class="container">
+            <a target="_blank" href="https://www.abbgymnasiet.se/" class="branding">
+                <img src="../../Weather-Hemsida/images/logo.PNG" alt="" class="logo">
+            </a>
+            <div class="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item"><a href="../../Weather-Hemsida/index.html">Hem</a></li>
+                    <li class="menu-item"><a target="_blank" href="../../Website/Website.html">Om projektet</a></li>
+                    <li class="menu-item"><a target="_blank"
+                            href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
+                    <li class="menu-item"><a target="_blank"
+                            href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
+                    </li>
+                    <li class="menu-item"><a target="_blank" href="https://new.abb.com/se">ABB</a></li>
+                </ul> <!-- .menu -->
+            </div> <!-- .main-navigation -->
+        </div>
+    </div>
 
     <div class="site-content">
-        <div class="site-header">
-            <div class="container">
-                <a href="https://www.abbgymnasiet.se/" class="branding">
-                    <img src="images/logo.png" alt="" class="logo">
-                </a>
+        <div class="container">
 
-                <!-- Default snippet for navigation -->
-                <div class="main-navigation">
-                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-                    <ul class="menu">
-                        <li class="menu-item"><a href="../Website/Website.html">Egen Hemsida</a></li>
-                        <li class="menu-item"><a href="https://www.smhi.se/q/V%C3%A4ster%C3%A5s/2664454">SMHI</a></li>
-                        <li class="menu-item"><a
-                                href="https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/2-2664454/Sverige/V%C3%A4stmanland/V%C3%A4ster%C3%A5s/V%C3%A4ster%C3%A5sl">YR</a>
-                        </li>
-                        <li class="menu-item"><a href="">?</a></li>
-                        <li class="menu-item"><a href="https://new.abb.com/se">ABB</a></li>
-                    </ul> <!-- .menu -->
-                </div> <!-- .main-navigation -->
-
-            </div>
-        </div> <!-- .site-header -->
-
-        <a href="">
             <div class="Banner-Image">
-                <div class="container"> </div>
-            </div>
-        </a>
 
-        <div class="forecast-table">
-            <div class="container">
-                <div class="forecast-container">
-                    <div class="today forecast">
-                        <div class="forecast-header">
-                            <div class="day">Utomhus</div>
-                            <div id="date"></div>
-                            <script>
-                                window.onload = setInterval(clock, 1000);
-                                function clock() {
-                                    var d = new Date();
-                                    var date = d.getDate();
-                                    var year = d.getFullYear();
-                                    var month = d.getMonth();
-                                    var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                                    month = monthArr[month];
-                                    document.getElementById("date").innerHTML = date + " " + month + ", " + year;
-                                }
-                                clock()
-                            </script>
+            </div>
+            <!-- <p>Åter
+                <a href="../../Weather-Hemsida/index.html">
+
+                </a> -->
+
+            </p>
+            <div class="Tabell">
+                <div class="Top-Bar">
+                    <div class="Re-Page">
+
+                    </div>
+                    <div class="Rubrik">
+                        <div id="bilddiv">
+                            <a href="../../Weather-Hemsida/index.html"> <img id="bildq"
+                                    src="https://cdn.discordapp.com/attachments/901939687466369045/903654907612114964/button-.png">
+                            </a>
                         </div>
-                        <div class="forecast-content">
-                            <div class="location">ABB Gymnasiet - Spets</div>
-                            <div class="degree">
-                                <div class="num" id="num"><sup></sup>C</div>
+                        <p class="menu-title">
+                            Cafeterian
+                        </p>
+                    </div>
+                </div>
+                <div class="Nyheter">
+                    <div class="List-Field">
+                        <div class="Li-title">
+                            <!-- grafer -->
+                            <p id="graftitle" class="menu-title">
+                                Grafer
+                            </p>
+                        </div>
+                        <div class="Graf-List">
+                            <!-- lista -->
+                            <ul class="nav-list">
+
+                                <a href="../../Graf/Ute/graf0.html">
+                                    <div class="list-item">
+                                        Utomhus
+                                    </div>
+                                </a>
+
+                                <a href="../../Graf/Klassrum1/graf1.html">
+                                    <div class="list-item">
+                                        Klassrummet
+                                    </div>
+                                </a>
+
+                                <a href="../../Graf/Klassrum2/graf2.html">
+                                    <div class="list-item">
+                                       Terrariet
+                                    </div>
+                                </a>
+
+                                <a href="../../Graf/Klassrum3/graf3.html">
+                                    <div class="list-item">
+                                    Vardagsrummet
+                                    </div>
+                                </a>
+
+                                <a href="../../Graf/Pingis Rummet/graf5.html">
+                                    <div class="list-item">
+                                        Pingisrummet
+                                    </div>
+                                </a>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="Graf-blad">
+                        <!-- Knapp till Celisus Farenheit switch -->
+                        <div class="knapp">
+                            <label id="btnlabel">Celisus till Farenheit</label>
+                            <input id="ButtonCF" type="checkbox"></input>
+                        </div>
+                        <div class="Väder-ruta">
+                            <img id="picture" src="../../Weather-Hemsida/images/icons/temp-2.png" width="20%"></img>
+                            <div class="Temp-bild">
                                 <div class="forecast-icon">
-                                    <img id="uteicon" src="" alt="" width=100>
                                 </div>
                             </div>
-                            <span><img src="images/icon-clock.png" height="20px" alt="Time"><span
-                                    id="Time">a</span></span>
-                            <span><img src="images/icon-umberella.png" heigt=20px"" alt="Rain Chance">20%</span>
-                            <span><img src="images/icon-wind.png" height="20px" alt="Wind speed">100km/h</span>
-                            <span><img src="images/icon-compass.png" height="20px" alt="Direction">East</span>
-                            <script>
-                                function updateClock() {
-                                    var now = new Date()
-                                    var minutes = now.getMinutes()
-                                    var hours = now.getHours()
-                                    if (minutes < 10) {
-                                        minutes = "0" + minutes
-                                    }
-                                    time = hours + ':' + minutes,
-                                        document.getElementById('Time').innerHTML = time;
+                            <div class="Fakta">
+                                <div class="faktasize">
+                                    <div class="degree">
+                                        <span id="klassrum4-temp"></span>
+                                    </div>
+                                    <div>
+                                        <span><img class="faktabild"
+                                                src="../../Weather-Hemsida/images/icons/humidity.png" height="25px"
+                                                alt="Rain Chance: "><span id="hum2"></span></span>
+                                    </div>
+                                    <div>
+                                        <span><img class="faktabild" src="../../Weather-Hemsida/images/icon-clock.png"
+                                                height="25px" alt="Time: "><span id="Time"></span></span>
+                                    </div>
 
-                                    if (6 < hours < 23) {
-                                        document.getElementById("uteicon").src = "images/icons/helsol.svg"
-                                    }
-                                    else {
-                                        document.getElementById("uteicon").src = "images/icons/moon.png"
-                                    }
+                                    <div id="date">
+                                        <span>Date</span>
+                                    </div>
+                                    <script>
+                                        //funktion som skriver ut tid och byter icon.
+                                        function updateClock() {
+                                            var now = new Date()
+                                            var minutes = now.getMinutes()
+                                            var hours = now.getHours()
+                                            if (minutes < 10) {
+                                                minutes = "0" + minutes
+                                            }
+                                            time = hours + ':' + minutes,
+                                                document.getElementById('Time').innerHTML = time;
 
+                                            setTimeout(updateClock, 1000);  //uppdaterar varje sekund.
+                                        }
+                                        updateClock();
+                                    </script>
 
-                                    setTimeout(updateClock, 1000);
-                                }
-                                updateClock();
-                            </script>
-                        </div>
-                    </div>
-
-                    <div class="forecast">
-                        <div class="forecast-header">
-                            <div class="day">Cafeterian</div>
-                        </div> <!-- .forecast-header -->
-                        <div class="forecast-content">
-                            <div class="forecast-icon">
-                                <img id="cafeterian-img" src="images/icons/temp-2.png" alt="" width=48>
+                                    <script>
+                                        //funktion som skriver ut datum, dag, månad och år.
+                                        window.onload = setInterval(clock, 1000);
+                                        function clock() {
+                                            var d = new Date();
+                                            var date = d.getDate();
+                                            var year = d.getFullYear();
+                                            var month = d.getMonth();
+                                            var monthArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                                            month = monthArr[month];
+                                            document.getElementById("date").innerHTML = date + " " + month + ", " + year;
+                                        }
+                                        clock()
+                                    </script>
+                                </div>
                             </div>
-                            <div class="degree"><span id="cafeterian-temp"></span><sup>o</sup>C</div>
-                            <small id="hum4">0%</small>
+                        </div>
+                        <div class="Graf-Datum">
+                            <label for="datum">Välj datum:</label>
+                            <input type="date" id="datum" name="datum" min="2021-10-28">
+                        </div>
+                        <div class="Graf-here">
+                            <div id="curve_chart" style="width: 100%; min-height: 270px; "></div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <p class="colophon">Copyright 2021 Basgrupp 4. Designed by Gustav and Christopher. All rights
-                        reserved.</p>
+        <div class="Footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="colophon">Copyright
+                            2021 Basgrupp 4.
+                            Designed by Gustav, Christopher & Erling.
+                            All rights reserved.
+                        </p>
+                    </div>
                 </div>
-    </footer> <!-- .site-footer -->
-    </div>
-    <script type="module" src="javascript.js"></script>
+            </div>
+            <script type="module" src="javascript.js"></script>
+            <!-- <script type="text/javascript">
+                    ('.input-group.date').datepicker({
+                        format: 'DD/MM/YYYY'
+                    });
+            </script> -->
 </body>
 
 </html>
