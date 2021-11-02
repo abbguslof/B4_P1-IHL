@@ -180,7 +180,7 @@ let dataBaseRef = ref(database, "Temp1/Current")
 onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val() + "°C"
 
-    TempImg("klassrum1-temp", "klassrum1-img")
+    TempImg("klassrum1-temp", "klassrum1-img")  //kallar funktionen för termometer bilden
     console.log(dataBaseRef)
     console.log(snapshot.val())
 })
