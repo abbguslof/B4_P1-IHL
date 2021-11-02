@@ -24,13 +24,13 @@ async function getapitemp () {
     //funktion som byter icon beroende på utetemperatur.
     function TempImg (degrees, id) {
         if (degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
-        if (degrees < 15) {
+        if (degrees < 0) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
         }
-        else if (degrees < 20) {
+        else if (degrees < 10) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
         }
-        else if (degrees < 25) {
+        else if (degrees < 20) {
             document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
         }
         else if (degrees < 30) {
