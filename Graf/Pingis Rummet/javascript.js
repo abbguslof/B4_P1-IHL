@@ -44,30 +44,31 @@ onValue(dataBaseRef4, (snapshot) => {
     Farenheit()
 
     function TempImg (degrees, id) {
-        if(degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
-        if (degrees < 15) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
+        if (degrees) { //kör bara funktionen om variabeln inte är null, undefined eller empty
+            if (degrees < 15) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
+            }
+            else if (degrees < 20) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
+            }
+            else if (degrees < 25) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
+            }
+            else if (degrees < 30) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
+            }
+            else {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
+            }
+            setTimeout(TempImg, 1000)
         }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
-        }
-        else if (degrees < 25) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }}
+    }
     TempImg(tempC, "picture")
 })
 
 const prcent = "%"
 
-let humref2 = ref(db, "hum2/Current")
+let humref2 = ref(db, "Hum5/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
@@ -79,28 +80,28 @@ function drawChart () {
     var data = google.visualization.arrayToDataTable([
         ['Tidpunkt', 'Temperatur'],
         ['01:00', 20],
-        ['02:00', 19],
-        ['03:00', 19],
-        ['04:00', 20],
-        ['05:00', 19],
-        ['06:00', 20],
-        ['07:00', 20],
-        ['08:00', 21],
+        ['02:00', 20],
+        ['03:00', 20],
+        ['04:00', 23],
+        ['05:00', 18],
+        ['06:00', 23],
+        ['07:00', 22],
+        ['08:00', 22],
         ['09:00', 21],
         ['10:00', 22],
-        ['11:00', 21],
-        ['12:00', 22],
-        ['13:00', 23],
-        ['14:00', 22],
-        ['15:00', 22],
-        ['16:00', 23],
-        ['17:00', 22],
-        ['18:00', 22],
-        ['19:00', 21],
-        ['20:00', 20],
-        ['21:00', 20],
-        ['22:00', 20],
-        ['23:00', 20],
+        ['11:00', 22],
+        ['12:00', 23],
+        ['13:00', 22],
+        ['14:00', 21],
+        ['15:00', 21],
+        ['16:00', 21],
+        ['17:00', 19],
+        ['18:00', 20],
+        ['19:00', 19],
+        ['20:00', 19],
+        ['21:00', 19],
+        ['22:00', 19],
+        ['23:00', 19],
         ['24:00', 19]
     ])
 
