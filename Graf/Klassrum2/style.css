@@ -599,6 +599,7 @@ input[type="date"]{
   position: absolute;
   left: -35px;
   margin: 6px;
+  
 }
 /* 
 Knapp mellan C och F 
@@ -607,7 +608,10 @@ Knapp mellan C och F
 display: flex;
 justify-content: flex-end;
 }
-
+#klassrum2-temp{
+  color: white;
+  font-size: 120%;
+}
 #ButtonCF {
   display: flex;
   position: relative;

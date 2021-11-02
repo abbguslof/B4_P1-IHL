@@ -606,7 +606,10 @@ Knapp mellan C och F
 display: flex;
 justify-content: flex-end;
 }
-
+#klassrum3-temp{
+  color: white;
+  font-size: 120%;
+}
 #ButtonCF {
   display: flex;
   position: relative;
