@@ -596,6 +596,7 @@ input[type="date"]{
 #klassrum1-temp{
   color: white;
   font-size: 120%;
+  font-weight: 700;
 }
 .faktabild {
   display: flex;

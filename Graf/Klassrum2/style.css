@@ -611,6 +611,7 @@ justify-content: flex-end;
 #klassrum2-temp{
   color: white;
   font-size: 120%;
+  font-weight: 700;
 }
 #ButtonCF {
   display: flex;
