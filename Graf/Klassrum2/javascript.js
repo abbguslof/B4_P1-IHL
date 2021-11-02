@@ -44,30 +44,31 @@ onValue(dataBaseRef2, (snapshot) => {
     Farenheit()
 
     function TempImg (degrees, id) {
-        if(degrees){ //kör bara funktionen om variabeln inte är null, undefined eller empty
-        if (degrees < 15) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
+        if (degrees) { //kör bara funktionen om variabeln inte är null, undefined eller empty
+            if (degrees < 15) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-0.png"
+            }
+            else if (degrees < 20) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
+            }
+            else if (degrees < 25) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
+            }
+            else if (degrees < 30) {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
+            }
+            else {
+                document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
+            }
+            setTimeout(TempImg, 1000)
         }
-        else if (degrees < 20) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-1.png"
-        }
-        else if (degrees < 25) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-2.png"
-        }
-        else if (degrees < 30) {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-3.png"
-        }
-        else {
-            document.getElementById(id).src = "../../Weather-Hemsida/images/icons/temp-4.png"
-        }
-        setTimeout(TempImg, 1000)
-    }}
+    }
     TempImg(tempC, "picture")
 })
 
 const prcent = "%"
 
-let humref2 = ref(db, "hum2/Current")
+let humref2 = ref(db, "Hum2/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
@@ -127,7 +128,7 @@ function drawChart () {
 datePicker.onchange = function () {
     console.log(datePicker.value)
     if (datePicker.value != null) {
-        const datumRef = ref(db, datePicker.value + '/vardagsrummet' + '/temperature')
+        const datumRef = ref(db, datePicker.value + '/Terrariet' + '/temperature')
         onValue(datumRef, (snapshot) => {
             const data = snapshot.val()
             console.log(data)

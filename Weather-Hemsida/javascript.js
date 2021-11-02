@@ -85,11 +85,10 @@ async function getapi () {
         if (minutes < 10) {
             minutes = "0" + minutes
         }
-        let time = hours + ':' + minutes
-        document.getElementById('Time').innerHTML = time
+        document.getElementById('Time').innerHTML = hours + ':' + minutes
 
         //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
-        if (rain != "Rain") {
+        if (rain !== "Rain") {
             if (6 < hours && hours < 16) {
                 document.getElementById("uteicon").src = "images/icons/helsol.svg"
             }
@@ -142,12 +141,13 @@ async function getapi () {
     setTimeout(getapi, 1000)
 }
 
-// undefined || document.getElementById(degree).innerHTML != "" || document.getElementById(degree).innerHTML != null 
+// undefined || document.getElementById("degree").innerHTML != "" || document.getElementById("degree").innerHTML != null
 
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
-    var degrees = parseFloat(document.getElementById(degree).innerHTML)
-    if (degrees) { //kör bara funktionen om variabeln inte är undefined, empty eller null
+    if (degree) { //kör bara funktionen om variabeln inte är undefined, empty eller null
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+
         if (degrees < 15) {
             document.getElementById(id).src = "images/icons/temp-0.png"
         }
@@ -181,8 +181,6 @@ onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val() + "°C"
 
     TempImg("klassrum1-temp", "klassrum1-img")  //kallar funktionen för termometer bilden
-    console.log(dataBaseRef)
-    console.log(snapshot.val())
 })
 
 // skriv ut temperatur Terrariet
@@ -219,31 +217,31 @@ onValue(dataBaseRef5, (snapshot) => {
 
 //skriver ut luftfuktighet klassrum1
 const prcent = "%"
-let humref1 = ref(database, "hum/Current")
+let humref1 = ref(database, "Hum1/Current")
 onValue(humref1, (snapshot) => {
-    document.getElementById("hum1").innerHTML = snapshot.val() + prcent
+    document.getElementById("humidity1").innerHTML = snapshot.val() + prcent
 })
 
 //skriver ut luftfuktighet klassrum2
-let humref2 = ref(database, "hum2/Current")
+let humref2 = ref(database, "Hum2/Current")
 onValue(humref2, (snapshot) => {
     document.getElementById("hum2").innerHTML = snapshot.val() + prcent
 })
 
 //skriver ut luftfuktighet klassrum3
-let humref3 = ref(database, "hum3/Current")
+let humref3 = ref(database, "Hum3/Current")
 onValue(humref3, (snapshot) => {
     document.getElementById("hum3").innerHTML = snapshot.val() + prcent
 })
 
 //skriver ut luftfuktighet cafeterian
-let humref4 = ref(database, "hum4/Current")
+let humref4 = ref(database, "Hum4/Current")
 onValue(humref4, (snapshot) => {
     document.getElementById("hum4").innerHTML = snapshot.val() + prcent
 })
 
 //skriver ut luftfuktighet pingisrummet
-let humref5 = ref(database, "hum5/Current")
+let humref5 = ref(database, "Hum5/Current")
 onValue(humref5, (snapshot) => {
     document.getElementById("hum5").innerHTML = snapshot.val() + prcent
 })

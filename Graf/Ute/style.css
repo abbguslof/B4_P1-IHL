@@ -574,6 +574,8 @@ input[type="date"]{
   margin: 25px;
   position: relative;
   right: 18%;
+  height: 90% ;
+  width: 36%;
 }
 
 .faktasize {
@@ -582,8 +584,13 @@ input[type="date"]{
 
 #utomhus-temp{
 width: max-content;
+min-width: 40px;
 height: max-content;
+min-height: 45px;
+color: #ffffff;
+font-weight: 800;
 }
+
 .Fakta {
   display: flex;
   position: relative;
