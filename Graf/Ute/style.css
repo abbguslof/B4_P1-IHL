@@ -16,6 +16,16 @@ html, button, input, select, textarea {
 body {
   margin: 0;
 }
+#bildq {
+  width: 7%;
+  position: absolute;
+  left:20%;
+  top: 60vh;
+
+}
+#bildq:hover{
+  width: 83px;
+}
 
 a {
   background: transparent;

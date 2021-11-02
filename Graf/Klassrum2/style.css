@@ -534,6 +534,16 @@ input[type="date"]{
   justify-content: flex-start;
 }
 
+#bildq {
+  width: 80px;
+  position: absolute;
+  left: 20%;
+  
+}
+#bildq:hover{
+  width: 83px;
+}
+
 #graftitle {
   display: block;
   padding-top: 50%;
