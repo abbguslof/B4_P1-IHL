@@ -13,6 +13,7 @@ const firebaseConfig = {
     measurementId: "G-JC26DGQY7X"
 }
 
+//funktion som byter mellan celcius och farenheit
 function changeType (element, state) {
     let num = element.innerHTML.split('°')
     if (state)
