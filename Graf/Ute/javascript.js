@@ -60,6 +60,8 @@ async function getapi () {
     let feelslike = data.list[0].main.feels_like   //api på feels-like
 
     document.getElementById("utehum").innerHTML = hum + prcnt
+    document.getElementById("lufthastighet").innerHTML = dist + ms
+    document.getElementById("byar").innerHTML = gust + ms
 
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
 
@@ -121,8 +123,6 @@ async function getapi () {
         }
     }
     WindDegree(vdegree)
-
-    document.getElementById("lufthastighet").innerHTML = dist + ms
 
     if (response) {
     }
