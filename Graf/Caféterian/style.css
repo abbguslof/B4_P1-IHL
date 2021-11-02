@@ -593,7 +593,10 @@ input[type="date"]{
   align-self: center;
   right: 48%;
 }
-
+#klassrum4-temp{
+  color: white;
+  font-size: 120%;
+}
 .faktabild {
   display: flex;
   position: absolute;
