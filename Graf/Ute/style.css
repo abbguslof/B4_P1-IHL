@@ -17,14 +17,14 @@ body {
   margin: 0;
 }
 #bildq {
-  width: 5%;
+  width: 80px;
   position: absolute;
-  left:18%;
-  top: 36vh;
+  left:19%;
+  top: 46vh;
 
 }
 #bildq:hover{
-  width: 6%;
+  width: 83px;
 }
 
 a {
