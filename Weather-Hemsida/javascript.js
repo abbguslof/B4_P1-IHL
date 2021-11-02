@@ -181,8 +181,6 @@ onValue(dataBaseRef, (snapshot) => {
     document.getElementById("klassrum1-temp").innerHTML = snapshot.val() + "°C"
 
     TempImg("klassrum1-temp", "klassrum1-img")  //kallar funktionen för termometer bilden
-    console.log(dataBaseRef)
-    console.log(snapshot.val())
 })
 
 // skriv ut temperatur Terrariet
@@ -222,7 +220,6 @@ const prcent = "%"
 let humref1 = ref(database, "Hum1/Current")
 onValue(humref1, (snapshot) => {
     document.getElementById("humidity1").innerHTML = snapshot.val() + prcent
-    console.log(snapshot.val())
 })
 
 //skriver ut luftfuktighet klassrum2
