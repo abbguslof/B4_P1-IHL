@@ -169,17 +169,135 @@ margin-right: auto;
 }
 
 #curve_chart {
-    margin-top: 5vh;
+    margin-top: 10vh;
     margin-bottom: 5vh;
+    border-bottom: 10px solid white;
     
-    
+
    
 }
+#rumtitle{
+    
+     border:3px solid white;
+     width: 20%;
+     text-align: center;
+     margin-left:auto;
+     margin-right: auto;
+     font-family: sans-serif;
+     background-color: 
+     rgba(255, 255, 255, 0.637);
+    }
+    #klassbtn{
+        font-family: sans-serif;
+        
+        font-size: 140%;
+        width: 10%;
+        height: 4vh;
+       
+        text-align: center;
+        padding: 5px;
+        border-radius: 24px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 13%;
+        background-color: 
+        rgba(255, 255, 255, 0.637);
+
+    }
+    #terarrietbtn{
+        font-family: sans-serif;
+        
+        font-size: 140%;
+        width: 10%;
+        height: 4vh;
+       
+        text-align: center;
+        padding: 5px;
+        border-radius: 24px;
+        float: left;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: 
+        rgba(255, 255, 255, 0.637);
+    }
+    #vardagsrummetbtn{
+        font-family: sans-serif;
+        
+        font-size: 140%;
+        width: 10%;
+        height: 4vh;
+       
+        text-align: center;
+        padding: 5px;
+        border-radius: 24px;
+        float: left;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: 
+        rgba(255, 255, 255, 0.637);
+    }
+    #caffeterianbtn{
+        font-family: sans-serif;
+        
+        font-size: 140%;
+        width: 10%;
+        height: 4vh;
+        
+        text-align: center;
+        padding: 5px;
+        border-radius: 24px;
+        float: left;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: 
+        rgba(255, 255, 255, 0.637);
+    }
+    #pingisbtn{
+        font-family: sans-serif;
+        
+        font-size: 140%;
+        width: 10%;
+        height: 4vh;
+        
+        text-align: center;
+        padding: 5px;
+        border-radius: 24px;
+        float: left;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: 
+        rgba(255, 255, 255, 0.637);
+       
+    }
+    .btndiv{
+        
+        font-family: sans-serif;
+        margin-top: 7vh;
+       
+    }
+
+    .btnbro{
+        border: 3px solid white;
+    }
+    .btnbro:hover{
+        border: 3px solid blue;
+    }
+   
 #w {
     text-align: center;
    font-family: 'Times New Roman', Times, serif;
    background-color: rgba(255, 255, 255, 0.582);
-    border-radius: 20px;
+    border: 3px solid white;
     font-size: 50px;
     width: 40%;
     margin-right: auto;
@@ -215,7 +333,7 @@ font-size: 1.875em;
     height:30% ;
     position: absolute;
     left: 7%;
-   top: 180vh;
+   top: 165vh;
  border-radius: 24px;
  
 }
@@ -223,7 +341,7 @@ font-size: 1.875em;
    height: 30%;
     position: absolute;
     left: 37%;
-   top: 180vh;
+   top: 165vh;
  border-radius: 24px;
 
 }
@@ -232,7 +350,7 @@ font-size: 1.875em;
     height:30%;
     position: absolute;
     left: 70%;
-   top: 180vh;
+   top: 165vh;
  border-radius: 24px;
 
 }

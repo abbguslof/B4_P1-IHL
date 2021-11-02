@@ -8,7 +8,7 @@
     <title>Spets Termometern | ABB </title>
     <link rel="stylesheet" href="css.css">
 </head>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
@@ -53,7 +53,7 @@
 
         chart.draw(data, options);
     }
-</script>
+</script> -->
 
 
 <body>
@@ -151,7 +151,17 @@ Hemsidans titel och en tillbacka knapp till den andra hemsidan -->
     </div>
 
     <!-- Graph -->
-    <div id="curve_chart" style="width: 100%; height: 50vh;"></div>
+    <div id="curve_chart" style="width: 100%; height: 30vh;">
+        <div id="rumtitle"><h1> Se mer info om rummen</h1></div>
+            <div class="btndiv">
+        <a style="color: black;" href="../../B4_P1-IHL/Graf/Klassrum1/graf1.html"><div class="btnbro" id="klassbtn"> Klassrummet</div></a>
+        <a style="color: black;" href="../../B4_P1-IHL/Graf/Klassrum2/graf2.html"><div class="btnbro" id="terarrietbtn">Terrariet</div> </a>
+        <a style="color: black;" href="../../B4_P1-IHL/Graf/Klassrum3/graf3.html"><div class="btnbro" id="vardagsrummetbtn">Vardagsrummet</div> </a>
+        <a style="color: black;" href="../../B4_P1-IHL/Graf/Caféterian/graf4.html"><div class="btnbro" id="caffeterianbtn">Cafeterian</div> </a>
+        <a style="color: black;" href="../../B4_P1-IHL/Graf/Pingis Rummet/graf5.html"><div class="btnbro" id="pingisbtn">Pingisrummet</div> </a>
+            </div>
+    
+    </div>
 
     <!-- Info om projektet -->
     <h1 id="w"> Vad är projektet?</h1>

@@ -47,7 +47,7 @@ const HUM = "Hum: "
 const PRCNT = "%"
 
 // Get temp klassrum 1
-let dataBaseRef = ref(database, "Temp/Current")
+let dataBaseRef = ref(database, "Temp1/Current")
 onValue(dataBaseRef, (snapshot) => {
     console.log(snapshot.val())
     document.getElementById("klass1").innerHTML = TMP + snapshot.val() + cgrader
