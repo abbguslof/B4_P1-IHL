@@ -37,8 +37,8 @@ const database = getDatabase()
 // }
 
 // getapi()
-    
-    
+
+
 
 
 const cgrader = "°C"
@@ -70,7 +70,7 @@ let dataBaseRef4 = ref(database, "Temp4/Current")
 onValue(dataBaseRef4, (snapshot) => {
     document.getElementById("cafeterian").innerHTML = TMP + snapshot.val() + cgrader
 
-   })
+})
 // Get temp pingsirummet
 let dataBaseRef5 = ref(database, "Temp5/Current")
 onValue(dataBaseRef5, (snapshot) => {
@@ -85,29 +85,29 @@ const Hum = "Fuktighet: "
 const prcent = "%"
 
 // Get Humidity klassrum 1
-let humref1 = ref(database, "hum/Current")
+let humref1 = ref(database, "Hum1/Current")
 onValue(humref1, (snapshot) => {
-    document.getElementById("hum1").innerHTML = Hum + snapshot.val() + prcent 
+    document.getElementById("hum1").innerHTML = Hum + snapshot.val() + prcent
 })
 // Get Humidity klassrum 2
-let humref2 = ref(database, "hum2/Current")
+let humref2 = ref(database, "Hum2/Current")
 onValue(humref2, (snapshot) => {
-    document.getElementById("hum2").innerHTML = Hum + snapshot.val() + prcent 
+    document.getElementById("hum2").innerHTML = Hum + snapshot.val() + prcent
 })
 // Get Humidity klassrum 3
-let humref3 = ref(database, "hum3/Current")
+let humref3 = ref(database, "Hum3/Current")
 onValue(humref3, (snapshot) => {
-    document.getElementById("hum3").innerHTML = Hum + snapshot.val() + prcent 
+    document.getElementById("hum3").innerHTML = Hum + snapshot.val() + prcent
 })
 // Get Humidity cafeterian
-let humref4 = ref(database, "hum4/Current")
+let humref4 = ref(database, "Hum4/Current")
 onValue(humref4, (snapshot) => {
-    document.getElementById("hum4").innerHTML = Hum + snapshot.val() + prcent 
+    document.getElementById("hum4").innerHTML = Hum + snapshot.val() + prcent
 })
 // Get Humidity pingisrummet
-let humref5 = ref(database, "hum5/Current")
+let humref5 = ref(database, "Hum5/Current")
 onValue(humref5, (snapshot) => {
-    document.getElementById("hum5").innerHTML = Hum + snapshot.val() + prcent 
+    document.getElementById("hum5").innerHTML = Hum + snapshot.val() + prcent
 })
 
 
