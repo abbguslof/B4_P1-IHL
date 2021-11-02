@@ -74,7 +74,8 @@ async function getapi () {
     let dist = data.list[0].wind.speed   //api på vindhastighet
     let hum = data.list[0].main.humidity   //api på luftfuktighet
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
-    let rain = data.list[0].weather.main  //api på regn
+    let rain = data.list[0].weather[0].main  //api på regn
+
     if (rain == "Rain") {
         document.getElementById("uteicon").src = "images/icons/regn.svg"
     }
