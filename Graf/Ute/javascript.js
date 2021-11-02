@@ -54,8 +54,10 @@ async function getapi () {
     const prcnt = "%"
     var data = await response.json()
     let dist = data.list[0].wind.speed   //api på vindhastighet
+    let gust = data.list[0].wind.gust   //api på vindbyar
     let hum = data.list[0].main.humidity   //api på luftfuktighet
-    let pressure = data.list[0].main.pressure //api på lufttryck
+    let pressure = data.list[0].main.pressure   //api på lufttryck
+    let feelslike = data.list[0].main.feels_like   //api på feels-like
 
     document.getElementById("utehum").innerHTML = hum + prcnt
 
