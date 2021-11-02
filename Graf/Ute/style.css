@@ -20,11 +20,8 @@ body {
   width: 80px;
   position: absolute;
   left:19%;
-  top: 37vh;
+  top: 47vh;
 
-}
-#bildq:hover{
-  width: 83px;
 }
 
 a {
@@ -583,12 +580,9 @@ input[type="date"]{
 }
 
 #utomhus-temp{
-width: max-content;
-min-width: 40px;
-height: max-content;
-min-height: 45px;
-color: #ffffff;
-font-weight: 800;
+  color: white;
+  font-size: 120%;
+  font-weight: 700;
 }
 
 .Fakta {
