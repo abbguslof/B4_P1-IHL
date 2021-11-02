@@ -85,11 +85,10 @@ async function getapi () {
         if (minutes < 10) {
             minutes = "0" + minutes
         }
-        let time = document.getElementById("Time").innerHTML + ':' + minutes
+        document.getElementById('Time').innerHTML = hours + ':' + minutes
 
-        // byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
-
-        if (rain != "Rain") {
+        //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
+        if (rain !== "Rain") {
             if (6 < hours && hours < 16) {
                 document.getElementById("uteicon").src = "images/icons/helsol.svg"
             }
@@ -146,8 +145,9 @@ async function getapi () {
 
 //funktion som byter icon beroende på temperatur.
 function TempImg (degree, id) {
-    var degrees = parseFloat(document.getElementById("degree").innerHTML)
-    if (degrees) { //kör bara funktionen om variabeln inte är undefined, empty eller null
+    if (degree) { //kör bara funktionen om variabeln inte är undefined, empty eller null
+        var degrees = parseFloat(document.getElementById(degree).innerHTML)
+
         if (degrees < 15) {
             document.getElementById(id).src = "images/icons/temp-0.png"
         }
