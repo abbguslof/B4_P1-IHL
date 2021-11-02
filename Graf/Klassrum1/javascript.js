@@ -23,8 +23,8 @@ const db = getDatabase()
 let datePicker = document.getElementById('datum')
 
 // skriv ut temperatur Klassrum2
-let dataBaseRef2 = ref(db, "Temp2/Current")
-onValue(dataBaseRef2, (snapshot) => {
+let dataBaseRef1 = ref(db, "Temp1/Current")
+onValue(dataBaseRef1, (snapshot) => {
     //document.getElementById("klassrum2-temp").innerHTML = snapshot.val()
     let tempC = snapshot.val()//document.getElementById("klassrum2-temp").innerHTML
     const grader = "°" // Ger Grader värdet "°" och förenklar kodandet l'ngre ned
@@ -34,10 +34,10 @@ onValue(dataBaseRef2, (snapshot) => {
     function Farenheit () {
         let checkbutton = document.getElementById("ButtonCF").checked
         if (checkbutton == false) {
-            document.getElementById("klassrum2-temp").innerHTML = tempC + grader + "C"
+            document.getElementById("klassrum1-temp").innerHTML = tempC + grader + "C"
         }
         else {
-            document.getElementById("klassrum2-temp").innerHTML = tempF + grader + "F"
+            document.getElementById("klassrum1-temp").innerHTML = tempF + grader + "F"
         }
         setTimeout(Farenheit, 1000)
     }
