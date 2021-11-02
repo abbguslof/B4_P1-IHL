@@ -57,11 +57,14 @@ async function getapi () {
     let gust = data.list[0].wind.gust   //api på vindbyar
     let hum = data.list[0].main.humidity   //api på luftfuktighet
     let pressure = data.list[0].main.pressure   //api på lufttryck
-    let feelslike = data.list[0].main.feels_like   //api på feels-like
+    let feels = data.list[0].main.feels_like   //api på feels-like
+    let feelslike = (feels - 273.15).toFixed(1) + "°C"
+
 
     document.getElementById("utehum").innerHTML = hum + prcnt
     document.getElementById("lufthastighet").innerHTML = dist + ms
     document.getElementById("byar").innerHTML = gust + ms
+    document.getElementById("feel").innerHTML = feelslike
 
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
 
