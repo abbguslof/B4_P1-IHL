@@ -17,14 +17,14 @@ body {
   margin: 0;
 }
 #bildq {
-  width: 7%;
+  width: 5%;
   position: absolute;
-  left:20%;
-  top: 60vh;
+  left:18%;
+  top: 36vh;
 
 }
 #bildq:hover{
-  width: 83px;
+  width: 6%;
 }
 
 a {
@@ -582,8 +582,13 @@ input[type="date"]{
 
 #utomhus-temp{
 width: max-content;
+min-width: 40px;
 height: max-content;
+min-height: 45px;
+color: #ffffff;
+font-weight: 800;
 }
+
 .Fakta {
   display: flex;
   position: relative;
