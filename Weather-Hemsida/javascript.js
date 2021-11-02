@@ -76,9 +76,11 @@ async function getapi () {
     let vdegree = data.list[0].wind.deg   //api på vind riktning (grader)
     let rain = data.list[0].weather[0].main  //api på regn
 
+    //byter ikon om det regnar
     if (rain == "Rain") {
         document.getElementById("uteicon").src = "images/icons/regn.svg"
     }
+    //skriver ut tid
     function updateClock () {
         var now = new Date()
         var minutes = now.getMinutes()
@@ -88,7 +90,7 @@ async function getapi () {
         }
         document.getElementById('Time').innerHTML = hours + ':' + minutes
 
-        //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6.
+        //byter icon. Sol mellan klockan 6 och 16, halvsol mellan 16 och 19, och måne mellan 20 och 6. Händer bara om det inte regnar.
         if (rain !== "Rain") {
             if (6 < hours && hours < 16) {
                 document.getElementById("uteicon").src = "images/icons/helsol.svg"
